@@ -1,3 +1,15 @@
 /* This file is for your main application css. */
 
-@import "./phoenix.css";
+@import "./tachyons.css";
+
+@import url('https://fonts.googleapis.com/css?family=Ubuntu&display=swap');
+
+/* Helvetica -> Arial substitution problem */
+.sans-serif {
+  font-family: -apple-system, BlinkMacSystemFont, 'avenir next', avenir, 'helvetica neue', ubuntu, roboto, noto, 'segoe ui', Helvetica, Arial, sans-serif;
+}
+
+.social-login {
+  fill: "currentColor";
+}
+
