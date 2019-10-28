@@ -42,7 +42,16 @@ defmodule Scribit.MixProject do
       {:phoenix_live_reload, "~> 1.2", only: :dev},
       {:gettext, "~> 0.11"},
       {:jason, "~> 1.0"},
-      {:plug_cowboy, "~> 2.0"}
+      {:plug_cowboy, "~> 2.0"},
+
+      {:pow, "~> 1.0.13"},
+      {:pow_assent, "~> 0.4.1"},
+
+      # Optional, but recommended for SSL validation with :httpc adapter
+      {:certifi, "~> 2.4"},
+      {:ssl_verify_fun, "~> 1.1"},
+
+      {:phoenix_inline_svg, "~> 1.3"},
     ]
   end
 

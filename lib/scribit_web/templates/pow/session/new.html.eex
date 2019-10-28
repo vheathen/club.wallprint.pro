@@ -1,0 +1,16 @@
+<h1 class="f3 f2-ns mt3 tc">Sign in with</h1>
+
+<div class="pv4 ph2 tc-l">
+  <%= 
+    for {provider, path} <- ScribitWeb.ViewHelpers.provider_paths(@conn) do # PowAssent.Phoenix.ViewHelpers.provider_links(@conn),
+      provider_str = provider |> Atom.to_string()
+
+      img = svg_image(provider_str, "social", class: "social-login dib h2 w2", fill: "currentColor" )
+
+      caption = content_tag(:span, String.capitalize(provider_str), class: "f6 ml3 pr2")
+
+      [img, caption]
+      |> link(to: path, title: provider_str, class: "no-underline near-white bg-animate bg-near-black hover-bg-gray inline-flex items-center ma2 tc br2 pa2")
+    end 
+  %>
+</div>

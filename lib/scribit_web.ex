@@ -33,6 +33,8 @@ defmodule ScribitWeb do
         root: "lib/scribit_web/templates",
         namespace: ScribitWeb
 
+      use PhoenixInlineSvg.Helpers, otp_app: :scribit
+
       # Import convenience functions from controllers
       import Phoenix.Controller, only: [get_flash: 1, get_flash: 2, view_module: 1]
 

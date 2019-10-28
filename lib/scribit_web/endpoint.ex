@@ -42,5 +42,7 @@ defmodule ScribitWeb.Endpoint do
     key: "_scribit_key",
     signing_salt: "P2RdvVke"
 
+  plug Pow.Plug.Session, otp_app: :scribit
+
   plug ScribitWeb.Router
 end

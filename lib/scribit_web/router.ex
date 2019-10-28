@@ -1,5 +1,7 @@
 defmodule ScribitWeb.Router do
   use ScribitWeb, :router
+  use Pow.Phoenix.Router
+  use PowAssent.Phoenix.Router
 
   pipeline :browser do
     plug :accepts, ["html"]
@@ -11,6 +13,17 @@ defmodule ScribitWeb.Router do
 
   pipeline :api do
     plug :accepts, ["json"]
+  end
+
+  pipeline :protected do
+    plug Pow.Plug.RequireAuthenticated,
+      error_handler: Pow.Phoenix.PlugErrorHandler
+  end
+
+  scope "/" do
+    pipe_through :browser
+    pow_session_routes()
+    pow_assent_routes()
   end
 
   scope "/", ScribitWeb do

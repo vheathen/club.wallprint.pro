@@ -13,6 +13,11 @@
         <nav role="navigation" class="pa3 pa4-ns">
           <a class="link dim black b f1 f-headline-ns tc db mb3 mb4-ns" href="/" title="Home">Scribit Unofficial</a>
           <div class="tc pb3">
+            <%= if Pow.Plug.current_user(@conn) do %>
+              <span><%= link "Sign out", to: Routes.pow_session_path(@conn, :delete), method: :delete, class: "link dim gray f6 f5-ns dib mr3" %></span>
+            <% else %>
+              <span><%= link "Sign in", to: Routes.pow_session_path(@conn, :new), class: "link dim gray f6 f5-ns dib mr3" %></span>
+            <% end %>
           </div>
         </nav>
       </section>
