@@ -10,19 +10,21 @@
   <body class="w-100 sans-serif">
     <header class="cf">
       <section class="container">
-        <nav role="navigation" class="pa3 pa4-ns">
-          <a class="link dim black b f1 f-headline-ns tc db mb3 mb4-ns" href="/" title="Home">Scribit Unofficial</a>
-          <div class="tc pb3">
+        <nav role="navigation" class="dt w-100 mw8 center">
+          <div class="dtc w5 v-mid pa3">
+            <a class="link dim black b f4 db mb3 mb4-ns dtc v-mid" href="/" title="Home">scribit unofficial</a>
+          </div>
+          <div class="dtc v-mid tr pa3">
             <%= if Pow.Plug.current_user(@conn) do %>
-              <span><%= link "Sign out", to: Routes.pow_session_path(@conn, :delete), method: :delete, class: "link dim gray f6 f5-ns dib mr3" %></span>
+              <span><%= link "Sign out", to: Routes.pow_session_path(@conn, :delete), method: :delete, class: "f6 fw4 hover-dark-red no-underline red dib ml2 pv2 ph3 ba" %></span>
             <% else %>
-              <span><%= link "Sign in", to: Routes.pow_session_path(@conn, :new), class: "link dim gray f6 f5-ns dib mr3" %></span>
+              <span><%= link "Sign in", to: Routes.pow_session_path(@conn, :new), class: "f6 fw4 hover-black no-underline black-70 dib ml2 pv2 ph3 ba" %></span>
             <% end %>
           </div>
         </nav>
       </section>
     </header>
-    <main role="main" class="container">
+    <main role="main" class="container mw8 center">
       <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
       <p class="alert alert-danger" role="alert"><%= get_flash(@conn, :error) %></p>
       <%= render @view_module, @view_template, assigns %>
