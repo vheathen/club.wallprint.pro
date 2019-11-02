@@ -1,9 +1,11 @@
 defmodule ScribitWeb.Endpoint do
   use Phoenix.Endpoint, otp_app: :scribit
 
-  socket "/socket", ScribitWeb.UserSocket,
-    websocket: true,
-    longpoll: false
+  socket "/live", Phoenix.LiveView.Socket
+
+  # socket "/socket", ScribitWeb.UserSocket,
+  #   websocket: true,
+  #   longpoll: false
 
   # Serve at "/" the static files from "priv/static" directory.
   #

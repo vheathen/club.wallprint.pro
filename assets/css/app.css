@@ -1,6 +1,7 @@
 /* This file is for your main application css. */
 
 @import "./tachyons.css";
+@import "../../deps/phoenix_live_view/assets/css/live_view.css";
 
 @import url('https://fonts.googleapis.com/css?family=Ubuntu&display=swap');
 
@@ -8,8 +9,3 @@
 .sans-serif {
   font-family: -apple-system, BlinkMacSystemFont, 'avenir next', avenir, 'helvetica neue', ubuntu, roboto, noto, 'segoe ui', Helvetica, Arial, sans-serif;
 }
-
-.social-login {
-  fill: "currentColor";
-}
-

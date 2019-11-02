@@ -44,6 +44,9 @@ defmodule Scribit.MixProject do
       {:jason, "~> 1.0"},
       {:plug_cowboy, "~> 2.0"},
 
+      {:phoenix_live_view, github: "phoenixframework/phoenix_live_view"},
+      {:floki, ">= 0.0.0"}, # phoenix_inline_svg requires floki not only in :test env, only: :test},
+
       {:pow, "~> 1.0.13"},
       {:pow_assent, "~> 0.4.1"},
 
@@ -52,6 +55,8 @@ defmodule Scribit.MixProject do
       {:ssl_verify_fun, "~> 1.1"},
 
       {:phoenix_inline_svg, "~> 1.3"},
+
+
     ]
   end
 
