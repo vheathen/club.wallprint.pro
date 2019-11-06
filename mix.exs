@@ -47,7 +47,7 @@ defmodule Scribit.MixProject do
       {:phoenix_live_view, github: "phoenixframework/phoenix_live_view"},
       {:floki, ">= 0.0.0"}, # phoenix_inline_svg requires floki not only in :test env, only: :test},
 
-      {:pow, "~> 1.0.13"},
+      {:pow, "~> 1.0.14"},
       {:pow_assent, "~> 0.4.1"},
 
       # Optional, but recommended for SSL validation with :httpc adapter
