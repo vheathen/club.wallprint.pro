@@ -34,7 +34,8 @@ config :scribit, :pow,
   web_module: ScribitWeb,
   routes_backend: ScribitWeb.Pow.Routes,
   extensions: [PowPersistentSession],
-  controller_callbacks: Pow.Extension.Phoenix.ControllerCallbacks
+  controller_callbacks: Pow.Extension.Phoenix.ControllerCallbacks,
+  cache_store_backend: Pow.Store.Backend.MnesiaCache
 
 config :phoenix_inline_svg, dir: "/priv/static/images"
 

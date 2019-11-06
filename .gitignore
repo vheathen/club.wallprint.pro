@@ -38,4 +38,4 @@ npm-debug.log
 /.vscode
 
 /config/pow_assent.exs
-/start.sh
+/Mnesia*

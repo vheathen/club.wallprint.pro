@@ -11,9 +11,10 @@ defmodule Scribit.Application do
       # Start the Ecto repository
       Scribit.Repo,
       # Start the endpoint when the application starts
-      ScribitWeb.Endpoint
+      ScribitWeb.Endpoint,
       # Starts a worker by calling: Scribit.Worker.start_link(arg)
       # {Scribit.Worker, arg},
+      Pow.Store.Backend.MnesiaCache
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html

@@ -17,6 +17,15 @@ config :scribit, ScribitWeb.Endpoint,
 # Print only warnings and errors during test
 config :logger, level: :warn
 
+config :scribit, :pow,
+  user: Scribit.Users.User,
+  repo: Scribit.Repo,
+  web_module: ScribitWeb,
+  routes_backend: ScribitWeb.Pow.Routes,
+  extensions: [PowPersistentSession],
+  controller_callbacks: Pow.Extension.Phoenix.ControllerCallbacks,
+  cache_store_backend: Pow.Store.Backend.EtsCache
+
 if ! File.exists?("config/pow_assent.exs"), do: raise """
   Pow Assent requires external auth providers settings!
   Please create config/pow_assent_social.exs file.
