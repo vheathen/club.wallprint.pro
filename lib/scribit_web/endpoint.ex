@@ -46,5 +46,7 @@ defmodule ScribitWeb.Endpoint do
 
   plug Pow.Plug.Session, otp_app: :scribit
 
+  plug PowPersistentSession.Plug.Cookie
+
   plug ScribitWeb.Router
 end
