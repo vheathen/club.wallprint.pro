@@ -1,4 +1,4 @@
-use Mix.Config
+import Config
 
 # Configure your database
 config :scribit, Scribit.Repo,
@@ -16,3 +16,10 @@ config :scribit, ScribitWeb.Endpoint,
 
 # Print only warnings and errors during test
 config :logger, level: :warn
+
+if ! File.exists?("config/pow_assent.exs"), do: raise """
+  Pow Assent requires external auth providers settings!
+  Please create config/pow_assent_social.exs file.
+"""
+
+import_config("pow_assent.exs")

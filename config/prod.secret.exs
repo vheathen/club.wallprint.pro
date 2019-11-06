@@ -2,7 +2,7 @@
 # from environment variables. You can also hardcode secrets,
 # although such is generally not recommended and you have to
 # remember to add this file to your .gitignore.
-use Mix.Config
+import Config
 
 database_url =
   System.get_env("DATABASE_URL") ||
@@ -35,6 +35,36 @@ config :scribit, ScribitWeb.Endpoint,
   secret_key_base: secret_key_base,
   live_view: [
     signing_salt: live_view_signing_salt
+  ]
+
+# Pow Assent
+google_client_id = System.get_env("GOOGLE_CLIENT_ID") || raise "no GOOGLE_CLIENT_ID env var!"
+google_client_secret = System.get_env("GOOGLE_CLIENT_SECRET") || raise "no GOOGLE_CLIENT_ID env var!"
+
+facebook_client_id = System.get_env("FACEBOOK_CLIENT_ID") || raise "no FACEBOOK_CLIENT_ID env var!"
+facebook_client_secret = System.get_env("FACEBOOK_CLIENT_SECRET") || raise "no FACEBOOK_CLIENT_ID env var!"
+
+vk_client_id = System.get_env("VK_CLIENT_ID") || raise "no VK_CLIENT_ID env var!"
+vk_client_secret = System.get_env("VK_CLIENT_SECRET") || raise "no VK_CLIENT_ID env var!"
+
+config :scribit, :pow_assent,
+  providers: [
+    google: [
+      client_id: google_client_id,
+      client_secret: google_client_secret,
+      strategy: Assent.Strategy.Google
+    ],
+    facebook: [
+      client_id: facebook_client_id,
+      client_secret: facebook_client_secret,
+      strategy: Assent.Strategy.Facebook
+    ],
+    vk: [
+      client_id: vk_client_id,
+      client_secret: vk_client_secret,
+      strategy: Assent.Strategy.VK
+    ]
+
   ]
 
 # ## Using releases (Elixir v1.9+)

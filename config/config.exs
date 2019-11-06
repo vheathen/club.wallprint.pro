@@ -5,7 +5,7 @@
 # is restricted to this project.
 
 # General application configuration
-use Mix.Config
+import Config
 
 config :scribit,
   ecto_repos: [Scribit.Repo]
@@ -32,27 +32,9 @@ config :scribit, :pow,
   user: Scribit.Users.User,
   repo: Scribit.Repo,
   web_module: ScribitWeb,
-  routes_backend: ScribitWeb.Pow.Routes
-
-config :scribit, :pow_assent,
-  providers: [
-    google: [
-      client_id: System.get_env("GOOGLE_CLIENT_ID"),
-      client_secret: System.get_env("GOOGLE_CLIENT_SECRET"),
-      strategy: Assent.Strategy.Google
-    ],
-    facebook: [
-      client_id: System.get_env("FACEBOOK_CLIENT_ID"),
-      client_secret: System.get_env("FACEBOOK_CLIENT_SECRET"),
-      strategy: Assent.Strategy.Facebook
-    ],
-    vk: [
-      client_id: System.get_env("VK_CLIENT_ID"),
-      client_secret: System.get_env("VK_CLIENT_SECRET"),
-      strategy: Assent.Strategy.VK
-    ]
-
-  ]
+  routes_backend: ScribitWeb.Pow.Routes,
+  extensions: [PowPersistentSession],
+  controller_callbacks: Pow.Extension.Phoenix.ControllerCallbacks
 
 config :phoenix_inline_svg, dir: "/priv/static/images"
 

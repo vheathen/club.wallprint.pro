@@ -1,4 +1,4 @@
-use Mix.Config
+import Config
 
 # Configure your database
 config :scribit, Scribit.Repo,
@@ -29,6 +29,13 @@ config :scribit, ScribitWeb.Endpoint,
       cd: Path.expand("../assets", __DIR__)
     ]
   ]
+
+if ! File.exists?("config/pow_assent.exs"), do: raise """
+  Pow Assent requires external auth providers settings!
+  Please create config/pow_assent_social.exs file.
+"""
+
+import_config("pow_assent.exs")
 
 # ## SSL Support
 #
