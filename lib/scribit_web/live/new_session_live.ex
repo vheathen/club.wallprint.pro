@@ -14,8 +14,6 @@ defmodule ScribitWeb.NewSessionLive do
 
   def render(assigns) do
     ~L"""
-    <h1 class="f3 f2-ns mt3 tc">Sign in with</h1>
-
     <div class="pv4 ph2 tc-l">
       <input type="checkbox" <%= if @persist_session do %>checked<% end %> phx-click="persist_session">
         Remember me for 30 days
