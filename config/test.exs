@@ -26,9 +26,11 @@ config :scribit, :pow,
   controller_callbacks: Pow.Extension.Phoenix.ControllerCallbacks,
   cache_store_backend: Pow.Store.Backend.EtsCache
 
-if ! File.exists?("config/pow_assent.exs"), do: raise """
-  Pow Assent requires external auth providers settings!
-  Please create config/pow_assent_social.exs file.
-"""
+if !File.exists?("config/pow_assent.exs"),
+  do:
+    raise("""
+      Pow Assent requires external auth providers settings!
+      Please create config/pow_assent_social.exs file.
+    """)
 
 import_config("pow_assent.exs")

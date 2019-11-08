@@ -13,7 +13,7 @@ defmodule ScribitWeb.ViewHelpers do
   @spec provider_paths(Conn.t()) :: [{String.t(), HTML.safe()}]
   def provider_paths(conn) do
     available_providers = Plug.available_providers(conn)
-    providers_for_user  = Plug.providers_for_current_user(conn)
+    providers_for_user = Plug.providers_for_current_user(conn)
 
     available_providers
     |> Enum.map(&{&1, &1 in providers_for_user})
@@ -33,10 +33,18 @@ defmodule ScribitWeb.ViewHelpers do
   @spec authorization_path(Conn.t(), atom()) :: HTML.safe()
   def authorization_path(conn, provider) do
     query_params = authorization_link_query_params(conn)
-    AuthorizationController.routes(conn).path_for(conn, AuthorizationController, :new, [provider], query_params)
+
+    AuthorizationController.routes(conn).path_for(
+      conn,
+      AuthorizationController,
+      :new,
+      [provider],
+      query_params
+    )
   end
 
-  defp authorization_link_query_params(%{assigns: %{invited_user: %{invitation_token: token}}}), do: [invitation_token: token]
-  defp authorization_link_query_params(_conn), do: []
+  defp authorization_link_query_params(%{assigns: %{invited_user: %{invitation_token: token}}}),
+    do: [invitation_token: token]
 
+  defp authorization_link_query_params(_conn), do: []
 end

@@ -39,10 +39,15 @@ config :scribit, ScribitWeb.Endpoint,
 
 # Pow Assent
 google_client_id = System.get_env("GOOGLE_CLIENT_ID") || raise "no GOOGLE_CLIENT_ID env var!"
-google_client_secret = System.get_env("GOOGLE_CLIENT_SECRET") || raise "no GOOGLE_CLIENT_ID env var!"
 
-facebook_client_id = System.get_env("FACEBOOK_CLIENT_ID") || raise "no FACEBOOK_CLIENT_ID env var!"
-facebook_client_secret = System.get_env("FACEBOOK_CLIENT_SECRET") || raise "no FACEBOOK_CLIENT_ID env var!"
+google_client_secret =
+  System.get_env("GOOGLE_CLIENT_SECRET") || raise "no GOOGLE_CLIENT_ID env var!"
+
+facebook_client_id =
+  System.get_env("FACEBOOK_CLIENT_ID") || raise "no FACEBOOK_CLIENT_ID env var!"
+
+facebook_client_secret =
+  System.get_env("FACEBOOK_CLIENT_SECRET") || raise "no FACEBOOK_CLIENT_ID env var!"
 
 vk_client_id = System.get_env("VK_CLIENT_ID") || raise "no VK_CLIENT_ID env var!"
 vk_client_secret = System.get_env("VK_CLIENT_SECRET") || raise "no VK_CLIENT_ID env var!"
@@ -64,7 +69,6 @@ config :scribit, :pow_assent,
       client_secret: vk_client_secret,
       strategy: Assent.Strategy.VK
     ]
-
   ]
 
 # ## Using releases (Elixir v1.9+)

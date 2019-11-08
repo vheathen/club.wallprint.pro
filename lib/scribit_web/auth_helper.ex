@@ -32,9 +32,9 @@ defmodule ScribitWeb.AuthHelper do
   import Phoenix.LiveView, only: [assign: 3]
 
   defmacro __using__(opts) do
-    config      = [otp_app: opts[:otp_app]]
+    config = [otp_app: opts[:otp_app]]
     session_key = Pow.Plug.prepend_with_namespace(config, "auth")
-    interval    = Keyword.get(opts, :interval, :timer.seconds(60))
+    interval = Keyword.get(opts, :interval, :timer.seconds(60))
 
     config = [
       session_key: session_key,
@@ -43,9 +43,11 @@ defmodule ScribitWeb.AuthHelper do
     ]
 
     quote do
-      @config unquote(Macro.escape(config)) # ++ [module: __MODULE__]
+      # ++ [module: __MODULE__]
+      @config unquote(Macro.escape(config))
 
-      def mount_user(socket, session), do: unquote(__MODULE__).mount_user(socket, self(), session, config())
+      def mount_user(socket, session),
+        do: unquote(__MODULE__).mount_user(socket, self(), session, config())
 
       def handle_info(:pow_auth_ttl, socket) do
         {
@@ -59,11 +61,11 @@ defmodule ScribitWeb.AuthHelper do
         |> Application.get_env(:pow, [])
         |> Keyword.merge(@config)
       end
-
     end
   end
 
-  @spec mount_user(Phoenix.LiveView.Socket.t(), pid(), map(), keyword()) :: Phoenix.LiveView.Socket.t()
+  @spec mount_user(Phoenix.LiveView.Socket.t(), pid(), map(), keyword()) ::
+          Phoenix.LiveView.Socket.t()
   def mount_user(socket, pid, session, config) do
     session = Map.fetch!(session, config[:session_key] |> String.to_existing_atom())
 
@@ -83,7 +85,8 @@ defmodule ScribitWeb.AuthHelper do
     end
   end
 
-  @spec handle_auth_ttl(Phoenix.LiveView.Socket.t(), pid(), keyword()) :: Phoenix.LiveView.Socket.t()
+  @spec handle_auth_ttl(Phoenix.LiveView.Socket.t(), pid(), keyword()) ::
+          Phoenix.LiveView.Socket.t()
   def handle_auth_ttl(socket, pid, config) do
     interval = Pow.Config.get(config, :interval)
     module = Pow.Config.get(config, :module)
@@ -124,10 +127,10 @@ defmodule ScribitWeb.AuthHelper do
     case pow_session_active?(socket, config) do
       true ->
         assign(socket, assign_key, get_current_user(socket, config))
+
       false ->
         assign(socket, assign_key, nil)
     end
-
   end
 
   defp get_current_user(socket, config) do
@@ -136,7 +139,7 @@ defmodule ScribitWeb.AuthHelper do
     store_config
     |> store.get(get_current_session(socket, config))
     |> case do
-      :not_found            -> :not_found
+      :not_found -> :not_found
       {user, _inserted_at} -> user
     end
   end
@@ -145,15 +148,15 @@ defmodule ScribitWeb.AuthHelper do
     socket
     |> get_current_user(config)
     |> case do
-      :not_found            -> false
-      _                     -> true
+      :not_found -> false
+      _ -> true
     end
   end
 
   defp store(config) do
     case Pow.Config.get(config, :session_store, default_store(config)) do
       {store, store_config} -> {store, store_config}
-      store                 -> {store, []}
+      store -> {store, []}
     end
   end
 

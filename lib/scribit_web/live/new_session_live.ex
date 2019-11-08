@@ -45,6 +45,5 @@ defmodule ScribitWeb.NewSessionLive do
     {:noreply, assign(socket, :persist_session, true)}
   end
 
-  defp build_auth_path(path, persist?),  do: "#{path}?user[persistent_session]=#{persist?}"
-
+  defp build_auth_path(path, persist?), do: "#{path}?user[persistent_session]=#{persist?}"
 end
