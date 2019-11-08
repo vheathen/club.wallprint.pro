@@ -39,6 +39,16 @@ config :scribit, :pow,
 
 config :phoenix_inline_svg, dir: "/priv/static/images"
 
+if Mix.env() == :dev do
+  config :mix_test_watch,
+    tasks: [
+      "test",
+      "format",
+      "credo --strict",
+      "sobelow --verbose"
+    ]
+end
+
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
 import_config "#{Mix.env()}.exs"

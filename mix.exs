@@ -44,19 +44,23 @@ defmodule Scribit.MixProject do
       {:jason, "~> 1.0"},
       {:plug_cowboy, "~> 2.0"},
 
+      #
       {:phoenix_live_view, github: "phoenixframework/phoenix_live_view"},
-      {:floki, ">= 0.0.0"}, # phoenix_inline_svg requires floki not only in :test env, only: :test},
 
+      # phoenix_inline_svg requires floki not only in :test env, only: :test},
+      {:floki, ">= 0.0.0"},
       {:pow, "~> 1.0.14"},
       {:pow_assent, "~> 0.4.1"},
 
       # Optional, but recommended for SSL validation with :httpc adapter
       {:certifi, "~> 2.4"},
       {:ssl_verify_fun, "~> 1.1"},
-
       {:phoenix_inline_svg, "~> 1.3"},
 
-
+      #
+      {:mix_test_watch, "~> 1.0", only: :dev, runtime: false},
+      {:credo, "~> 1.1.0", only: [:dev, :test], runtime: false},
+      {:sobelow, "~> 0.8", only: [:dev, :test], runtime: false}
     ]
   end
 

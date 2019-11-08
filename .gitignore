@@ -39,3 +39,6 @@ npm-debug.log
 
 /config/pow_assent.exs
 /Mnesia*
+
+# dev
+/.sobelow
