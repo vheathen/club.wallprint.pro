@@ -1,10 +1,10 @@
 import Config
 
 # Configure your database
-config :scribit, Scribit.Repo,
+config :club, Club.Repo,
   username: "postgres",
   password: "postgres",
-  database: "scribit_dev",
+  database: "club_dev",
   hostname: "localhost",
   show_sensitive_data_on_connection_error: true,
   pool_size: 10
@@ -15,7 +15,7 @@ config :scribit, Scribit.Repo,
 # The watchers configuration can be used to run external
 # watchers to your application. For example, we use it
 # with webpack to recompile .js and .css sources.
-config :scribit, ScribitWeb.Endpoint,
+config :club, ClubWeb.Endpoint,
   http: [port: 4000],
   debug_errors: true,
   code_reloader: true,
@@ -64,13 +64,13 @@ import_config("pow_assent.exs")
 # different ports.
 
 # Watch static and templates for browser reloading.
-config :scribit, ScribitWeb.Endpoint,
+config :club, ClubWeb.Endpoint,
   live_reload: [
     patterns: [
       ~r"priv/static/.*(js|css|png|jpeg|jpg|gif|svg)$",
       ~r"priv/gettext/.*(po)$",
-      ~r"lib/scribit_web/{live,views}/.*(ex)$",
-      ~r"lib/scribit_web/templates/.*(eex)$"
+      ~r"lib/club_web/{live,views}/.*(ex)$",
+      ~r"lib/club_web/templates/.*(eex)$"
     ]
   ]
 

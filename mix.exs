@@ -1,9 +1,9 @@
-defmodule Scribit.MixProject do
+defmodule Club.MixProject do
   use Mix.Project
 
   def project do
     [
-      app: :scribit,
+      app: :club,
       version: "0.1.0",
       elixir: "~> 1.5",
       elixirc_paths: elixirc_paths(Mix.env()),
@@ -19,7 +19,7 @@ defmodule Scribit.MixProject do
   # Type `mix help compile.app` for more information.
   def application do
     [
-      mod: {Scribit.Application, []},
+      mod: {Club.Application, []},
       extra_applications: [:logger, :runtime_tools, :mnesia]
     ]
   end

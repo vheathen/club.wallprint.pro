@@ -1,27 +1,27 @@
 import Config
 
 # Configure your database
-config :scribit, Scribit.Repo,
+config :club, Club.Repo,
   username: "postgres",
   password: "postgres",
-  database: "scribit_test",
+  database: "club_test",
   hostname: "localhost",
   pool: Ecto.Adapters.SQL.Sandbox
 
 # We don't run a server during test. If one is required,
 # you can enable the server option below.
-config :scribit, ScribitWeb.Endpoint,
+config :club, ClubWeb.Endpoint,
   http: [port: 4002],
   server: false
 
 # Print only warnings and errors during test
 config :logger, level: :warn
 
-config :scribit, :pow,
-  user: Scribit.Users.User,
-  repo: Scribit.Repo,
-  web_module: ScribitWeb,
-  routes_backend: ScribitWeb.Pow.Routes,
+config :club, :pow,
+  user: Club.Users.User,
+  repo: Club.Repo,
+  web_module: ClubWeb,
+  routes_backend: ClubWeb.Pow.Routes,
   extensions: [PowPersistentSession],
   controller_callbacks: Pow.Extension.Phoenix.ControllerCallbacks,
   cache_store_backend: Pow.Store.Backend.EtsCache

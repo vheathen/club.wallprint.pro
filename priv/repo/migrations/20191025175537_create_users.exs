@@ -1,4 +1,4 @@
-defmodule Scribit.Repo.Migrations.CreateUsers do
+defmodule Club.Repo.Migrations.CreateUsers do
   use Ecto.Migration
 
   def change do

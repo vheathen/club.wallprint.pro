@@ -11,7 +11,7 @@ database_url =
     For example: ecto://USER:PASS@HOST/DATABASE
     """
 
-config :scribit, Scribit.Repo,
+config :club, Club.Repo,
   # ssl: true,
   url: database_url,
   pool_size: String.to_integer(System.get_env("POOL_SIZE") || "10")
@@ -30,7 +30,7 @@ live_view_signing_salt =
     You can generate one by calling: mix phx.gen.secret 32
     """
 
-config :scribit, ScribitWeb.Endpoint,
+config :club, ClubWeb.Endpoint,
   http: [:inet6, port: String.to_integer(System.get_env("PORT") || "4000")],
   secret_key_base: secret_key_base,
   live_view: [
@@ -52,7 +52,7 @@ facebook_client_secret =
 vk_client_id = System.get_env("VK_CLIENT_ID") || raise "no VK_CLIENT_ID env var!"
 vk_client_secret = System.get_env("VK_CLIENT_SECRET") || raise "no VK_CLIENT_ID env var!"
 
-config :scribit, :pow_assent,
+config :club, :pow_assent,
   providers: [
     google: [
       client_id: google_client_id,
@@ -76,7 +76,7 @@ config :scribit, :pow_assent,
 # If you are doing OTP releases, you need to instruct Phoenix
 # to start each relevant endpoint:
 #
-#     config :scribit, ScribitWeb.Endpoint, server: true
+#     config :club, ClubWeb.Endpoint, server: true
 #
 # Then you can assemble a release by calling `mix release`.
 # See `mix help release` for more information.

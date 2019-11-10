@@ -1,3 +1,0 @@
-<h1 class="f3 f2-ns mt3 tc">Sign in with</h1>
-
-<%= Phoenix.LiveView.live_render(@conn, ScribitWeb.NewSessionLive, session: %{provider_paths: ScribitWeb.ViewHelpers.provider_paths(@conn)}) %>

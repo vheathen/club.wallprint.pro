@@ -7,15 +7,15 @@
 # General application configuration
 import Config
 
-config :scribit,
-  ecto_repos: [Scribit.Repo]
+config :club,
+  ecto_repos: [Club.Repo]
 
 # Configures the endpoint
-config :scribit, ScribitWeb.Endpoint,
+config :club, ClubWeb.Endpoint,
   url: [host: "localhost"],
   secret_key_base: "0qYYIVeGcCDcruvNQdbSisY8LjnCgjF/JSXTZB+PWSUzynU8kB9dXwepOaFDZatd",
-  render_errors: [view: ScribitWeb.ErrorView, accepts: ~w(html json)],
-  pubsub: [name: Scribit.PubSub, adapter: Phoenix.PubSub.PG2],
+  render_errors: [view: ClubWeb.ErrorView, accepts: ~w(html json)],
+  pubsub: [name: Club.PubSub, adapter: Phoenix.PubSub.PG2],
   live_view: [
     signing_salt: "pXALvg8wor5rhz3+VQh8oKFDoXypYfRz"
   ]
@@ -28,11 +28,11 @@ config :logger, :console,
 # Use Jason for JSON parsing in Phoenix
 config :phoenix, :json_library, Jason
 
-config :scribit, :pow,
-  user: Scribit.Users.User,
-  repo: Scribit.Repo,
-  web_module: ScribitWeb,
-  routes_backend: ScribitWeb.Pow.Routes,
+config :club, :pow,
+  user: Club.Users.User,
+  repo: Club.Repo,
+  web_module: ClubWeb,
+  routes_backend: ClubWeb.Pow.Routes,
   extensions: [PowPersistentSession],
   controller_callbacks: Pow.Extension.Phoenix.ControllerCallbacks,
   cache_store_backend: Pow.Store.Backend.MnesiaCache
