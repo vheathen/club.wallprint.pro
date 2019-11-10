@@ -1,4 +1,4 @@
-defmodule Club.Repo.Migrations.CreateUsers do
+defmodule Club.ReadRepo.Migrations.CreateUsers do
   use Ecto.Migration
 
   def change do

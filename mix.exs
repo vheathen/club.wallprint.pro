@@ -36,16 +36,24 @@ defmodule Club.MixProject do
       {:phoenix, "~> 1.4.10"},
       {:phoenix_pubsub, "~> 1.1"},
       {:phoenix_ecto, "~> 4.0"},
-      {:ecto_sql, "~> 3.1"},
-      {:postgrex, ">= 0.0.0"},
+      {:ecto_sql, "~> 3.1",},
+      {:postgrex, ">= 0.0.0", override: true},
       {:phoenix_html, "~> 2.11"},
       {:phoenix_live_reload, "~> 1.2", only: :dev},
       {:gettext, "~> 0.11"},
-      {:jason, "~> 1.0"},
+      {:jason, "~> 1.1"},
       {:plug_cowboy, "~> 2.0"},
 
       #
       {:phoenix_live_view, github: "phoenixframework/phoenix_live_view"},
+
+      # commanded and surrounding
+      {:commanded, "~> 1.0.0-pre", override: true},
+      {:eventstore, "~> 1.0.0-pre"},
+      {:commanded_eventstore_adapter, "~> 1.0.0-pre"},
+      {:commanded_ecto_projections, "~> 1.0.0-pre"},
+      {:commanded_audit_middleware, github: "commanded/commanded-audit-middleware" }, #"~> 0.4"},
+      # {:commanded_scheduler, github: "commanded/commanded-scheduler" }, # "~> 0.2"},
 
       # phoenix_inline_svg requires floki not only in :test env, only: :test},
       {:floki, ">= 0.0.0"},
@@ -72,9 +80,13 @@ defmodule Club.MixProject do
   # See the documentation for `Mix` for more info on aliases.
   defp aliases do
     [
-      "ecto.setup": ["ecto.create", "ecto.migrate", "run priv/repo/seeds.exs"],
-      "ecto.reset": ["ecto.drop", "ecto.setup"],
-      test: ["ecto.create --quiet", "ecto.migrate", "test"]
+      "es.init": ["event_store.drop", "event_store.create", "event_store.init"],
+      "read.init": ["ecto.drop", "ecto.create", "ecto.migrate", "run priv/read_repo/seeds.exs"],
+      "audit.init": ["ecto.drop -r Commanded.Middleware.Auditing.Repo --force", "ecto.create -r Commanded.Middleware.Auditing.Repo", "ecto.migrate -r Commanded.Middleware.Auditing.Repo"],
+      # "scheduler.init": ["ecto.drop --repo Commanded.Scheduler.Repo", "ecto.create --repo Commanded.Scheduler.Repo", "ecto.migrate --repo Commanded.Scheduler.Repo"],
+      # "storage.init": ["audit.init", "read.init", "scheduler.init", "es.init"],
+      "storage.init": ["audit.init", "read.init", "es.init"],
+      # test: ["ecto.create --quiet", "ecto.migrate", "test"]
     ]
   end
 end

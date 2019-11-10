@@ -16,21 +16,25 @@ defmodule Club.DataCase do
 
   using do
     quote do
-      alias Club.Repo
+      alias Club.ReadRepo
 
       import Ecto
       import Ecto.Changeset
       import Ecto.Query
+      import Commanded.Assertions.EventAssertions
       import Club.DataCase
     end
   end
 
-  setup tags do
-    :ok = Ecto.Adapters.SQL.Sandbox.checkout(Club.Repo)
+  setup do
+    {:ok, _} = Application.ensure_all_started(:club)
 
-    unless tags[:async] do
-      Ecto.Adapters.SQL.Sandbox.mode(Club.Repo, {:shared, self()})
-    end
+    default_settings = Application.get_all_env(:club)
+
+    on_exit(fn ->
+      Application.put_all_env([{:stream_to_tv, default_settings}])
+      Club.Storage.reset!()
+    end)
 
     :ok
   end

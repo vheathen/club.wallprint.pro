@@ -1,13 +1,38 @@
 import Config
 
 # Configure your database
-config :club, Club.Repo,
+config :club, Club.ReadRepo,
   username: "postgres",
   password: "postgres",
-  database: "club_dev",
+  database: "club_read_dev",
   hostname: "localhost",
   show_sensitive_data_on_connection_error: true,
   pool_size: 10
+
+# EventStore
+config :club, Club.EventStore,
+  username: "postgres",
+  # password: "postgres",
+  database: "club_es_dev",
+  hostname: "localhost",
+  pool_size: 10
+
+config :commanded_audit_middleware, Commanded.Middleware.Auditing.Repo,
+  adapter: Ecto.Adapters.Postgres,
+  database: "club_audit_dev",
+  username: "postgres",
+  password: "postgres",
+  hostname: "localhost",
+  port: "5432"
+
+# Scheduler repo
+# config :commanded_scheduler, Commanded.Scheduler.Repo,
+#   adapter: Ecto.Adapters.Postgres,
+#   database: "club_scheduler_dev",
+#   username: "postgres",
+#   password: "postgres",
+#   hostname: "localhost",
+#   pool_size: 1
 
 # For development, we disable any cache and enable
 # debugging and code reloading.
@@ -38,6 +63,14 @@ if !File.exists?("config/pow_assent.exs"),
     """)
 
 import_config("pow_assent.exs")
+
+config :mix_test_watch,
+  tasks: [
+    "test",
+    "format",
+    "credo --strict",
+    "sobelow --verbose"
+  ]
 
 # ## SSL Support
 #

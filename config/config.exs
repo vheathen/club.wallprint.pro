@@ -8,7 +8,9 @@
 import Config
 
 config :club,
-  ecto_repos: [Club.Repo]
+  namespace: Club,
+  ecto_repos: [Club.ReadRepo],
+  generators: [binary_id: true]
 
 # Configures the endpoint
 config :club, ClubWeb.Endpoint,
@@ -30,7 +32,7 @@ config :phoenix, :json_library, Jason
 
 config :club, :pow,
   user: Club.Users.User,
-  repo: Club.Repo,
+  repo: Club.ReadRepo,
   web_module: ClubWeb,
   routes_backend: ClubWeb.Pow.Routes,
   extensions: [PowPersistentSession],
@@ -39,15 +41,29 @@ config :club, :pow,
 
 config :phoenix_inline_svg, dir: "/priv/static/images"
 
-if Mix.env() == :dev do
-  config :mix_test_watch,
-    tasks: [
-      "test",
-      "format",
-      "credo --strict",
-      "sobelow --verbose"
-    ]
-end
+config :club, event_stores: [Club.EventStore]
+
+config :club, Club.EventStore,
+  serializer: Club.JsonbSerializer,
+  column_data_type: "jsonb",
+  types: EventStore.PostgresTypes
+
+config :club, Club.Commanded,
+        event_store: [
+          adapter: Commanded.EventStore.Adapters.EventStore,
+          event_store: Club.EventStore
+        ],
+        pubsub: :local,
+        registry: :local
+
+config :commanded_audit_middleware,
+        ecto_repos: [Commanded.Middleware.Auditing.Repo],
+        serializer: Club.JsonbSerializer,
+        data_column_schema_type: :map,
+        metadata_column_schema_type: :map,
+        data_column_db_type: :jsonb,
+        metadata_column_db_type: :jsonb
+
 
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.

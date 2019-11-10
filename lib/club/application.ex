@@ -9,12 +9,15 @@ defmodule Club.Application do
     # List all child processes to be supervised
     children = [
       # Start the Ecto repository
-      Club.Repo,
+      Club.ReadRepo,
       # Start the endpoint when the application starts
       ClubWeb.Endpoint,
       # Starts a worker by calling: Club.Worker.start_link(arg)
       # {Club.Worker, arg},
-      Pow.Store.Backend.MnesiaCache
+      Pow.Store.Backend.MnesiaCache,
+
+      # Commanded application
+      Club.Commanded
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html

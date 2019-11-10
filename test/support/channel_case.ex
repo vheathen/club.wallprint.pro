@@ -26,10 +26,10 @@ defmodule ClubWeb.ChannelCase do
   end
 
   setup tags do
-    :ok = Ecto.Adapters.SQL.Sandbox.checkout(Club.Repo)
+    :ok = Ecto.Adapters.SQL.Sandbox.checkout(Club.ReadRepo)
 
     unless tags[:async] do
-      Ecto.Adapters.SQL.Sandbox.mode(Club.Repo, {:shared, self()})
+      Ecto.Adapters.SQL.Sandbox.mode(Club.ReadRepo, {:shared, self()})
     end
 
     :ok
