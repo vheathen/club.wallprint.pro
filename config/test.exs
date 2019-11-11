@@ -65,4 +65,9 @@ if !File.exists?("config/pow_assent.exs"),
       Please create config/pow_assent_social.exs file.
     """)
 
-import_config("pow_assent.exs")
+config :club, :test,
+  test_key1: :test_value1,
+  test_key2: 42,
+  test_key3: ["Forty two"]
+
+  import_config("pow_assent.exs")

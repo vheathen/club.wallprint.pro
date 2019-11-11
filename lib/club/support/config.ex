@@ -4,8 +4,8 @@ defmodule Club.Support.Config do
   @app_name :club
 
   @defaults %{
-    # all defaults are in config
-  }
+              # all defaults are in config
+            }
 
   @spec get(atom) :: term
   def get(key) when is_atom(key) do
@@ -38,13 +38,15 @@ defmodule Club.Support.Config do
       val -> val
     end
   end
+
   defp get_cases({:system, env_var, preconfigured_default}, _, _) do
     case System.get_env(env_var) do
       nil -> preconfigured_default
       val -> val
     end
   end
-  defp get_cases(nil, key, default), do: if is_nil(default), do: Map.get(@defaults, key)
+
+  defp get_cases(nil, key, default), do: if(is_nil(default), do: Map.get(@defaults, key))
   defp get_cases(val, _key, _default), do: val
 
   @doc """
@@ -55,8 +57,12 @@ defmodule Club.Support.Config do
   @spec get_int(atom, atom, integer | nil) :: integer | nil
   def get_int(app, key, default \\ nil) do
     case get(app, key, nil) do
-      nil -> default
-      n when is_integer(n) -> n
+      nil ->
+        default
+
+      n when is_integer(n) ->
+        n
+
       n ->
         case Integer.parse(n) do
           {i, _} -> i
@@ -79,8 +85,12 @@ defmodule Club.Support.Config do
   @spec get_sub_int(atom, atom, integer | nil) :: integer | nil
   def get_sub_int(key, subkey, default \\ nil) do
     case get_sub(key, subkey) do
-      nil -> default
-      n when is_integer(n) -> n
+      nil ->
+        default
+
+      n when is_integer(n) ->
+        n
+
       n ->
         case Integer.parse(n) do
           {i, _} -> i
@@ -88,5 +98,4 @@ defmodule Club.Support.Config do
         end
     end
   end
-
 end
