@@ -17,7 +17,10 @@ defmodule Club.Application do
       Pow.Store.Backend.MnesiaCache,
 
       # Commanded application
-      Club.Commanded
+      Club.Commanded,
+
+      # Brands domain
+      Club.Brands.Supervisor
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html
