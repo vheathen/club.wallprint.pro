@@ -36,7 +36,7 @@ defmodule Club.MixProject do
       {:phoenix, "~> 1.4.10"},
       {:phoenix_pubsub, "~> 1.1"},
       {:phoenix_ecto, "~> 4.0"},
-      {:ecto_sql, "~> 3.1",},
+      {:ecto_sql, "~> 3.1"},
       {:postgrex, ">= 0.0.0", override: true},
       {:phoenix_html, "~> 2.11"},
       {:phoenix_live_reload, "~> 1.2", only: :dev},
@@ -52,8 +52,10 @@ defmodule Club.MixProject do
       {:eventstore, "~> 1.0.0-pre"},
       {:commanded_eventstore_adapter, "~> 1.0.0-pre"},
       {:commanded_ecto_projections, "~> 1.0.0-pre"},
-      {:commanded_audit_middleware, github: "commanded/commanded-audit-middleware" }, #"~> 0.4"},
+      # "~> 0.4"},
+      {:commanded_audit_middleware, github: "commanded/commanded-audit-middleware"},
       # {:commanded_scheduler, github: "commanded/commanded-scheduler" }, # "~> 0.2"},
+      {:commanded_messaging, "~> 0.2.0"},
 
       # phoenix_inline_svg requires floki not only in :test env, only: :test},
       {:floki, ">= 0.0.0"},
@@ -82,10 +84,14 @@ defmodule Club.MixProject do
     [
       "es.init": ["event_store.drop", "event_store.create", "event_store.init"],
       "read.init": ["ecto.drop", "ecto.create", "ecto.migrate", "run priv/read_repo/seeds.exs"],
-      "audit.init": ["ecto.drop -r Commanded.Middleware.Auditing.Repo --force", "ecto.create -r Commanded.Middleware.Auditing.Repo", "ecto.migrate -r Commanded.Middleware.Auditing.Repo"],
+      "audit.init": [
+        "ecto.drop -r Commanded.Middleware.Auditing.Repo --force",
+        "ecto.create -r Commanded.Middleware.Auditing.Repo",
+        "ecto.migrate -r Commanded.Middleware.Auditing.Repo"
+      ],
       # "scheduler.init": ["ecto.drop --repo Commanded.Scheduler.Repo", "ecto.create --repo Commanded.Scheduler.Repo", "ecto.migrate --repo Commanded.Scheduler.Repo"],
       # "storage.init": ["audit.init", "read.init", "scheduler.init", "es.init"],
-      "storage.init": ["audit.init", "read.init", "es.init"],
+      "storage.init": ["audit.init", "read.init", "es.init"]
       # test: ["ecto.create --quiet", "ecto.migrate", "test"]
     ]
   end
