@@ -22,8 +22,6 @@ defmodule Club.Support.Router do
 
       import unquote(__MODULE__)
 
-      alias Club.Support.Middleware.Uniqueness
-
       middleware(Commanded.Middleware.Auditing)
 
       local_middleware(unquote(Keyword.get(opts, :local_middleware)))
