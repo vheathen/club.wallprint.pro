@@ -70,7 +70,7 @@ defmodule Club.MixProject do
       # dev\test deps
       {:ex_machina, "~> 2.3", only: :test},
       {:faker, "~> 0.13", only: [:test, :dev]},
-      {:mix_test_watch, "~> 1.0", only: :dev, runtime: false},
+      {:mix_test_watch, "~> 0.8", only: :dev},
       {:credo, "~> 1.1.0", only: [:dev, :test], runtime: false},
       {:sobelow, "~> 0.8", only: [:dev, :test], runtime: false}
     ]
