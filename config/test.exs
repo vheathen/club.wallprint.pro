@@ -6,7 +6,8 @@ config :club, Club.ReadRepo,
   password: "postgres",
   database: "club_read_test",
   hostname: "localhost"
-  # pool: Ecto.Adapters.SQL.Sandbox
+
+# pool: Ecto.Adapters.SQL.Sandbox
 
 # EventStore
 config :club, Club.EventStore,
@@ -24,7 +25,6 @@ config :commanded_audit_middleware, Commanded.Middleware.Auditing.Repo,
   hostname: "localhost",
   port: "5432"
 
-
 # Scheduler repo
 # config :commanded_scheduler, Commanded.Scheduler.Repo,
 #   adapter: Ecto.Adapters.Postgres,
@@ -37,7 +37,7 @@ config :commanded_audit_middleware, Commanded.Middleware.Auditing.Repo,
 config :club, Club.Commanded,
   event_store: [
     adapter: Commanded.EventStore.Adapters.InMemory,
-    serializer: Club.JsonbSerializer
+    serializer: Club.Support.JsonbSerializer
   ]
 
 # We don't run a server during test. If one is required,

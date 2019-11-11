@@ -1,4 +1,4 @@
-defmodule Club.JsonbSerializer do
+defmodule Club.Support.JsonbSerializer do
   @moduledoc """
   Serialize to/from PostgreSQL's native `jsonb` format.
   """
@@ -18,7 +18,8 @@ defmodule Club.JsonbSerializer do
 
   def deserialize(term, config) do
     case Keyword.get(config, :type) do
-      nil -> term
+      nil ->
+        term
 
       type ->
         type

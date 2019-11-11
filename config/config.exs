@@ -44,26 +44,25 @@ config :phoenix_inline_svg, dir: "/priv/static/images"
 config :club, event_stores: [Club.EventStore]
 
 config :club, Club.EventStore,
-  serializer: Club.JsonbSerializer,
+  serializer: Club.Support.JsonbSerializer,
   column_data_type: "jsonb",
   types: EventStore.PostgresTypes
 
 config :club, Club.Commanded,
-        event_store: [
-          adapter: Commanded.EventStore.Adapters.EventStore,
-          event_store: Club.EventStore
-        ],
-        pubsub: :local,
-        registry: :local
+  event_store: [
+    adapter: Commanded.EventStore.Adapters.EventStore,
+    event_store: Club.EventStore
+  ],
+  pubsub: :local,
+  registry: :local
 
 config :commanded_audit_middleware,
-        ecto_repos: [Commanded.Middleware.Auditing.Repo],
-        serializer: Club.JsonbSerializer,
-        data_column_schema_type: :map,
-        metadata_column_schema_type: :map,
-        data_column_db_type: :jsonb,
-        metadata_column_db_type: :jsonb
-
+  ecto_repos: [Commanded.Middleware.Auditing.Repo],
+  serializer: Club.Support.JsonbSerializer,
+  data_column_schema_type: :map,
+  metadata_column_schema_type: :map,
+  data_column_db_type: :jsonb,
+  metadata_column_db_type: :jsonb
 
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
