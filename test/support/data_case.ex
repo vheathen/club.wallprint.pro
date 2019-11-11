@@ -32,7 +32,7 @@ defmodule Club.DataCase do
     default_settings = Application.get_all_env(:club)
 
     on_exit(fn ->
-      Application.put_all_env([{:stream_to_tv, default_settings}])
+      Application.put_all_env([{:club, default_settings}])
       Club.Storage.reset!()
     end)
 

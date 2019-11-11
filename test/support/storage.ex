@@ -83,5 +83,4 @@ defmodule Club.Storage do
   #   RESTART IDENTITY;
   #   """
   # end
-
 end

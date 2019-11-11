@@ -25,12 +25,15 @@ defmodule ClubWeb.ChannelCase do
     end
   end
 
-  setup tags do
-    :ok = Ecto.Adapters.SQL.Sandbox.checkout(Club.ReadRepo)
+  setup _tags do
+    {:ok, _} = Application.ensure_all_started(:club)
 
-    unless tags[:async] do
-      Ecto.Adapters.SQL.Sandbox.mode(Club.ReadRepo, {:shared, self()})
-    end
+    default_settings = Application.get_all_env(:club)
+
+    on_exit(fn ->
+      Application.put_all_env([{:club, default_settings}])
+      Club.Storage.reset!()
+    end)
 
     :ok
   end
