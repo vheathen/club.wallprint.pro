@@ -5,8 +5,8 @@ config :club, Club.ReadRepo,
   username: "postgres",
   password: "postgres",
   database: "club_read_test",
-  hostname: "localhost",
-  pool: Ecto.Adapters.SQL.Sandbox
+  hostname: "localhost"
+  # pool: Ecto.Adapters.SQL.Sandbox
 
 # EventStore
 config :club, Club.EventStore,
