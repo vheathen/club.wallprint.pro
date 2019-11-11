@@ -67,7 +67,9 @@ defmodule Club.MixProject do
       {:ssl_verify_fun, "~> 1.1"},
       {:phoenix_inline_svg, "~> 1.3"},
 
-      #
+      # dev\test deps
+      {:ex_machina, "~> 2.3", only: :test},
+      {:faker, "~> 0.13", only: [:test, :dev]},
       {:mix_test_watch, "~> 1.0", only: :dev, runtime: false},
       {:credo, "~> 1.1.0", only: [:dev, :test], runtime: false},
       {:sobelow, "~> 0.8", only: [:dev, :test], runtime: false}
