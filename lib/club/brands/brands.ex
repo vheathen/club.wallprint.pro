@@ -4,7 +4,11 @@ defmodule Club.Brands do
   """
 
   alias Club.Commanded
-  alias Club.Brands.Commands.AddBrand
+
+  alias Club.Brands.Commands.{
+    AddBrand,
+    RenameBrand
+  }
 
   def add_brand(brand, metadata)
       when (is_map(brand) or is_list(brand)) and
@@ -21,5 +25,13 @@ defmodule Club.Brands do
     else
       reply -> reply
     end
+  end
+
+  def rename_brand(rename_brand, metadata)
+      when (is_map(rename_brand) or is_list(rename_brand)) and
+             (is_map(metadata) or is_list(metadata)) do
+    cmd = RenameBrand.new(rename_brand)
+
+    Commanded.validate_and_dispatch(cmd, metadata: metadata)
   end
 end

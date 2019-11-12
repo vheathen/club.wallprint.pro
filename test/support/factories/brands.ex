@@ -10,6 +10,15 @@ defmodule Club.Factories.Brands do
           user_name: Faker.Name.En.name()
         }
       end
+
+      def rename_brand_factory do
+        %{
+          brand_uuid: UUID.uuid4(),
+          brand_new_name: Faker.Company.En.buzzword(),
+          user_uuid: UUID.uuid4(),
+          user_name: Faker.Name.En.name()
+        }
+      end
     end
   end
 end
