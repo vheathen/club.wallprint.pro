@@ -5,6 +5,16 @@ defmodule Club.CommandCase do
 
   use ExUnit.CaseTemplate
 
+  import Club.Factory
+
+  @field_types [
+    :string,
+    :integer,
+    # :float,
+    Ecto.UUID
+    # :url
+  ]
+
   using(opts) do
     command =
       Keyword.get(opts, :command) ||
@@ -14,6 +24,8 @@ defmodule Club.CommandCase do
       Keyword.get(opts, :factory) ||
         raise "use CommandCase, command: CommandModule, factory: :factory_name"
 
+    fields_acc = for type <- @field_types, into: %{}, do: {type, []}
+
     quote do
       import Club.Factory
       import Club.CommandCase
@@ -22,15 +34,11 @@ defmodule Club.CommandCase do
       @factory unquote(factory)
       @test_retries 10
 
+      @fields unquote(Macro.escape(fields_acc))
+
       @required_fields []
       @optional_fields []
       @all_fields []
-
-      @string_fields []
-      @integer_fields []
-      @float_fields []
-      @uuid_fields []
-      @url_fields []
     end
   end
 
@@ -56,162 +64,17 @@ defmodule Club.CommandCase do
   """
   defmacro basic_command_tests do
     quote do
+      @tag :unit
       describe "#{@command}" do
-        @tag :unit
-        test "should contain all necessary fields" do
-          assert @all_fields ==
-                   @command
-                   |> struct()
-                   |> Map.from_struct()
-                   |> Map.keys()
-                   |> Enum.sort()
-        end
+        test_command_has_all_fields()
 
-        @tag :unit
-        test "with correct attributes should allow to create a valid command" do
-          for _ <- 1..@test_retries,
-              do: assert(@command.new(build(@factory)).valid?)
-        end
+        test_command_is_valid_with_valid_attributes()
 
-        @tag :unit
-        test "without one of the required fields - invalid command" do
-          for _ <- 1..@test_retries do
-            for req_field <- @required_fields do
-              data = @factory |> build() |> Map.delete(req_field)
+        test_command_is_invalid_without_required_fields()
 
-              %{errors: errors} = cmd = @command.new(data)
-              refute cmd.valid?
+        test_command_is_valid_without_optional_fields()
 
-              assert Enum.any?(
-                       errors,
-                       fn
-                         {^req_field, {_, [validation: :required]}} ->
-                           true
-
-                         _ ->
-                           false
-                       end
-                     )
-            end
-          end
-        end
-
-        @tag :unit
-        test "without any of the optional fields - valid command" do
-          for _ <- 1..@test_retries do
-            for opt_field <- @optional_fields do
-              data = @factory |> build() |> Map.delete(opt_field)
-              assert @command.new(data).valid?
-            end
-          end
-        end
-
-        @tag :unit
-        test "with non-string data for string fields - incorrect command" do
-          for _ <- 1..@test_retries do
-            [
-              Faker.Random.Elixir.random_between(-2_000_000_000, 2_000_000_000),
-              Faker.Random.Elixir.random_uniform(),
-              :simple_atom,
-              :"less simple atom",
-              'charlist'
-            ]
-            |> Enum.each(fn non_string ->
-              Enum.each(
-                @string_fields,
-                fn field ->
-                  data = build(@factory, %{field => non_string})
-
-                  %{errors: errors} = cmd = @command.new(data)
-                  refute cmd.valid?
-
-                  assert Enum.any?(
-                           errors,
-                           fn
-                             {^field, {_, [type: :string, validation: :cast]}} ->
-                               true
-
-                             _ ->
-                               false
-                           end
-                         )
-                end
-              )
-            end)
-          end
-        end
-
-        @tag :unit
-        test "with non-integer data for integer fields - incorrect command" do
-          for _ <- 1..@test_retries do
-            [
-              Faker.String.base64(4),
-              Faker.Random.Elixir.random_uniform(),
-              :simple_atom,
-              :"less simple atom",
-              'charlist'
-            ]
-            |> Enum.each(fn non_integer ->
-              Enum.each(
-                @integer_fields,
-                fn field ->
-                  data = build(@factory, %{field => non_integer})
-
-                  %{errors: errors} = cmd = @command.new(data)
-                  refute cmd.valid?
-
-                  assert Enum.any?(
-                           errors,
-                           fn
-                             {^field, {_, [type: :integer, validation: :cast]}} ->
-                               true
-
-                             _ ->
-                               false
-                           end
-                         )
-                end
-              )
-            end)
-          end
-        end
-
-        @tag :unit
-        test "with non-uuid data for uuid fields - incorrect command" do
-          for _ <- 1..@test_retries do
-            [
-              Faker.Random.Elixir.random_between(-2_000_000_000, 2_000_000_000),
-              Faker.String.base64(32),
-              Faker.String.base64(64),
-              Faker.Random.Elixir.random_uniform(),
-              :simple_atom,
-              :"less simple atom",
-              'charlist'
-            ]
-            |> Enum.each(fn non_uuid ->
-              Enum.each(
-                @uuid_fields,
-                fn field ->
-                  data = build(@factory, %{field => non_uuid})
-
-                  %{errors: errors} = cmd = @command.new(data)
-                  refute cmd.valid?
-
-                  assert Enum.any?(
-                           errors,
-                           fn
-                             {^field, {_, [type: Ecto.UUID, validation: :cast]}} ->
-                               true
-
-                             _ ->
-                               false
-                           end
-                         )
-                end
-              )
-            end)
-          end
-        end
+        test_command_field_types()
       end
     end
   end
@@ -234,18 +97,185 @@ defmodule Club.CommandCase do
   defmacro get_optional_fields, do: quote(do: @optional_fields)
   defmacro get_all_fields, do: quote(do: @all_fields)
 
-  defmacro string_fields(fields),
-    do: quote(do: @string_fields((unquote(fields) ++ @string_fields) |> Enum.sort()))
+  defmacro fields(type, fields) do
+    quote do
+      @fields Map.put(@fields, unquote(type), unquote(fields))
+    end
+  end
 
-  defmacro integer_fields(fields),
-    do: quote(do: @integer_fields((unquote(fields) ++ @integer_fields) |> Enum.sort()))
+  #####
+  defmacro test_command_has_all_fields do
+    quote do
+      test "should contain all necessary fields" do
+        check_command_has_all_fields(@command, @all_fields)
+      end
+    end
+  end
 
-  defmacro float_fields(fields),
-    do: quote(do: @float_fields((unquote(fields) ++ @float_fields) |> Enum.sort()))
+  @spec check_command_has_all_fields(atom(), list()) :: true | false
+  def check_command_has_all_fields(command, fields_list) when is_list(fields_list) do
+    assert fields_list == command |> struct() |> Map.from_struct() |> Map.keys() |> Enum.sort()
+  end
 
-  defmacro uuid_fields(fields),
-    do: quote(do: @uuid_fields((unquote(fields) ++ @uuid_fields) |> Enum.sort()))
+  ###
+  defmacro test_command_is_valid_with_valid_attributes do
+    quote do
+      test "with correct attributes should allow to create a valid command" do
+        check_command_is_valid_with_valid_attributes(@command, @factory, retries: @test_retries)
+      end
+    end
+  end
 
-  defmacro url_fields(fields),
-    do: quote(do: @url_fields((unquote(fields) ++ @url_fields) |> Enum.sort()))
+  @spec check_command_is_valid_with_valid_attributes(atom(), atom(), keyword) :: [any]
+  def check_command_is_valid_with_valid_attributes(command, factory, opts \\ []) do
+    for _ <- 1..Keyword.get(opts, :retries, 1),
+        do: assert(command.new(build(factory)).valid?)
+  end
+
+  ###
+  defmacro test_command_is_invalid_without_required_fields do
+    quote do
+      test "without one of the required fields - invalid command" do
+        check_command_is_invalid_without_required_field(@command, @factory, @required_fields,
+          retries: @test_retries
+        )
+      end
+    end
+  end
+
+  @spec check_command_is_invalid_without_required_field(atom(), atom(), list(), keyword()) :: [
+          any
+        ]
+  def check_command_is_invalid_without_required_field(
+        command,
+        factory,
+        required_fields,
+        opts \\ []
+      ) do
+    for _ <- 1..Keyword.get(opts, :retries, 1) do
+      for req_field <- required_fields do
+        data = factory |> build() |> Map.delete(req_field)
+
+        %{errors: errors} = cmd = command.new(data)
+        refute cmd.valid?
+
+        assert Enum.any?(
+                 errors,
+                 fn
+                   {^req_field, {_, [validation: :required]}} ->
+                     true
+
+                   _ ->
+                     false
+                 end
+               )
+      end
+    end
+  end
+
+  ###
+  defmacro test_command_is_valid_without_optional_fields() do
+    quote do
+      test "without any of the optional fields - valid command" do
+        check_command_is_valid_without_optional_fields(@command, @factory, @optional_fields,
+          retries: @test_retries
+        )
+      end
+    end
+  end
+
+  @spec check_command_is_valid_without_optional_fields(atom(), atom(), list(), keyword()) :: [
+          any
+        ]
+  def check_command_is_valid_without_optional_fields(
+        command,
+        factory,
+        optional_fields,
+        opts \\ []
+      ) do
+    for _ <- 1..Keyword.get(opts, :retries, 1) do
+      for opt_field <- optional_fields do
+        data = factory |> build() |> Map.delete(opt_field)
+        assert command.new(data).valid?
+      end
+    end
+  end
+
+  ###
+  defmacro test_command_field_types do
+    for type <- @field_types do
+      quote do
+        test "with non-#{unquote(type)} data for #{unquote(type)} fields - invalid command" do
+          check_command_fields_type(
+            @command,
+            @factory,
+            unquote(type),
+            @fields[unquote(type)],
+            retries: @test_retries
+          )
+        end
+      end
+    end
+  end
+
+  def check_command_fields_type(command, factory, type, field_names, opts \\ []) do
+    for field_name <- field_names do
+      for _ <- 1..Keyword.get(opts, :retries, 1) do
+        type
+        |> get_incorrect_data()
+        |> Enum.each(fn incorrect_data_piece ->
+          data = build(factory, %{field_name => incorrect_data_piece})
+
+          %{errors: errors} = cmd = command.new(data)
+          refute cmd.valid?
+
+          assert Enum.any?(
+                   errors,
+                   fn
+                     {^field_name, {_, [type: ^type, validation: :cast]}} ->
+                       true
+
+                     _ ->
+                       false
+                   end
+                 )
+        end)
+      end
+    end
+  end
+
+  @spec get_incorrect_data(atom()) :: [...]
+  def get_incorrect_data(:string) do
+    [
+      Faker.Random.Elixir.random_between(-2_000_000_000, 2_000_000_000),
+      Faker.Random.Elixir.random_uniform(),
+      :simple_atom,
+      :"less simple atom",
+      'charlist'
+    ]
+  end
+
+  def get_incorrect_data(Ecto.UUID) do
+    [
+      Faker.Random.Elixir.random_between(-2_000_000_000, 2_000_000_000),
+      Faker.String.base64(32),
+      Faker.String.base64(64),
+      Faker.Random.Elixir.random_uniform(),
+      :simple_atom,
+      :"less simple atom",
+      'charlist'
+    ]
+  end
+
+  def get_incorrect_data(:integer) do
+    [
+      Faker.Random.Elixir.random_between(-2_000_000_000, 2_000_000_000),
+      Faker.String.base64(32),
+      Faker.String.base64(64),
+      Faker.Random.Elixir.random_uniform(),
+      :simple_atom,
+      :"less simple atom",
+      'charlist'
+    ]
+  end
 end
