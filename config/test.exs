@@ -37,7 +37,7 @@ config :commanded_audit_middleware, Commanded.Middleware.Auditing.Repo,
 config :club, Club.Commanded,
   event_store: [
     adapter: Commanded.EventStore.Adapters.InMemory,
-    serializer: Club.Support.JsonbSerializer
+    serializer: Commanded.Serialization.JsonSerializer
   ]
 
 # We don't run a server during test. If one is required,
