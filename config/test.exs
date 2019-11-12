@@ -70,4 +70,4 @@ config :club, :test,
   test_key2: 42,
   test_key3: ["Forty two"]
 
-  import_config("pow_assent.exs")
+import_config("pow_assent.exs")
