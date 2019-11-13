@@ -10,10 +10,11 @@ defmodule Club.BrandsTest do
 
   alias Club.Brands.Events.{
     BrandAdded,
-    BrandRenamed
+    BrandRenamed,
+    BrandUrlUpdated
   }
 
-  describe "AddBrand/2" do
+  describe "add_brand/2" do
     @tag :integration
     test "should succeed and return a new brand_uuid if parameters are correct but doesn't contain brand_uuid" do
       brand = :new_brand |> build() |> Map.delete(:brand_uuid)
@@ -56,7 +57,7 @@ defmodule Club.BrandsTest do
     end
   end
 
-  describe "RenameBrand/2" do
+  describe "rename_brand/2" do
     @tag :integration
     test "should succeed and return :ok if parameters are correct" do
       add_brand = :new_brand |> build()
@@ -104,6 +105,57 @@ defmodule Club.BrandsTest do
       rename_brand = build(:rename_brand)
 
       assert {:error, :brand_doesnt_exist} == Brands.rename_brand(rename_brand, %{})
+    end
+  end
+
+  describe "update_brand_url/2" do
+    @tag :integration
+    test "should succeed and return :ok if parameters are correct" do
+      add_brand = :new_brand |> build()
+      {:ok, brand_uuid} = Brands.add_brand(add_brand, %{})
+
+      wait_for_event(Commanded, BrandAdded)
+
+      update_brand_url = build(:update_brand_url, brand_uuid: brand_uuid)
+      :ok = Brands.update_brand_url(update_brand_url, %{})
+
+      assert_receive_event(Club.Commanded, BrandUrlUpdated, fn event ->
+        assert brand_uuid == event.brand_uuid
+        assert update_brand_url.brand_url == event.brand_url
+        assert update_brand_url.user_uuid == event.user_uuid
+        assert update_brand_url.user_name == event.user_name
+      end)
+
+      assert Aggregate.aggregate_state(Commanded, Brand, "brand-" <> brand_uuid) ==
+               %Brand{
+                 uuid: brand_uuid,
+                 brand_name: add_brand.brand_name,
+                 brand_url: update_brand_url.brand_url,
+                 product_count: 0
+               }
+    end
+
+    @tag :integration
+    test "should fail and return error if parameters are incorrect" do
+      update_brand_url =
+        :update_brand_url
+        |> build()
+        |> Map.delete(:brand_uuid)
+
+      assert {:error, {:validation_failure, %{brand_uuid: ["can't be blank"]}}} ==
+               Brands.update_brand_url(update_brand_url, %{})
+    end
+
+    @tag :integration
+    test "should fail and return error if no brand with this id exists" do
+      add_brand = build(:new_brand)
+      {:ok, _brand_uuid} = Brands.add_brand(add_brand, %{})
+
+      wait_for_event(Commanded, BrandAdded)
+
+      update_brand_url = build(:update_brand_url)
+
+      assert {:error, :brand_doesnt_exist} == Brands.update_brand_url(update_brand_url, %{})
     end
   end
 end

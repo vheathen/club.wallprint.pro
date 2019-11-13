@@ -19,6 +19,15 @@ defmodule Club.Factories.Brands do
           user_name: Faker.Name.En.name()
         }
       end
+
+      def update_brand_url_factory do
+        %{
+          brand_uuid: UUID.uuid4(),
+          brand_url: Faker.Internet.url(),
+          user_uuid: UUID.uuid4(),
+          user_name: Faker.Name.En.name()
+        }
+      end
     end
   end
 end

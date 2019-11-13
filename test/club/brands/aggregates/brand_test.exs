@@ -6,12 +6,14 @@ defmodule Club.Brands.Aggregates.BrandTest do
 
   alias Club.Brands.Commands.{
     AddBrand,
-    RenameBrand
+    RenameBrand,
+    UpdateBrandUrl
   }
 
   alias Club.Brands.Events.{
     BrandAdded,
-    BrandRenamed
+    BrandRenamed,
+    BrandUrlUpdated
   }
 
   @tag :unit
@@ -51,7 +53,7 @@ defmodule Club.Brands.Aggregates.BrandTest do
       [add_brand: add_brand, rename_brand: rename_brand]
     end
 
-    test "should return BrandRenamed event for the first time", %{
+    test "should return BrandRenamed event for the existing brand", %{
       add_brand: add_brand,
       rename_brand: rename_brand
     } do
@@ -73,6 +75,49 @@ defmodule Club.Brands.Aggregates.BrandTest do
       brand_added = BrandAdded.new(add_brand)
       rename_brand = %{rename_brand | brand_new_name: brand_added.brand_name}
       assert_events([brand_added], rename_brand, [])
+    end
+  end
+
+  @tag :unit
+  describe "UpdateBrandUrl command" do
+    setup do
+      add_brand =
+        :new_brand
+        |> build()
+        |> AddBrand.new()
+        |> Ecto.Changeset.apply_changes()
+
+      update_brand_url =
+        :update_brand_url
+        |> build(brand_uuid: add_brand.brand_uuid)
+        |> UpdateBrandUrl.new()
+        |> Ecto.Changeset.apply_changes()
+
+      [add_brand: add_brand, update_brand_url: update_brand_url]
+    end
+
+    test "should return BrandUrlChanged event for the existing brand", %{
+      add_brand: add_brand,
+      update_brand_url: update_brand_url
+    } do
+      brand_added = BrandAdded.new(add_brand)
+      brand_url_updated = BrandUrlUpdated.new(update_brand_url)
+      assert_events([brand_added], update_brand_url, [brand_url_updated])
+    end
+
+    test "should return {:error, :brand_doesnt_exist} if no such brand exists", %{
+      update_brand_url: update_brand_url
+    } do
+      assert_error(update_brand_url, {:error, :brand_doesnt_exist})
+    end
+
+    test "should not return any events if brand_url is the same as previous one", %{
+      add_brand: add_brand,
+      update_brand_url: update_brand_url
+    } do
+      brand_added = BrandAdded.new(add_brand)
+      update_brand_url = %{update_brand_url | brand_url: brand_added.brand_url}
+      assert_events([brand_added], update_brand_url, [])
     end
   end
 end

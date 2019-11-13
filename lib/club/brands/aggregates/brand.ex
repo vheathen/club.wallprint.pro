@@ -10,12 +10,14 @@ defmodule Club.Brands.Aggregates.Brand do
 
   alias Club.Brands.Commands.{
     AddBrand,
-    RenameBrand
+    RenameBrand,
+    UpdateBrandUrl
   }
 
   alias Club.Brands.Events.{
     BrandAdded,
-    BrandRenamed
+    BrandRenamed,
+    BrandUrlUpdated
   }
 
   # AddBrand
@@ -29,6 +31,14 @@ defmodule Club.Brands.Aggregates.Brand do
   def execute(%Brand{brand_name: brand_name}, %RenameBrand{brand_new_name: brand_name}), do: nil
 
   def execute(%Brand{uuid: uuid}, %RenameBrand{brand_uuid: uuid} = cmd), do: BrandRenamed.new(cmd)
+
+  # UpdateBrandUrl
+  def execute(%Brand{uuid: nil}, %UpdateBrandUrl{}), do: {:error, :brand_doesnt_exist}
+
+  def execute(%Brand{brand_url: brand_url}, %UpdateBrandUrl{brand_url: brand_url}), do: nil
+
+  def execute(%Brand{uuid: uuid}, %UpdateBrandUrl{brand_uuid: uuid} = cmd),
+    do: BrandUrlUpdated.new(cmd)
 
   # state mutators
 
@@ -45,6 +55,13 @@ defmodule Club.Brands.Aggregates.Brand do
     %Brand{
       brand
       | brand_name: brand_new_name
+    }
+  end
+
+  def apply(%Brand{} = brand, %BrandUrlUpdated{brand_url: brand_url}) do
+    %Brand{
+      brand
+      | brand_url: brand_url
     }
   end
 end
