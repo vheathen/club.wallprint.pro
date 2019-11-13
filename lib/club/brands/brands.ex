@@ -5,11 +5,15 @@ defmodule Club.Brands do
 
   alias Club.Commanded
 
+  alias Club.ReadRepo, as: Repo
+
   alias Club.Brands.Commands.{
     AddBrand,
     RenameBrand,
     UpdateBrandUrl
   }
+
+  alias Club.Brands.Queries.BrandNameUnique
 
   def add_brand(brand, metadata)
       when (is_map(brand) or is_list(brand)) and
@@ -42,5 +46,12 @@ defmodule Club.Brands do
     cmd = UpdateBrandUrl.new(update_brand_url)
 
     Commanded.validate_and_dispatch(cmd, metadata: metadata)
+  end
+
+  def brand_name_unique?(brand_name) do
+    case Repo.one(BrandNameUnique.new(brand_name)) do
+      nil -> false
+      _ -> true
+    end
   end
 end

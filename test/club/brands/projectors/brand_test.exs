@@ -7,14 +7,6 @@ defmodule Club.Brands.Projectors.BrandTest do
 
   alias Club.Brands.Projections.Brand, as: BrandProjection
 
-  alias Club.Brands.Projectors.Brand, as: BrandProjector
-
-  # alias Club.Brands.Commands.{
-  #   AddBrand,
-  #   RenameBrand,
-  #   UpdateBrandUrl
-  # }
-
   alias Club.Brands.Events.{
     BrandAdded,
     BrandRenamed,

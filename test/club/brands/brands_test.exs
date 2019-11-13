@@ -154,4 +154,42 @@ defmodule Club.BrandsTest do
       assert {:error, :brand_doesnt_exist} == Brands.update_brand_url(update_brand_url, %{})
     end
   end
+
+  describe "brand_name_exists?/1" do
+    @describetag :integration
+
+    setup do
+      Phoenix.PubSub.subscribe(Club.EventBus, "domain:brands")
+
+      %{brand_uuid: brand_uuid} = brand = build(:new_brand)
+      {:ok, _} = Brands.add_brand(brand, %{})
+
+      assert_receive {:brand_added, %{brand_uuid: ^brand_uuid}}, 1_000
+
+      [brand: brand]
+    end
+
+    test "should return false if there is no such brand name", %{
+      brand: %{brand_name: existing_name}
+    } do
+      unique_name = unique_name(existing_name)
+
+      refute Brands.brand_name_unique?(unique_name)
+    end
+
+    test "should return true if there is no such brand name", %{
+      brand: %{brand_name: existing_name}
+    } do
+      assert Brands.brand_name_unique?(existing_name)
+    end
+
+    def unique_name(name) do
+      brand_name = Faker.Company.buzzword()
+
+      case brand_name != name do
+        true -> brand_name
+        false -> unique_name(name)
+      end
+    end
+  end
 end
