@@ -10,6 +10,7 @@ defmodule Club.Support.ConfigTest do
              |> Keyword.get(:test)
   end
 
+  @tag :unit
   test "Config.get_sub must return correct values" do
     :club
     |> Application.get_env(:test)

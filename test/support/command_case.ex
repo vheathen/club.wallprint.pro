@@ -64,8 +64,9 @@ defmodule Club.CommandCase do
   """
   defmacro basic_command_tests do
     quote do
-      @tag :unit
       describe "#{@command}" do
+        @describetag :unit
+
         test_command_has_all_fields()
 
         test_command_is_valid_with_valid_attributes()

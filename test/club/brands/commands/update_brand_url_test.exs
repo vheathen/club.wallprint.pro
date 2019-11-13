@@ -30,7 +30,8 @@ defmodule Club.Brands.Commands.UpdateBrandUrlTest do
   basic_command_tests()
 
   describe "UpdateBrandUrl" do
-    @tag :unit
+    @describetag :unit
+
     test "incorrect brand url - invalid command" do
       ~w(
         htup://wrong_scheme_url.com

@@ -15,7 +15,7 @@ defmodule Club.BrandsTest do
   }
 
   describe "add_brand/2" do
-    @tag :integration
+    @describetag :integration
     test "should succeed and return a new brand_uuid if parameters are correct but doesn't contain brand_uuid" do
       brand = :new_brand |> build() |> Map.delete(:brand_uuid)
       {:ok, brand_uuid} = Brands.add_brand(brand, %{})
@@ -37,7 +37,6 @@ defmodule Club.BrandsTest do
                }
     end
 
-    @tag :integration
     test "should succeed and return provided brand_uuid if parameters are correct" do
       brand = :new_brand |> build()
       {:ok, brand_uuid} = Brands.add_brand(brand, %{})
@@ -45,7 +44,6 @@ defmodule Club.BrandsTest do
       assert brand_uuid == brand.brand_uuid
     end
 
-    @tag :integration
     test "should fail and return error if parameters are incorrect" do
       brand =
         :new_brand
@@ -58,7 +56,8 @@ defmodule Club.BrandsTest do
   end
 
   describe "rename_brand/2" do
-    @tag :integration
+    @describetag :integration
+
     test "should succeed and return :ok if parameters are correct" do
       add_brand = :new_brand |> build()
       {:ok, brand_uuid} = Brands.add_brand(add_brand, %{})
@@ -84,7 +83,6 @@ defmodule Club.BrandsTest do
                }
     end
 
-    @tag :integration
     test "should fail and return error if parameters are incorrect" do
       rename_brand =
         :rename_brand
@@ -95,7 +93,6 @@ defmodule Club.BrandsTest do
                Brands.rename_brand(rename_brand, %{})
     end
 
-    @tag :integration
     test "should fail and return error if no brand with this id exists" do
       add_brand = build(:new_brand)
       {:ok, _brand_uuid} = Brands.add_brand(add_brand, %{})
@@ -109,7 +106,8 @@ defmodule Club.BrandsTest do
   end
 
   describe "update_brand_url/2" do
-    @tag :integration
+    @describetag :integration
+
     test "should succeed and return :ok if parameters are correct" do
       add_brand = :new_brand |> build()
       {:ok, brand_uuid} = Brands.add_brand(add_brand, %{})
@@ -135,7 +133,6 @@ defmodule Club.BrandsTest do
                }
     end
 
-    @tag :integration
     test "should fail and return error if parameters are incorrect" do
       update_brand_url =
         :update_brand_url
@@ -146,7 +143,6 @@ defmodule Club.BrandsTest do
                Brands.update_brand_url(update_brand_url, %{})
     end
 
-    @tag :integration
     test "should fail and return error if no brand with this id exists" do
       add_brand = build(:new_brand)
       {:ok, _brand_uuid} = Brands.add_brand(add_brand, %{})

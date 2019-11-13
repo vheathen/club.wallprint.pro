@@ -16,8 +16,9 @@ defmodule Club.Brands.Aggregates.BrandTest do
     BrandUrlUpdated
   }
 
-  @tag :unit
   describe "AddBrand command" do
+    @describetag :unit
+
     setup do
       add_brand = :new_brand |> build() |> AddBrand.new() |> Ecto.Changeset.apply_changes()
 
@@ -35,8 +36,9 @@ defmodule Club.Brands.Aggregates.BrandTest do
     end
   end
 
-  @tag :unit
   describe "RenameBrand command" do
+    @describetag :unit
+
     setup do
       add_brand =
         :new_brand
@@ -78,8 +80,9 @@ defmodule Club.Brands.Aggregates.BrandTest do
     end
   end
 
-  @tag :unit
   describe "UpdateBrandUrl command" do
+    @describetag :unit
+
     setup do
       add_brand =
         :new_brand
