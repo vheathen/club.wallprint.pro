@@ -28,7 +28,7 @@ defmodule Club.Brands.Aggregates.Brand do
   # RenameBrand
   def execute(%Brand{uuid: nil}, %RenameBrand{}), do: {:error, :brand_doesnt_exist}
 
-  def execute(%Brand{brand_name: brand_name}, %RenameBrand{brand_new_name: brand_name}), do: nil
+  def execute(%Brand{brand_name: brand_name}, %RenameBrand{brand_name: brand_name}), do: nil
 
   def execute(%Brand{uuid: uuid}, %RenameBrand{brand_uuid: uuid} = cmd), do: BrandRenamed.new(cmd)
 
@@ -51,10 +51,10 @@ defmodule Club.Brands.Aggregates.Brand do
     }
   end
 
-  def apply(%Brand{} = brand, %BrandRenamed{brand_new_name: brand_new_name}) do
+  def apply(%Brand{} = brand, %BrandRenamed{brand_name: brand_name}) do
     %Brand{
       brand
-      | brand_name: brand_new_name
+      | brand_name: brand_name
     }
   end
 

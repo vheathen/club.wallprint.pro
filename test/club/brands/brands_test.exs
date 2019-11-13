@@ -70,7 +70,7 @@ defmodule Club.BrandsTest do
 
       assert_receive_event(Club.Commanded, BrandRenamed, fn event ->
         assert brand_uuid == event.brand_uuid
-        assert rename_brand.brand_new_name == event.brand_new_name
+        assert rename_brand.brand_name == event.brand_name
         assert rename_brand.user_uuid == event.user_uuid
         assert rename_brand.user_name == event.user_name
       end)
@@ -78,7 +78,7 @@ defmodule Club.BrandsTest do
       assert Aggregate.aggregate_state(Commanded, Brand, "brand-" <> brand_uuid) ==
                %Brand{
                  uuid: brand_uuid,
-                 brand_name: rename_brand.brand_new_name,
+                 brand_name: rename_brand.brand_name,
                  brand_url: add_brand.brand_url,
                  product_count: 0
                }

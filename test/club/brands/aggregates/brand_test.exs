@@ -68,12 +68,12 @@ defmodule Club.Brands.Aggregates.BrandTest do
       assert_error(rename_brand, {:error, :brand_doesnt_exist})
     end
 
-    test "should not return any events if brand_new_name is the same as previous one", %{
+    test "should not return any events if brand_name is the same as previous one", %{
       add_brand: add_brand,
       rename_brand: rename_brand
     } do
       brand_added = BrandAdded.new(add_brand)
-      rename_brand = %{rename_brand | brand_new_name: brand_added.brand_name}
+      rename_brand = %{rename_brand | brand_name: brand_added.brand_name}
       assert_events([brand_added], rename_brand, [])
     end
   end
