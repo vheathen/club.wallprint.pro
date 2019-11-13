@@ -3,6 +3,7 @@ defmodule Club.Support.ConfigTest do
 
   alias Club.Support.Config
 
+  @tag :unit
   test "Config.get must return correct values" do
     assert Config.get(:test) ==
              :club
@@ -17,5 +18,10 @@ defmodule Club.Support.ConfigTest do
     |> Enum.each(fn {subkey, sub_value} ->
       assert Config.get_sub(:test, subkey) == sub_value
     end)
+  end
+
+  @tag :unit
+  test "Config.get_sub must return nil if key doesn't exists" do
+    assert is_nil(Config.get_sub(:jWCmPESu4lnmF0Xc, :doesnt_matter))
   end
 end

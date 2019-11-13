@@ -77,9 +77,10 @@ defmodule Club.Support.Config do
   end
 
   def get_sub(key, subkey) do
-    @app_name
-    |> get(key)
-    |> Keyword.get(subkey)
+    case get(@app_name, key) do
+      nil -> nil
+      opts -> Keyword.get(opts, subkey)
+    end
   end
 
   @spec get_sub_int(atom, atom, integer | nil) :: integer | nil
