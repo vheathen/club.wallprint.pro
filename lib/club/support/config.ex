@@ -46,7 +46,7 @@ defmodule Club.Support.Config do
     end
   end
 
-  defp get_cases(nil, key, default), do: if(is_nil(default), do: Map.get(@defaults, key))
+  defp get_cases(nil, key, default), do: Map.get(@defaults, key, default)
   defp get_cases(val, _key, _default), do: val
 
   @doc """
