@@ -10,7 +10,8 @@ import Config
 config :club,
   namespace: Club,
   ecto_repos: [Club.ReadRepo],
-  generators: [binary_id: true]
+  generators: [binary_id: true],
+  migration_timestamps: [type: :utc_datetime_usec]
 
 # Configures the endpoint
 config :club, ClubWeb.Endpoint,

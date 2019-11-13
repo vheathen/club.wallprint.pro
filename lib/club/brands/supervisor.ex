@@ -6,7 +6,10 @@ defmodule Club.Brands.Supervisor do
   end
 
   def init(_arg) do
-    Supervisor.init([],
+    Supervisor.init(
+      [
+        Club.Brands.Projectors.Brand
+      ],
       strategy: :one_for_one
     )
   end
