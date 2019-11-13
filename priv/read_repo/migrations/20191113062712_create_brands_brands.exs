@@ -10,5 +10,7 @@ defmodule Club.ReadRepo.Migrations.CreateBrandsBrands do
 
       timestamps()
     end
+
+    create index("brands_brands", ["lower(brand_name)"], name: :brand_lower_name_idx)
   end
 end
