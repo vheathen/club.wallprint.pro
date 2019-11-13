@@ -16,6 +16,9 @@ defmodule Club.Application do
       # {Club.Worker, arg},
       Pow.Store.Backend.MnesiaCache,
 
+      # Events PubSub
+      {Phoenix.PubSub.PG2, name: Club.EventBus, pool_size: 1},
+
       # Commanded application
       Club.Commanded,
 
