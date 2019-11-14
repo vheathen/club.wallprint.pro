@@ -67,9 +67,8 @@ import_config("pow_assent.exs")
 config :mix_test_watch,
   tasks: [
     "test --trace",
-    # "format",
     "credo --strict",
-    "sobelow --verbose"
+    # "sobelow --verbose"
   ]
 
 # ## SSL Support
