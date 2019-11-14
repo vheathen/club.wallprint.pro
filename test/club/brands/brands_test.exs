@@ -155,7 +155,7 @@ defmodule Club.BrandsTest do
     end
   end
 
-  describe "brand_name_exists?/1" do
+  describe "brand_exists?/1" do
     @describetag :integration
 
     setup do
@@ -169,18 +169,18 @@ defmodule Club.BrandsTest do
       [brand: brand]
     end
 
-    test "should return false if there is no such brand name", %{
+    test "should return true if there is no such brand", %{
       brand: %{brand_name: existing_name}
     } do
       unique_name = unique_name(existing_name)
 
-      refute Brands.brand_name_unique?(unique_name)
+      assert Brands.brand_unique?(%{brand_name: unique_name})
     end
 
-    test "should return true if there is no such brand name", %{
-      brand: %{brand_name: existing_name}
+    test "should return false if the brand exists", %{
+      brand: brand
     } do
-      assert Brands.brand_name_unique?(existing_name)
+      refute Brands.brand_unique?(brand)
     end
 
     def unique_name(name) do

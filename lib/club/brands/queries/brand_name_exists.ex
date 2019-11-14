@@ -1,4 +1,4 @@
-defmodule Club.Brands.Queries.BrandNameUnique do
+defmodule Club.Brands.Queries.BrandNameExists do
   import Ecto.Query
 
   alias Club.Brands.Projections.Brand

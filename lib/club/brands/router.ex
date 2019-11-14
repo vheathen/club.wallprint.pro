@@ -1,5 +1,5 @@
 defmodule Club.Brands.Router do
-  use Commanded.Commands.Router
+  use Club.Support.Router
 
   alias Club.Brands.Aggregates.Brand
 

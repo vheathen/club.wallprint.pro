@@ -25,6 +25,8 @@ defmodule Club.Support.Router do
       middleware(Commanded.Middleware.Auditing)
 
       local_middleware(unquote(Keyword.get(opts, :local_middleware)))
+
+      middleware(Club.Support.Middleware.Uniqueness)
     end
   end
 
