@@ -65,6 +65,11 @@ config :commanded_audit_middleware,
   data_column_db_type: :jsonb,
   metadata_column_db_type: :jsonb
 
+config :club, Club.Support.Unique,
+  adapter: Club.Support.Unique.Cachex,
+  # ttl: 60 minutes in milliseconds
+  ttl: 60 * 60 * 1_000
+
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
 import_config "#{Mix.env()}.exs"

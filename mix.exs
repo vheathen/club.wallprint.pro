@@ -57,6 +57,9 @@ defmodule Club.MixProject do
       # {:commanded_scheduler, github: "commanded/commanded-scheduler" }, # "~> 0.2"},
       {:commanded_messaging, "~> 0.2.0"},
 
+      #
+      {:cachex, "~> 3.2.0"},
+
       # phoenix_inline_svg requires floki not only in :test env, only: :test},
       {:floki, ">= 0.0.0"},
       {:pow, "~> 1.0.14"},

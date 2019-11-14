@@ -19,6 +19,9 @@ defmodule Club.Application do
       # Events PubSub
       {Phoenix.PubSub.PG2, name: Club.EventBus, pool_size: 1},
 
+      # Support tools supervisor
+      Club.Support.Supervisor,
+
       # Commanded application
       Club.Commanded,
 
