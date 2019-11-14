@@ -96,6 +96,52 @@ defmodule Club.Support.Middleware.UniquenessTest do
     end
   end
 
+  describe "Uniqueness middleware, TestCommandExternalCheck should" do
+    @describetag :unit
+
+    test "should continue if :is_unique option function returns true" do
+      cmd = %TestCommandExternalCheck{id: 1, name: "NewName", email: "one@example.com"}
+      p = Uniqueness.before_dispatch(%Pipeline{command: cmd})
+      # %Pipeline{halted: false}
+      refute p.halted
+      refute p.response
+
+      cmd = %TestCommandExternalCheck{id: 2, name: "OtherName", email: "two@example.com"}
+      p = Uniqueness.before_dispatch(%Pipeline{command: cmd})
+      # %Pipeline{halted: false}
+      refute p.halted
+      refute p.response
+    end
+
+    test "should halt if :is_unique option function returns false" do
+      cmd = %TestCommandExternalCheck{id: 1, name: "NewName", email: "one@example.com"}
+      p = Uniqueness.before_dispatch(%Pipeline{command: cmd})
+      # %Pipeline{halted: false}
+      refute p.halted
+      refute p.response
+
+      assert Cachex.get!(@cachex_adapter, {:name, "NewName"}) == 1
+      assert Cachex.get!(@cachex_adapter, {:email, "one@example.com"}) == 1
+
+      #
+      cmd = %TestCommandExternalCheck{
+        id: 2,
+        name: "ExternallyTakenName",
+        email: "two@example.com"
+      }
+
+      p = Uniqueness.before_dispatch(%Pipeline{command: cmd})
+      # %Pipeline{halted: true}
+      assert p.halted
+
+      assert p.response ==
+               {:error, :validation_failure, [{:name, "has already been taken"}]}
+
+      assert Cachex.get!(@cachex_adapter, {:name, "ExternallyTakenName"}) == 2
+      assert Cachex.get!(@cachex_adapter, {:email, "two@example.com"}) == nil
+    end
+  end
+
   describe "Uniqueness middleware, TestCommandSimpleCaseInsensitive should" do
     @describetag :unit
 

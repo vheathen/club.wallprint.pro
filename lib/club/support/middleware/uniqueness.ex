@@ -3,7 +3,15 @@ defmodule Club.Support.Middleware.Uniqueness do
 
   defprotocol UniqueFields do
     @fallback_to_any true
-    @doc "Returns unique fields for the command"
+    @doc """
+    Returns unique fields for the command as a list of
+    tuples as: `{field_name :: atom() | list(atom), error_message :: String.t(), owner :: term, opts :: keyword()}`,
+    where `opts` might contain none, one or multiple options:
+    `ignore_case: true` or `ignore_case: [:email, :username]` for multi-fields entities - binary-based
+    fields are downcased before comparison
+    `:label` - use this atom as error label
+    `:is_unique` - `(term, String.t(), term, keyword() -> boolean())`
+    """
     def unique(command)
   end
 
@@ -54,13 +62,20 @@ defmodule Club.Support.Middleware.Uniqueness do
     {_, error_message, _, _} = record = expand_record(record)
     label = get_label(record)
 
-    case claim(record, command, adapter) do
-      {id, value, owner} ->
-        ensure_uniqueness(rest, command, adapter, errors, [{id, value, owner} | to_release])
+    {errors, to_release} =
+      case claim(record, command, adapter) do
+        {id, value, owner} ->
+          to_release = [{id, value, owner} | to_release]
 
-      _ ->
-        ensure_uniqueness(rest, command, adapter, [{label, error_message} | errors], to_release)
-    end
+          {errors, to_release}
+
+        _ ->
+          errors = [{label, error_message} | errors]
+
+          {errors, to_release}
+      end
+
+    ensure_uniqueness(rest, command, adapter, errors, to_release)
   end
 
   defp ensure_uniqueness([], _command, _adapter, [], _to_release), do: :ok
@@ -94,12 +109,33 @@ defmodule Club.Support.Middleware.Uniqueness do
     value = get_field_value(command, field_name, ignore_case?)
 
     case adapter.claim(field_name, value, owner) do
-      :ok -> {field_name, value, owner}
-      error -> error
+      :ok ->
+        case external_check(field_name, value, owner, command, opts) do
+          true -> {field_name, value, owner}
+          _ -> {:error, :external_check_failed}
+        end
+
+      error ->
+        error
     end
   end
 
   defp release({id, value, owner}, adapter), do: adapter.release(id, value, owner)
+
+  defp external_check(field_name, value, owner, command, opts) when is_list(opts),
+    do: external_check(field_name, value, owner, command, get_external_checker(opts))
+
+  defp external_check(field_name, value, owner, _command, {checker, opts})
+       when is_function(checker, 4),
+       do: checker.(field_name, value, owner, opts)
+
+  defp external_check(_field_name, _value, _owner, _command, {nil, _}), do: true
+
+  defp external_check(_field_name, _value, _owner, %{__struct__: module}, _opts),
+    do:
+      raise(
+        "#{__MODULE__}: The ':is_unique' option for the #{module} command has incorrect value. It should be only a function with 4 arguments"
+      )
 
   defp expand_record({one, two, three}), do: {one, two, three, []}
   defp expand_record(entity), do: entity
@@ -121,6 +157,8 @@ defmodule Club.Support.Middleware.Uniqueness do
   defp downcase(value), do: value
 
   defp get_label({entity, _, _, opts}), do: Keyword.get(opts, :label, entity)
+
+  defp get_external_checker(opts), do: {Keyword.get(opts, :is_unique), opts}
 
   defp get_adapter, do: Club.Support.Config.get_sub(Club.Support.Unique, :adapter)
 end
