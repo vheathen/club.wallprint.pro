@@ -51,14 +51,15 @@ defmodule Club.Support.Middleware.Uniqueness do
   end
 
   defp ensure_uniqueness([record | rest], command, adapter, errors, to_release) do
-    {entity, error_message, _, _} = record = expand_record(record)
+    {_, error_message, _, _} = record = expand_record(record)
+    label = get_label(record)
 
     case claim(record, command, adapter) do
       {id, value, owner} ->
         ensure_uniqueness(rest, command, adapter, errors, [{id, value, owner} | to_release])
 
       _ ->
-        ensure_uniqueness(rest, command, adapter, [{entity, error_message} | errors], to_release)
+        ensure_uniqueness(rest, command, adapter, [{label, error_message} | errors], to_release)
     end
   end
 
@@ -118,6 +119,8 @@ defmodule Club.Support.Middleware.Uniqueness do
 
   defp downcase(value) when is_binary(value), do: String.downcase(value)
   defp downcase(value), do: value
+
+  defp get_label({entity, _, _, opts}), do: Keyword.get(opts, :label, entity)
 
   defp get_adapter, do: Club.Support.Config.get_sub(Club.Support.Unique, :adapter)
 end

@@ -75,6 +75,27 @@ defmodule Club.Support.Middleware.UniquenessTest do
     end
   end
 
+  describe "Uniqueness middleware, TestCommandSimpleLabel should" do
+    @describetag :unit
+
+    test "should halt if field value not unique with custom label" do
+      cmd = %TestCommandSimpleLabel{id: 1, name: "NewName"}
+      p = Uniqueness.before_dispatch(%Pipeline{command: cmd})
+      # %Pipeline{halted: false}
+      refute p.halted
+      refute p.response
+
+      #
+      cmd = %TestCommandSimpleLabel{id: 2, name: "NewName"}
+      p = Uniqueness.before_dispatch(%Pipeline{command: cmd})
+      # %Pipeline{halted: true}
+      assert p.halted
+
+      assert p.response ==
+               {:error, :validation_failure, [{:another_label, "has already been taken"}]}
+    end
+  end
+
   describe "Uniqueness middleware, TestCommandSimpleCaseInsensitive should" do
     @describetag :unit
 
