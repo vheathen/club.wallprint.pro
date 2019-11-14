@@ -12,6 +12,8 @@ defmodule Club.Support.Unique do
   Also add the adapter module to the supervision tree by either using `inject_child_spec/2`
   or manually via `child_spec/0`.
   """
+  alias Club.Support.Config
+
   @callback child_spec() :: Supervisor.child_spec()
   @callback claim(id :: term, value :: term, owner :: term) ::
               :ok | {:error, :already_exists} | {:error, :unknown_error}
@@ -43,7 +45,7 @@ defmodule Club.Support.Unique do
   def adapter_settings do
     case adapter() do
       nil -> nil
-      _ -> Club.Support.Config.get_sub(__MODULE__, :adapter_settings)
+      _ -> Config.get_sub(__MODULE__, :adapter_settings)
     end
   end
 
@@ -53,7 +55,7 @@ defmodule Club.Support.Unique do
   ]
 
   defp adapter do
-    case Club.Support.Config.get_sub(__MODULE__, :adapter) do
+    case Config.get_sub(__MODULE__, :adapter) do
       nil ->
         nil
 

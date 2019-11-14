@@ -108,7 +108,7 @@ defmodule Club.Brands.Commands.UniqueBrandNameTest do
     build(:new_brand, attrs)
   end
 
-  defp rename_brand(attrs \\ []) do
+  defp rename_brand(attrs) do
     build(:rename_brand, attrs)
   end
 end

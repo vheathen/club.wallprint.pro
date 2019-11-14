@@ -27,10 +27,12 @@ defmodule Club.Brands do
       |> Map.put(:brand_uuid, brand_uuid)
       |> AddBrand.new()
 
-    with :ok <- Commanded.validate_and_dispatch(cmd, metadata: metadata) do
-      {:ok, brand_uuid}
-    else
-      reply -> reply
+    case Commanded.validate_and_dispatch(cmd, metadata: metadata) do
+      :ok ->
+        {:ok, brand_uuid}
+
+      reply ->
+        reply
     end
   end
 
