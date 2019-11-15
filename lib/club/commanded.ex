@@ -3,4 +3,5 @@ defmodule Club.Commanded do
   use Commanded.CommandDispatchValidation
 
   router(Club.Brands.Router)
+  router(Club.Devices.Router)
 end

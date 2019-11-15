@@ -3,4 +3,5 @@ defmodule Club.Factory do
 
   # Brands domain
   use Club.Factories.Brands
+  use Club.Factories.Devices
 end
