@@ -84,7 +84,7 @@ defmodule Club.Brands.Commands.UniqueBrandNameTest do
 
       Repo.delete_all(BrandProjection)
 
-      rename_brand = rename_brand(%{brand_uuid: new_uuid, brand_name: brand.brand_name})
+      rename_brand = rename_brand(%{brand_uuid: new_uuid, name: brand.name})
       result = Brands.rename_brand(rename_brand, %{})
       assert result == {:error, :validation_failure, [brand: "has already exist"]}
     end
@@ -98,7 +98,7 @@ defmodule Club.Brands.Commands.UniqueBrandNameTest do
 
       Cachex.clear(@cachex_adapter)
 
-      rename_brand = rename_brand(%{brand_uuid: new_uuid, brand_name: brand.brand_name})
+      rename_brand = rename_brand(%{brand_uuid: new_uuid, name: brand.name})
       result = Brands.rename_brand(rename_brand, %{})
       assert result == {:error, :validation_failure, [brand: "has already exist"]}
     end

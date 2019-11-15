@@ -5,7 +5,7 @@ defmodule Club.Brands.Commands.RenameBrandTest do
 
   required_fields([
     :brand_uuid,
-    :brand_name,
+    :name,
     :user_uuid,
     :user_name
   ])
@@ -13,7 +13,7 @@ defmodule Club.Brands.Commands.RenameBrandTest do
   fields(
     :string,
     [
-      :brand_name,
+      :name,
       :user_name
     ]
   )

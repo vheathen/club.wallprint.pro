@@ -13,7 +13,7 @@ defmodule Club.Brands do
     UpdateBrandUrl
   }
 
-  alias Club.Brands.Queries.BrandNameExists
+  alias Club.Brands.Queries.NameExists
 
   @spec add_brand(brand :: map(), metadata :: maybe_improper_list | map) ::
           {:ok, Ecto.UUID.t()} | {:error, any}
@@ -46,19 +46,19 @@ defmodule Club.Brands do
     Commanded.validate_and_dispatch(cmd, metadata: metadata)
   end
 
-  @spec update_brand_url(update_brand_url :: map(), metadata :: maybe_improper_list | map) ::
+  @spec update_url(update_url :: map(), metadata :: maybe_improper_list | map) ::
           :ok | {:error, any}
-  def update_brand_url(update_brand_url, metadata)
-      when (is_map(update_brand_url) or is_list(update_brand_url)) and
+  def update_url(update_url, metadata)
+      when (is_map(update_url) or is_list(update_url)) and
              (is_map(metadata) or is_list(metadata)) do
-    cmd = UpdateBrandUrl.new(update_brand_url)
+    cmd = UpdateBrandUrl.new(update_url)
 
     Commanded.validate_and_dispatch(cmd, metadata: metadata)
   end
 
   @spec brand_unique?(brand :: map()) :: boolean()
-  def brand_unique?(%{brand_name: brand_name}) do
-    case Repo.one(BrandNameExists.new(brand_name)) do
+  def brand_unique?(%{name: name}) do
+    case Repo.one(NameExists.new(name)) do
       true -> false
       nil -> true
     end

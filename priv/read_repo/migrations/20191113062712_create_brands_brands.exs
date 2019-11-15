@@ -4,13 +4,13 @@ defmodule Club.ReadRepo.Migrations.CreateBrandsBrands do
   def change do
     create table(:brands_brands, primary_key: false) do
       add :brand_uuid, :binary_id, primary_key: true
-      add :brand_name, :string
-      add :brand_url, :string
+      add :name, :string
+      add :url, :string
       add :product_count, :bigint
 
       timestamps()
     end
 
-    create index("brands_brands", ["lower(brand_name)"], name: :brand_lower_name_idx)
+    create index("brands_brands", ["lower(name)"], name: :brand_lower_name_idx)
   end
 end

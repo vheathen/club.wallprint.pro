@@ -7,20 +7,20 @@ defmodule Club.Brands.Commands.AddBrandTest do
 
   required_fields([
     :brand_uuid,
-    :brand_name,
+    :name,
     :user_uuid,
     :user_name
   ])
 
   optional_fields([
-    :brand_url
+    :url
   ])
 
   fields(
     :string,
     [
-      :brand_name,
-      :brand_url,
+      :name,
+      :url,
       :user_name
     ]
   )
@@ -36,7 +36,7 @@ defmodule Club.Brands.Commands.AddBrandTest do
   # fields(
   #   :url,
   #   [
-  #     :brand_url
+  #     :url
   #   ]
   # )
 
@@ -52,11 +52,11 @@ defmodule Club.Brands.Commands.AddBrandTest do
         just_a_string
       )
       |> Enum.each(fn url ->
-        brand = build(:new_brand, %{brand_url: url})
+        brand = build(:new_brand, %{url: url})
 
         %{errors: errors} = cmd = AddBrand.new(brand)
         refute cmd.valid?
-        assert Enum.any?(errors, fn {field, {_, [validation: :url]}} -> field == :brand_url end)
+        assert Enum.any?(errors, fn {field, {_, [validation: :url]}} -> field == :url end)
       end)
     end
   end

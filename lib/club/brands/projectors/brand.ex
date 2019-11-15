@@ -19,8 +19,8 @@ defmodule Club.Brands.Projectors.Brand do
       :brand,
       %Brand{
         brand_uuid: brand_added.brand_uuid,
-        brand_name: brand_added.brand_name,
-        brand_url: brand_added.brand_url,
+        name: brand_added.name,
+        url: brand_added.url,
         product_count: 0
       }
     )
@@ -37,44 +37,44 @@ defmodule Club.Brands.Projectors.Brand do
   end
 
   project(
-    %BrandRenamed{brand_uuid: brand_uuid, brand_name: brand_name},
+    %BrandRenamed{brand_uuid: brand_uuid, name: name},
     _meta,
     fn multi ->
-      update_brand(multi, brand_uuid, brand_name: brand_name)
+      update_brand(multi, brand_uuid, name: name)
     end
   )
 
   def after_update(
-        %BrandRenamed{brand_uuid: brand_uuid, brand_name: brand_name},
+        %BrandRenamed{brand_uuid: brand_uuid, name: name},
         _metadata,
         _changes
       ) do
     Phoenix.PubSub.broadcast(
       Club.EventBus,
       "domain:brands",
-      {:brand_renamed, %{brand_uuid: brand_uuid, brand_name: brand_name}}
+      {:brand_renamed, %{brand_uuid: brand_uuid, name: name}}
     )
 
     :ok
   end
 
   project(
-    %BrandUrlUpdated{brand_uuid: brand_uuid, brand_url: brand_url},
+    %BrandUrlUpdated{brand_uuid: brand_uuid, url: url},
     _meta,
     fn multi ->
-      update_brand(multi, brand_uuid, brand_url: brand_url)
+      update_brand(multi, brand_uuid, url: url)
     end
   )
 
   def after_update(
-        %BrandUrlUpdated{brand_uuid: brand_uuid, brand_url: brand_url},
+        %BrandUrlUpdated{brand_uuid: brand_uuid, url: url},
         _metadata,
         _changes
       ) do
     Phoenix.PubSub.broadcast(
       Club.EventBus,
       "domain:brands",
-      {:brand_url_updated, %{brand_uuid: brand_uuid, brand_url: brand_url}}
+      {:url_updated, %{brand_uuid: brand_uuid, url: url}}
     )
 
     :ok

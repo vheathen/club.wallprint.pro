@@ -1,13 +1,13 @@
 defmodule Club.Brands.Commands.UpdateBrandUrlTest do
   use Club.CommandCase,
     command: Club.Brands.Commands.UpdateBrandUrl,
-    factory: :update_brand_url
+    factory: :update_url
 
   alias Club.Brands.Commands.UpdateBrandUrl
 
   required_fields([
     :brand_uuid,
-    :brand_url,
+    :url,
     :user_uuid,
     :user_name
   ])
@@ -39,11 +39,11 @@ defmodule Club.Brands.Commands.UpdateBrandUrlTest do
         just_a_string
       )
       |> Enum.each(fn url ->
-        brand = build(:update_brand_url, %{brand_url: url})
+        brand = build(:update_url, %{url: url})
 
         %{errors: errors} = cmd = UpdateBrandUrl.new(brand)
         refute cmd.valid?
-        assert Enum.any?(errors, fn {field, {_, [validation: :url]}} -> field == :brand_url end)
+        assert Enum.any?(errors, fn {field, {_, [validation: :url]}} -> field == :url end)
       end)
     end
   end

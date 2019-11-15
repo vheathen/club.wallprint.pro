@@ -1,13 +1,13 @@
 defmodule Club.Brands.Commands.RenameBrand do
   use Commanded.Command,
     brand_uuid: Ecto.UUID,
-    brand_name: :string,
+    name: :string,
     user_uuid: Ecto.UUID,
     user_name: :string
 
   @required_fields [
     :brand_uuid,
-    :brand_name,
+    :name,
     :user_uuid,
     :user_name
   ]
@@ -24,9 +24,9 @@ defimpl Club.Support.Middleware.Uniqueness.UniqueFields, for: Club.Brands.Comman
 
   def unique(%RenameBrand{brand_uuid: brand_uuid}),
     do: [
-      {:brand_name, "has already exist", brand_uuid,
+      {:name, "has already exist", brand_uuid,
        ignore_case: true, label: :brand, is_unique: &is_unique/4}
     ]
 
-  def is_unique(:brand_name, value, _owner, _opts), do: Brands.brand_unique?(%{brand_name: value})
+  def is_unique(:name, value, _owner, _opts), do: Brands.brand_unique?(%{name: value})
 end

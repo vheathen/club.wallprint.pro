@@ -22,8 +22,8 @@ defmodule Club.BrandsTest do
 
       assert_receive_event(Club.Commanded, BrandAdded, fn event ->
         assert brand_uuid == event.brand_uuid
-        assert brand.brand_name == event.brand_name
-        assert brand.brand_url == event.brand_url
+        assert brand.name == event.name
+        assert brand.url == event.url
         assert brand.user_uuid == event.user_uuid
         assert brand.user_name == event.user_name
       end)
@@ -31,8 +31,8 @@ defmodule Club.BrandsTest do
       assert Aggregate.aggregate_state(Commanded, Brand, "brand-" <> brand_uuid) ==
                %Brand{
                  uuid: brand_uuid,
-                 brand_name: brand.brand_name,
-                 brand_url: brand.brand_url,
+                 name: brand.name,
+                 url: brand.url,
                  product_count: 0
                }
     end
@@ -49,9 +49,9 @@ defmodule Club.BrandsTest do
         :new_brand
         |> build()
         |> Map.delete(:brand_uuid)
-        |> Map.delete(:brand_name)
+        |> Map.delete(:name)
 
-      {:error, {:validation_failure, %{brand_name: _}}} = Brands.add_brand(brand, %{})
+      {:error, {:validation_failure, %{name: _}}} = Brands.add_brand(brand, %{})
     end
   end
 
@@ -69,7 +69,7 @@ defmodule Club.BrandsTest do
 
       assert_receive_event(Club.Commanded, BrandRenamed, fn event ->
         assert brand_uuid == event.brand_uuid
-        assert rename_brand.brand_name == event.brand_name
+        assert rename_brand.name == event.name
         assert rename_brand.user_uuid == event.user_uuid
         assert rename_brand.user_name == event.user_name
       end)
@@ -77,8 +77,8 @@ defmodule Club.BrandsTest do
       assert Aggregate.aggregate_state(Commanded, Brand, "brand-" <> brand_uuid) ==
                %Brand{
                  uuid: brand_uuid,
-                 brand_name: rename_brand.brand_name,
-                 brand_url: add_brand.brand_url,
+                 name: rename_brand.name,
+                 url: add_brand.url,
                  product_count: 0
                }
     end
@@ -105,7 +105,7 @@ defmodule Club.BrandsTest do
     end
   end
 
-  describe "update_brand_url/2" do
+  describe "update_url/2" do
     @describetag :integration
 
     test "should succeed and return :ok if parameters are correct" do
@@ -114,33 +114,33 @@ defmodule Club.BrandsTest do
 
       wait_for_event(Commanded, BrandAdded)
 
-      update_brand_url = build(:update_brand_url, brand_uuid: brand_uuid)
-      :ok = Brands.update_brand_url(update_brand_url, %{})
+      update_url = build(:update_url, brand_uuid: brand_uuid)
+      :ok = Brands.update_url(update_url, %{})
 
       assert_receive_event(Club.Commanded, BrandUrlUpdated, fn event ->
         assert brand_uuid == event.brand_uuid
-        assert update_brand_url.brand_url == event.brand_url
-        assert update_brand_url.user_uuid == event.user_uuid
-        assert update_brand_url.user_name == event.user_name
+        assert update_url.url == event.url
+        assert update_url.user_uuid == event.user_uuid
+        assert update_url.user_name == event.user_name
       end)
 
       assert Aggregate.aggregate_state(Commanded, Brand, "brand-" <> brand_uuid) ==
                %Brand{
                  uuid: brand_uuid,
-                 brand_name: add_brand.brand_name,
-                 brand_url: update_brand_url.brand_url,
+                 name: add_brand.name,
+                 url: update_url.url,
                  product_count: 0
                }
     end
 
     test "should fail and return error if parameters are incorrect" do
-      update_brand_url =
-        :update_brand_url
+      update_url =
+        :update_url
         |> build()
         |> Map.delete(:brand_uuid)
 
       assert {:error, {:validation_failure, %{brand_uuid: ["can't be blank"]}}} ==
-               Brands.update_brand_url(update_brand_url, %{})
+               Brands.update_url(update_url, %{})
     end
 
     test "should fail and return error if no brand with this id exists" do
@@ -149,9 +149,9 @@ defmodule Club.BrandsTest do
 
       wait_for_event(Commanded, BrandAdded)
 
-      update_brand_url = build(:update_brand_url)
+      update_url = build(:update_url)
 
-      assert {:error, :brand_doesnt_exist} == Brands.update_brand_url(update_brand_url, %{})
+      assert {:error, :brand_doesnt_exist} == Brands.update_url(update_url, %{})
     end
   end
 
@@ -170,11 +170,11 @@ defmodule Club.BrandsTest do
     end
 
     test "should return true if there is no such brand", %{
-      brand: %{brand_name: existing_name}
+      brand: %{name: existing_name}
     } do
       unique_name = unique_name(existing_name)
 
-      assert Brands.brand_unique?(%{brand_name: unique_name})
+      assert Brands.brand_unique?(%{name: unique_name})
     end
 
     test "should return false if the brand exists", %{
@@ -183,12 +183,12 @@ defmodule Club.BrandsTest do
       refute Brands.brand_unique?(brand)
     end
 
-    def unique_name(name) do
-      brand_name = Faker.Company.buzzword()
+    def unique_name(old_name) do
+      name = Faker.Company.buzzword()
 
-      case brand_name != name do
-        true -> brand_name
-        false -> unique_name(name)
+      case name != old_name do
+        true -> name
+        false -> unique_name(old_name)
       end
     end
   end

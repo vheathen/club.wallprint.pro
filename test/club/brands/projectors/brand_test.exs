@@ -40,21 +40,21 @@ defmodule Club.Brands.Projectors.BrandTest do
       [brand_projection] = result
 
       assert brand.brand_uuid == brand_projection.brand_uuid
-      assert brand.brand_name == brand_projection.brand_name
-      assert brand.brand_url == brand_projection.brand_url
+      assert brand.name == brand_projection.name
+      assert brand.url == brand_projection.url
       assert 0 == brand_projection.product_count
     end
 
     test "BrandRenamed event shoud update an existing brand record", %{
       brand: %{brand_uuid: brand_uuid} = brand
     } do
-      %{brand_name: brand_name} = rename_brand = build(:rename_brand, brand_uuid: brand_uuid)
+      %{name: name} = rename_brand = build(:rename_brand, brand_uuid: brand_uuid)
 
       :ok = Brands.rename_brand(rename_brand, %{})
 
       wait_for_event(Club.Commanded, BrandRenamed)
 
-      assert_receive {:brand_renamed, %{brand_uuid: ^brand_uuid, brand_name: ^brand_name}},
+      assert_receive {:brand_renamed, %{brand_uuid: ^brand_uuid, name: ^name}},
                      1_000
 
       result = Repo.all(BrandProjection)
@@ -62,22 +62,21 @@ defmodule Club.Brands.Projectors.BrandTest do
       [brand_projection] = result
 
       assert brand.brand_uuid == brand_projection.brand_uuid
-      assert rename_brand.brand_name == brand_projection.brand_name
-      assert brand.brand_url == brand_projection.brand_url
+      assert rename_brand.name == brand_projection.name
+      assert brand.url == brand_projection.url
       assert 0 == brand_projection.product_count
     end
 
     test "BrandUrlUpdated event shoud update an existing brand record", %{
       brand: %{brand_uuid: brand_uuid} = brand
     } do
-      %{brand_url: brand_url} =
-        update_brand_url = build(:update_brand_url, brand_uuid: brand_uuid)
+      %{url: url} = update_url = build(:update_url, brand_uuid: brand_uuid)
 
-      :ok = Brands.update_brand_url(update_brand_url, %{})
+      :ok = Brands.update_url(update_url, %{})
 
       wait_for_event(Club.Commanded, BrandUrlUpdated)
 
-      assert_receive {:brand_url_updated, %{brand_uuid: ^brand_uuid, brand_url: ^brand_url}},
+      assert_receive {:url_updated, %{brand_uuid: ^brand_uuid, url: ^url}},
                      1_000
 
       result = Repo.all(BrandProjection)
@@ -85,8 +84,8 @@ defmodule Club.Brands.Projectors.BrandTest do
       [brand_projection] = result
 
       assert brand.brand_uuid == brand_projection.brand_uuid
-      assert brand.brand_name == brand_projection.brand_name
-      assert update_brand_url.brand_url == brand_projection.brand_url
+      assert brand.name == brand_projection.name
+      assert update_url.url == brand_projection.url
       assert 0 == brand_projection.product_count
     end
   end

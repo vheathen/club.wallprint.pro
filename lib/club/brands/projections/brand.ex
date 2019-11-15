@@ -6,8 +6,8 @@ defmodule Club.Brands.Projections.Brand do
   @primary_key {:brand_uuid, :binary_id, autogenerate: false}
   @foreign_key_type :binary_id
   schema "brands_brands" do
-    field :brand_name, :string
-    field :brand_url, :string, null: false, default: ""
+    field :name, :string
+    field :url, :string, null: false, default: ""
     field :product_count, :integer
 
     timestamps()
@@ -16,7 +16,7 @@ defmodule Club.Brands.Projections.Brand do
   @doc false
   def changeset(user, attrs) do
     user
-    |> cast(attrs, [:brand_name, :brand_url, :product_count])
-    |> validate_required([:brand_name, :product_count])
+    |> cast(attrs, [:name, :url, :product_count])
+    |> validate_required([:name, :product_count])
   end
 end

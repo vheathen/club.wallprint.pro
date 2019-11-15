@@ -70,12 +70,12 @@ defmodule Club.Brands.Aggregates.BrandTest do
       assert_error(rename_brand, {:error, :brand_doesnt_exist})
     end
 
-    test "should not return any events if brand_name is the same as previous one", %{
+    test "should not return any events if name is the same as previous one", %{
       add_brand: add_brand,
       rename_brand: rename_brand
     } do
       brand_added = BrandAdded.new(add_brand)
-      rename_brand = %{rename_brand | brand_name: brand_added.brand_name}
+      rename_brand = %{rename_brand | name: brand_added.name}
       assert_events([brand_added], rename_brand, [])
     end
   end
@@ -90,37 +90,37 @@ defmodule Club.Brands.Aggregates.BrandTest do
         |> AddBrand.new()
         |> Ecto.Changeset.apply_changes()
 
-      update_brand_url =
-        :update_brand_url
+      update_url =
+        :update_url
         |> build(brand_uuid: add_brand.brand_uuid)
         |> UpdateBrandUrl.new()
         |> Ecto.Changeset.apply_changes()
 
-      [add_brand: add_brand, update_brand_url: update_brand_url]
+      [add_brand: add_brand, update_url: update_url]
     end
 
     test "should return BrandUrlChanged event for the existing brand", %{
       add_brand: add_brand,
-      update_brand_url: update_brand_url
+      update_url: update_url
     } do
       brand_added = BrandAdded.new(add_brand)
-      brand_url_updated = BrandUrlUpdated.new(update_brand_url)
-      assert_events([brand_added], update_brand_url, [brand_url_updated])
+      url_updated = BrandUrlUpdated.new(update_url)
+      assert_events([brand_added], update_url, [url_updated])
     end
 
     test "should return {:error, :brand_doesnt_exist} if no such brand exists", %{
-      update_brand_url: update_brand_url
+      update_url: update_url
     } do
-      assert_error(update_brand_url, {:error, :brand_doesnt_exist})
+      assert_error(update_url, {:error, :brand_doesnt_exist})
     end
 
-    test "should not return any events if brand_url is the same as previous one", %{
+    test "should not return any events if url is the same as previous one", %{
       add_brand: add_brand,
-      update_brand_url: update_brand_url
+      update_url: update_url
     } do
       brand_added = BrandAdded.new(add_brand)
-      update_brand_url = %{update_brand_url | brand_url: brand_added.brand_url}
-      assert_events([brand_added], update_brand_url, [])
+      update_url = %{update_url | url: brand_added.url}
+      assert_events([brand_added], update_url, [])
     end
   end
 end

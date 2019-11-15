@@ -4,8 +4,8 @@ defmodule Club.Factories.Brands do
       def new_brand_factory do
         %{
           brand_uuid: UUID.uuid4(),
-          brand_name: Faker.Company.En.buzzword(),
-          brand_url: Faker.Internet.url(),
+          name: Faker.Company.En.buzzword(),
+          url: Faker.Internet.url(),
           user_uuid: UUID.uuid4(),
           user_name: Faker.Name.En.name()
         }
@@ -14,16 +14,16 @@ defmodule Club.Factories.Brands do
       def rename_brand_factory do
         %{
           brand_uuid: UUID.uuid4(),
-          brand_name: Faker.Company.En.buzzword(),
+          name: Faker.Company.En.buzzword(),
           user_uuid: UUID.uuid4(),
           user_name: Faker.Name.En.name()
         }
       end
 
-      def update_brand_url_factory do
+      def update_url_factory do
         %{
           brand_uuid: UUID.uuid4(),
-          brand_url: Faker.Internet.url(),
+          url: Faker.Internet.url(),
           user_uuid: UUID.uuid4(),
           user_name: Faker.Name.En.name()
         }
