@@ -82,15 +82,15 @@ defmodule Club.CommandCase do
 
   defmacro required_fields(fields) when is_list(fields) do
     quote do
-      @required_fields (unquote(fields) ++ @required_fields) |> Enum.sort()
-      @all_fields (unquote(fields) ++ @all_fields) |> Enum.sort()
+      @required_fields (unquote(fields) ++ @required_fields) |> Enum.uniq() |> Enum.sort()
+      @all_fields (unquote(fields) ++ @all_fields) |> Enum.uniq() |> Enum.sort()
     end
   end
 
   defmacro optional_fields(fields) when is_list(fields) do
     quote do
-      @optional_fields (unquote(fields) ++ @optional_fields) |> Enum.sort()
-      @all_fields (unquote(fields) ++ @all_fields) |> Enum.sort()
+      @optional_fields (unquote(fields) ++ @optional_fields) |> Enum.uniq() |> Enum.sort()
+      @all_fields (unquote(fields) ++ @all_fields) |> Enum.uniq() |> Enum.sort()
     end
   end
 
@@ -100,7 +100,28 @@ defmodule Club.CommandCase do
 
   defmacro fields(type, fields) do
     quote do
-      @fields Map.put(@fields, unquote(type), unquote(fields))
+      Enum.each(unquote(fields), fn field ->
+        unless Enum.any?(@all_fields, &(&1 == field)),
+          do:
+            raise(
+              "Requred + optional fields list doesn't contain '#{inspect(field)}' field of type '#{
+                inspect(unquote(type))
+              }'"
+            )
+
+        # @fields
+        # |> Enum.each(fn {key, list} ->
+        #   if Enum.any?(list, &(&1 == field)),
+        #     do:
+        #       raise(
+        #         "'#{inspect(field)}' cannot be in both '#{inspect(unquote(type))}' and '#{
+        #           inspect(key)
+        #         }' lists at the same time!"
+        #       )
+        # end)
+      end)
+
+      @fields Map.put(@fields, unquote(type), unquote(fields |> Enum.uniq() |> Enum.sort()))
     end
   end
 
@@ -130,7 +151,11 @@ defmodule Club.CommandCase do
   @spec check_command_is_valid_with_valid_attributes(atom(), atom(), keyword) :: [any]
   def check_command_is_valid_with_valid_attributes(command, factory, opts \\ []) do
     for _ <- 1..Keyword.get(opts, :retries, 1),
-        do: assert(command.new(build(factory)).valid?)
+        do:
+          assert(
+            command.new(build(factory)).valid?,
+            "Command invalid event with valid attributes: '#{inspect(build(factory))}'!"
+          )
   end
 
   ###
@@ -158,7 +183,7 @@ defmodule Club.CommandCase do
         data = factory |> build() |> Map.delete(req_field)
 
         %{errors: errors} = cmd = command.new(data)
-        refute cmd.valid?
+        refute cmd.valid?, "Command valid even without '#{inspect(req_field)}' field!"
 
         assert Enum.any?(
                  errors,
@@ -169,7 +194,8 @@ defmodule Club.CommandCase do
                    _ ->
                      false
                  end
-               )
+               ),
+               "'#{inspect(req_field)}' field doesn't have validation: :required error!"
       end
     end
   end
@@ -197,7 +223,9 @@ defmodule Club.CommandCase do
     for _ <- 1..Keyword.get(opts, :retries, 1) do
       for opt_field <- optional_fields do
         data = factory |> build() |> Map.delete(opt_field)
-        assert command.new(data).valid?
+
+        assert command.new(data).valid?,
+               "Command invalid event despite '#{inspect(opt_field)}' field must be optional!"
       end
     end
   end
@@ -228,7 +256,11 @@ defmodule Club.CommandCase do
           data = build(factory, %{field_name => incorrect_data_piece})
 
           %{errors: errors} = cmd = command.new(data)
-          refute cmd.valid?
+
+          refute cmd.valid?,
+                 "Command valid even if '#{inspect(field_name)}' field of type '#{inspect(type)}' set to '#{
+                   inspect(incorrect_data_piece)
+                 }'!"
 
           assert Enum.any?(
                    errors,
