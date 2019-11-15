@@ -1,6 +1,15 @@
 defmodule Club.Factories.Brands do
   defmacro __using__(_opts) do
     quote do
+      def brand_aggregate_factory do
+        %Club.Brands.Aggregates.Brand{
+          uuid: UUID.uuid4(),
+          name: Faker.Company.En.buzzword(),
+          url: Faker.Internet.url(),
+          product_count: 0
+        }
+      end
+
       def new_brand_factory do
         %{
           brand_uuid: UUID.uuid4(),
