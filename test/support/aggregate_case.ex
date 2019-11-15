@@ -8,7 +8,8 @@ defmodule Club.AggregateCase do
   using aggregate: aggregate do
     quote bind_quoted: [aggregate: aggregate] do
       @aggregate_module aggregate
-      use Club.DataCase
+
+      import Club.Factory
 
       # Assert that the expected events are returned when the given commands have been executed
       defp assert_events(commands, expected_events) do
@@ -16,15 +17,22 @@ defmodule Club.AggregateCase do
       end
 
       defp assert_events(initial_events, commands, expected_events) do
-        {_aggregate, events, error} =
-          %@aggregate_module{}
-          |> evolve(initial_events)
-          |> execute(commands)
+        {_aggregate, events, error} = aggregate_run(initial_events, commands)
 
         actual_events = List.wrap(events)
 
         assert is_nil(error)
-        assert expected_events == actual_events
+        assert actual_events == expected_events
+      end
+
+      defp assert_state(commands, expected_state) do
+        assert_state([], commands, expected_state)
+      end
+
+      defp assert_state(initial_events, commands, expected_state) do
+        {aggregate, events, error} = aggregate_run(initial_events, commands)
+        assert is_nil(error)
+        assert aggregate == expected_state
       end
 
       defp assert_error(commands, expected_error) do
@@ -32,12 +40,14 @@ defmodule Club.AggregateCase do
       end
 
       defp assert_error(initial_events, commands, expected_error) do
-        {_aggregate, _events, error} =
-          %@aggregate_module{}
-          |> evolve(initial_events)
-          |> execute(commands)
-
+        {_aggregate, _events, error} = aggregate_run(initial_events, commands)
         assert error == expected_error
+      end
+
+      defp aggregate_run(initial_events, commands) do
+        %@aggregate_module{}
+        |> evolve(initial_events)
+        |> execute(commands)
       end
 
       # Execute one or more commands against an aggregate
