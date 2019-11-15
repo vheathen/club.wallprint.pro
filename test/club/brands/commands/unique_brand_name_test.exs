@@ -31,7 +31,7 @@ defmodule Club.Brands.Commands.UniqueBrandNameTest do
     Phoenix.PubSub.subscribe(Club.EventBus, @topic)
 
     %{brand_uuid: uuid} = brand = new_brand()
-    {:ok, _} = Brands.add_brand(brand, %{})
+    {:ok, _} = Brands.add_brand(brand, meta())
 
     assert_receive {:brand_added, %{brand_uuid: ^uuid}}, 1_000
 
@@ -43,7 +43,7 @@ defmodule Club.Brands.Commands.UniqueBrandNameTest do
 
     test "with unique name should succeed" do
       %{brand_uuid: uuid} = brand = new_brand()
-      {:ok, _} = Brands.add_brand(brand, %{})
+      {:ok, _} = Brands.add_brand(brand, meta())
       assert_receive {:brand_added, %{brand_uuid: ^uuid}}, 1_000
       assert length(Repo.all(BrandProjection)) == 2
     end
@@ -52,7 +52,7 @@ defmodule Club.Brands.Commands.UniqueBrandNameTest do
       uuid = UUID.uuid4()
       brand = %{brand | brand_uuid: uuid}
       Repo.delete_all(BrandProjection)
-      result = Brands.add_brand(brand, %{})
+      result = Brands.add_brand(brand, meta())
       assert result == {:error, :validation_failure, [brand: "has already exist"]}
     end
 
@@ -60,7 +60,7 @@ defmodule Club.Brands.Commands.UniqueBrandNameTest do
       uuid = UUID.uuid4()
       brand = %{brand | brand_uuid: uuid}
       Cachex.clear(@cachex_adapter)
-      result = Brands.add_brand(brand, %{})
+      result = Brands.add_brand(brand, meta())
       assert result == {:error, :validation_failure, [brand: "has already exist"]}
     end
   end
@@ -70,14 +70,14 @@ defmodule Club.Brands.Commands.UniqueBrandNameTest do
 
     test "with unique name should succeed", %{brand: %{brand_uuid: brand_uuid}} do
       rename_brand = rename_brand(%{brand_uuid: brand_uuid})
-      :ok = Brands.rename_brand(rename_brand, %{})
+      :ok = Brands.rename_brand(rename_brand, meta())
       assert_receive {:brand_renamed, %{brand_uuid: ^brand_uuid}}, 1_000
       assert length(Repo.all(BrandProjection)) == 1
     end
 
     test "with duplicate name should fail based on the cached results", %{brand: brand} do
       %{brand_uuid: new_uuid} = new_brand = new_brand()
-      {:ok, _} = Brands.add_brand(new_brand, %{})
+      {:ok, _} = Brands.add_brand(new_brand, meta())
 
       assert_receive {:brand_added, %{brand_uuid: ^new_uuid}}, 1_000
       assert length(Repo.all(BrandProjection)) == 2
@@ -85,13 +85,13 @@ defmodule Club.Brands.Commands.UniqueBrandNameTest do
       Repo.delete_all(BrandProjection)
 
       rename_brand = rename_brand(%{brand_uuid: new_uuid, name: brand.name})
-      result = Brands.rename_brand(rename_brand, %{})
+      result = Brands.rename_brand(rename_brand, meta())
       assert result == {:error, :validation_failure, [brand: "has already exist"]}
     end
 
     test "with duplicate name should fail based on the readstore results", %{brand: brand} do
       %{brand_uuid: new_uuid} = new_brand = new_brand()
-      {:ok, _} = Brands.add_brand(new_brand, %{})
+      {:ok, _} = Brands.add_brand(new_brand, meta())
 
       assert_receive {:brand_added, %{brand_uuid: ^new_uuid}}, 1_000
       assert length(Repo.all(BrandProjection)) == 2
@@ -99,7 +99,7 @@ defmodule Club.Brands.Commands.UniqueBrandNameTest do
       Cachex.clear(@cachex_adapter)
 
       rename_brand = rename_brand(%{brand_uuid: new_uuid, name: brand.name})
-      result = Brands.rename_brand(rename_brand, %{})
+      result = Brands.rename_brand(rename_brand, meta())
       assert result == {:error, :validation_failure, [brand: "has already exist"]}
     end
   end

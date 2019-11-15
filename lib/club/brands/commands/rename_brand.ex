@@ -1,15 +1,11 @@
 defmodule Club.Brands.Commands.RenameBrand do
   use Commanded.Command,
     brand_uuid: Ecto.UUID,
-    name: :string,
-    user_uuid: Ecto.UUID,
-    user_name: :string
+    name: :string
 
   @required_fields [
     :brand_uuid,
-    :name,
-    :user_uuid,
-    :user_name
+    :name
   ]
 
   def handle_validate(changeset) do

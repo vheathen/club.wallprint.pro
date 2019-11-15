@@ -6,6 +6,7 @@ defmodule Club.CommandCase do
   use ExUnit.CaseTemplate
 
   import Club.Factory
+  import Club.Fixture
 
   @field_types [
     :string,

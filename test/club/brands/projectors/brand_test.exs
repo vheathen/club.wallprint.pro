@@ -20,7 +20,7 @@ defmodule Club.Brands.Projectors.BrandTest do
 
     brand = build(:new_brand)
 
-    {:ok, _} = Brands.add_brand(brand, %{})
+    {:ok, _} = Brands.add_brand(brand, meta())
 
     wait_for_event(Club.Commanded, BrandAdded)
 
@@ -50,7 +50,7 @@ defmodule Club.Brands.Projectors.BrandTest do
     } do
       %{name: name} = rename_brand = build(:rename_brand, brand_uuid: brand_uuid)
 
-      :ok = Brands.rename_brand(rename_brand, %{})
+      :ok = Brands.rename_brand(rename_brand, meta())
 
       wait_for_event(Club.Commanded, BrandRenamed)
 
@@ -72,7 +72,7 @@ defmodule Club.Brands.Projectors.BrandTest do
     } do
       %{url: url} = update_url = build(:update_url, brand_uuid: brand_uuid)
 
-      :ok = Brands.update_url(update_url, %{})
+      :ok = Brands.update_url(update_url, meta())
 
       wait_for_event(Club.Commanded, BrandUrlUpdated)
 

@@ -2,8 +2,6 @@ defmodule Club.Brands.Aggregates.BrandTest do
   use Club.AggregateCase,
     aggregate: Club.Brands.Aggregates.Brand
 
-  alias Club.Brands.Aggregates.Brand
-
   alias Club.Brands.Commands.{
     AddBrand,
     RenameBrand,

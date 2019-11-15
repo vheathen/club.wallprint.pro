@@ -18,14 +18,12 @@ defmodule Club.BrandsTest do
     @describetag :integration
     test "should succeed and return a new brand_uuid if parameters are correct but doesn't contain brand_uuid" do
       brand = :new_brand |> build() |> Map.delete(:brand_uuid)
-      {:ok, brand_uuid} = Brands.add_brand(brand, %{})
+      {:ok, brand_uuid} = Brands.add_brand(brand, meta())
 
-      assert_receive_event(Club.Commanded, BrandAdded, fn event ->
+      assert_receive_event(Commanded, BrandAdded, fn event ->
         assert brand_uuid == event.brand_uuid
         assert brand.name == event.name
         assert brand.url == event.url
-        assert brand.user_uuid == event.user_uuid
-        assert brand.user_name == event.user_name
       end)
 
       assert Aggregate.aggregate_state(Commanded, Brand, "brand-" <> brand_uuid) ==
@@ -39,7 +37,7 @@ defmodule Club.BrandsTest do
 
     test "should succeed and return provided brand_uuid if parameters are correct" do
       brand = :new_brand |> build()
-      {:ok, brand_uuid} = Brands.add_brand(brand, %{})
+      {:ok, brand_uuid} = Brands.add_brand(brand, meta())
 
       assert brand_uuid == brand.brand_uuid
     end
@@ -51,7 +49,19 @@ defmodule Club.BrandsTest do
         |> Map.delete(:brand_uuid)
         |> Map.delete(:name)
 
-      {:error, {:validation_failure, %{name: _}}} = Brands.add_brand(brand, %{})
+      {:error, {:validation_failure, %{name: _}}} = Brands.add_brand(brand, meta())
+    end
+
+    test "should fail and return error if no user_uuid and user_name in metadata" do
+      brand = :new_brand |> build()
+      meta = %{}
+
+      assert Brands.add_brand(brand, meta) ==
+               {:error, :validation_failure,
+                [
+                  {:user_name, "must be provided"},
+                  {:user_uuid, "must be provided"}
+                ]}
     end
   end
 
@@ -60,18 +70,16 @@ defmodule Club.BrandsTest do
 
     test "should succeed and return :ok if parameters are correct" do
       add_brand = :new_brand |> build()
-      {:ok, brand_uuid} = Brands.add_brand(add_brand, %{})
+      {:ok, brand_uuid} = Brands.add_brand(add_brand, meta())
 
       wait_for_event(Commanded, BrandAdded)
 
       rename_brand = build(:rename_brand, brand_uuid: brand_uuid)
-      :ok = Brands.rename_brand(rename_brand, %{})
+      :ok = Brands.rename_brand(rename_brand, meta())
 
-      assert_receive_event(Club.Commanded, BrandRenamed, fn event ->
+      assert_receive_event(Commanded, BrandRenamed, fn event ->
         assert brand_uuid == event.brand_uuid
         assert rename_brand.name == event.name
-        assert rename_brand.user_uuid == event.user_uuid
-        assert rename_brand.user_name == event.user_name
       end)
 
       assert Aggregate.aggregate_state(Commanded, Brand, "brand-" <> brand_uuid) ==
@@ -90,18 +98,30 @@ defmodule Club.BrandsTest do
         |> Map.delete(:brand_uuid)
 
       assert {:error, {:validation_failure, %{brand_uuid: ["can't be blank"]}}} ==
-               Brands.rename_brand(rename_brand, %{})
+               Brands.rename_brand(rename_brand, meta())
     end
 
     test "should fail and return error if no brand with this id exists" do
       add_brand = build(:new_brand)
-      {:ok, _brand_uuid} = Brands.add_brand(add_brand, %{})
+      {:ok, _brand_uuid} = Brands.add_brand(add_brand, meta())
 
       wait_for_event(Commanded, BrandAdded)
 
       rename_brand = build(:rename_brand)
 
-      assert {:error, :brand_doesnt_exist} == Brands.rename_brand(rename_brand, %{})
+      assert {:error, :brand_doesnt_exist} == Brands.rename_brand(rename_brand, meta())
+    end
+
+    test "should fail and return error if no user_uuid and user_name in metadata" do
+      rename_brand = build(:rename_brand)
+      meta = %{}
+
+      assert Brands.rename_brand(rename_brand, meta) ==
+               {:error, :validation_failure,
+                [
+                  {:user_name, "must be provided"},
+                  {:user_uuid, "must be provided"}
+                ]}
     end
   end
 
@@ -110,18 +130,16 @@ defmodule Club.BrandsTest do
 
     test "should succeed and return :ok if parameters are correct" do
       add_brand = :new_brand |> build()
-      {:ok, brand_uuid} = Brands.add_brand(add_brand, %{})
+      {:ok, brand_uuid} = Brands.add_brand(add_brand, meta())
 
       wait_for_event(Commanded, BrandAdded)
 
       update_url = build(:update_url, brand_uuid: brand_uuid)
-      :ok = Brands.update_url(update_url, %{})
+      :ok = Brands.update_url(update_url, meta())
 
-      assert_receive_event(Club.Commanded, BrandUrlUpdated, fn event ->
+      assert_receive_event(Commanded, BrandUrlUpdated, fn event ->
         assert brand_uuid == event.brand_uuid
         assert update_url.url == event.url
-        assert update_url.user_uuid == event.user_uuid
-        assert update_url.user_name == event.user_name
       end)
 
       assert Aggregate.aggregate_state(Commanded, Brand, "brand-" <> brand_uuid) ==
@@ -140,18 +158,30 @@ defmodule Club.BrandsTest do
         |> Map.delete(:brand_uuid)
 
       assert {:error, {:validation_failure, %{brand_uuid: ["can't be blank"]}}} ==
-               Brands.update_url(update_url, %{})
+               Brands.update_url(update_url, meta())
     end
 
     test "should fail and return error if no brand with this id exists" do
       add_brand = build(:new_brand)
-      {:ok, _brand_uuid} = Brands.add_brand(add_brand, %{})
+      {:ok, _brand_uuid} = Brands.add_brand(add_brand, meta())
 
       wait_for_event(Commanded, BrandAdded)
 
       update_url = build(:update_url)
 
-      assert {:error, :brand_doesnt_exist} == Brands.update_url(update_url, %{})
+      assert {:error, :brand_doesnt_exist} == Brands.update_url(update_url, meta())
+    end
+
+    test "should fail and return error if no user_uuid and user_name in metadata" do
+      update_url = build(:update_url)
+      meta = %{}
+
+      assert Brands.update_url(update_url, meta) ==
+               {:error, :validation_failure,
+                [
+                  {:user_name, "must be provided"},
+                  {:user_uuid, "must be provided"}
+                ]}
     end
   end
 
@@ -162,7 +192,7 @@ defmodule Club.BrandsTest do
       Phoenix.PubSub.subscribe(Club.EventBus, "domain:brands")
 
       %{brand_uuid: brand_uuid} = brand = build(:new_brand)
-      {:ok, _} = Brands.add_brand(brand, %{})
+      {:ok, _} = Brands.add_brand(brand, meta())
 
       assert_receive {:brand_added, %{brand_uuid: ^brand_uuid}}, 1_000
 

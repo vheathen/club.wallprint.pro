@@ -22,6 +22,7 @@ defmodule Club.DataCase do
       import Ecto.Changeset
       import Ecto.Query
       import Club.Factory
+      import Club.Fixture
       import Commanded.Assertions.EventAssertions
       import Club.DataCase
     end

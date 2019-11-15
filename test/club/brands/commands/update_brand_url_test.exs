@@ -7,23 +7,13 @@ defmodule Club.Brands.Commands.UpdateBrandUrlTest do
 
   required_fields([
     :brand_uuid,
-    :url,
-    :user_uuid,
-    :user_name
+    :url
   ])
-
-  fields(
-    :string,
-    [
-      :user_name
-    ]
-  )
 
   fields(
     Ecto.UUID,
     [
-      :brand_uuid,
-      :user_uuid
+      :brand_uuid
     ]
   )
 

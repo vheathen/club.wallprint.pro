@@ -1,17 +1,13 @@
 defmodule Club.Brands.Commands.UpdateBrandUrl do
   use Commanded.Command,
     brand_uuid: Ecto.UUID,
-    url: :string,
-    user_uuid: Ecto.UUID,
-    user_name: :string
+    url: :string
 
   import Club.Support.Validators
 
   @required_fields [
     :brand_uuid,
-    :url,
-    :user_uuid,
-    :user_name
+    :url
   ]
 
   def handle_validate(changeset) do

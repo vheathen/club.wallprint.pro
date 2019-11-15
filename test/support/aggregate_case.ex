@@ -10,6 +10,7 @@ defmodule Club.AggregateCase do
       @aggregate_module aggregate
 
       import Club.Factory
+      import Club.Fixture
 
       # Assert that the expected events are returned when the given commands have been executed
       defp assert_events(commands, expected_events) do

@@ -5,24 +5,20 @@ defmodule Club.Brands.Commands.RenameBrandTest do
 
   required_fields([
     :brand_uuid,
-    :name,
-    :user_uuid,
-    :user_name
+    :name
   ])
 
   fields(
     :string,
     [
-      :name,
-      :user_name
+      :name
     ]
   )
 
   fields(
     Ecto.UUID,
     [
-      :brand_uuid,
-      :user_uuid
+      :brand_uuid
     ]
   )
 

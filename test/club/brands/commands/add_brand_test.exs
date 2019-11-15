@@ -7,9 +7,7 @@ defmodule Club.Brands.Commands.AddBrandTest do
 
   required_fields([
     :brand_uuid,
-    :name,
-    :user_uuid,
-    :user_name
+    :name
   ])
 
   optional_fields([
@@ -19,17 +17,14 @@ defmodule Club.Brands.Commands.AddBrandTest do
   fields(
     :string,
     [
-      :name,
-      :url,
-      :user_name
+      :url
     ]
   )
 
   fields(
     Ecto.UUID,
     [
-      :brand_uuid,
-      :user_uuid
+      :brand_uuid
     ]
   )
 
