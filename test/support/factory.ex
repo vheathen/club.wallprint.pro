@@ -4,6 +4,7 @@ defmodule Club.Factory do
   # Brands domain
   use Club.Factories.Brands
   use Club.Factories.Devices
+  use Club.Factories.SurfaceTypes
 
   def metadata_factory do
     %{

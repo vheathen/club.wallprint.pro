@@ -42,6 +42,7 @@ defmodule Club.Storage do
   defp truncate_readstore_tables do
     """
     TRUNCATE TABLE
+      surface_types_surface_types,
       brands_brands,
       projection_versions
     RESTART IDENTITY;

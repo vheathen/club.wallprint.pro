@@ -26,7 +26,13 @@ defmodule Club.Application do
       Club.Commanded,
 
       # Brands domain
-      Club.Brands.Supervisor
+      Club.Brands.Supervisor,
+
+      # Devices domain
+      Club.Devices.Supervisor,
+
+      # SurfaceTypes domain
+      Club.SurfaceTypes.Supervisor
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html
