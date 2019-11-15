@@ -9,16 +9,14 @@ defmodule Club.DevicesTest do
   alias Club.Devices.Aggregates.Device
 
   alias Club.Devices.Events.{
-    DeviceAdded,
-    DeviceRenamed,
-    DeviceUrlUpdated
+    DeviceAdded
   }
 
   describe "add_device/2" do
     @describetag :integration
     test "should succeed and return a new device_uuid if parameters are correct but doesn't contain device_uuid" do
       device = :new_device |> build() |> Map.delete(:device_uuid)
-      {:ok, device_uuid} = Devices.add_device(device, %{})
+      {:ok, device_uuid} = Devices.add_device(device, meta())
 
       assert_receive_event(Club.Commanded, DeviceAdded, fn event ->
         assert device_uuid == event.device_uuid
@@ -43,7 +41,7 @@ defmodule Club.DevicesTest do
 
     test "should succeed and return provided device_uuid if parameters are correct" do
       device = :new_device |> build()
-      {:ok, device_uuid} = Devices.add_device(device, %{})
+      {:ok, device_uuid} = Devices.add_device(device, meta())
 
       assert device_uuid == device.device_uuid
     end
@@ -55,7 +53,20 @@ defmodule Club.DevicesTest do
         |> Map.delete(:device_uuid)
         |> Map.delete(:model)
 
-      {:error, {:validation_failure, %{model: _}}} = Devices.add_device(device, %{})
+      {result, {:validation_failure, %{model: _}}} = Devices.add_device(device, meta())
+      assert result == :error
+    end
+
+    test "should fail and return error if no user_uuid and user_name in metadata" do
+      device = :new_device |> build()
+      meta = %{}
+
+      assert Devices.add_device(device, meta) ==
+               {:error, :validation_failure,
+                [
+                  {:user_name, "must be provided"},
+                  {:user_uuid, "must be provided"}
+                ]}
     end
   end
 end

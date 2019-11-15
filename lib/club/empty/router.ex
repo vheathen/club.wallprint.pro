@@ -1,3 +1,3 @@
 defmodule Club.Empty.Router do
-  use Commanded.Commands.Router
+  use Club.Support.Router
 end

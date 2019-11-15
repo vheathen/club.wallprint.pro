@@ -1,5 +1,5 @@
 defmodule Club.Devices.Router do
-  use Commanded.Commands.Router
+  use Club.Support.Router
 
   alias Club.Devices.Aggregates.Device
 
