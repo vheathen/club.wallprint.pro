@@ -28,6 +28,10 @@ defmodule Club.Brands.Commands.UniqueBrandNameTest do
   end
 
   setup do
+    on_exit(fn ->
+      Cachex.clear(@cachex_adapter)
+    end)
+
     Phoenix.PubSub.subscribe(Club.EventBus, @topic)
 
     %{brand_uuid: uuid} = brand = new_brand()
