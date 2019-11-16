@@ -151,12 +151,16 @@ defmodule Club.CommandCase do
 
   @spec check_command_is_valid_with_valid_attributes(atom(), atom(), keyword) :: [any]
   def check_command_is_valid_with_valid_attributes(command, factory, opts \\ []) do
-    for _ <- 1..Keyword.get(opts, :retries, 1),
-        do:
-          assert(
-            command.new(build(factory)).valid?,
-            "Command invalid event with valid attributes: '#{inspect(build(factory))}'!"
-          )
+    for _ <- 1..Keyword.get(opts, :retries, 1) do
+      cmd = command.new(build(factory))
+
+      assert(
+        cmd.valid?,
+        "Command invalid event with valid attributes: '#{inspect(build(factory))}': #{
+          inspect(cmd.errors)
+        }"
+      )
+    end
   end
 
   ###
@@ -196,7 +200,9 @@ defmodule Club.CommandCase do
                      false
                  end
                ),
-               "'#{inspect(req_field)}' field doesn't have validation: :required error!"
+               "'#{inspect(req_field)}' field doesn't have validation: :required error: #{
+                 inspect(cmd.errors)
+               }"
       end
     end
   end
@@ -225,8 +231,12 @@ defmodule Club.CommandCase do
       for opt_field <- optional_fields do
         data = factory |> build() |> Map.delete(opt_field)
 
-        assert command.new(data).valid?,
-               "Command invalid event despite '#{inspect(opt_field)}' field must be optional!"
+        cmd = command.new(data)
+
+        assert cmd.valid?,
+               "Command invalid event despite '#{inspect(opt_field)}' field must be optional: #{
+                 inspect(cmd.errors)
+               }"
       end
     end
   end
