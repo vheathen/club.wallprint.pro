@@ -6,7 +6,9 @@ defmodule Club.Brands.Router do
   alias Club.Brands.Commands.{
     AddBrand,
     RenameBrand,
-    UpdateBrandUrl
+    UpdateBrandUrl,
+    LinkNewProductWithBrand,
+    UnlinkProductFromBrand
   }
 
   identify(Brand, by: :brand_uuid, prefix: "brand-")
@@ -15,7 +17,9 @@ defmodule Club.Brands.Router do
     [
       AddBrand,
       RenameBrand,
-      UpdateBrandUrl
+      UpdateBrandUrl,
+      LinkNewProductWithBrand,
+      UnlinkProductFromBrand
     ],
     to: Brand
   )

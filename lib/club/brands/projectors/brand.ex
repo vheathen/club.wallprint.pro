@@ -10,7 +10,9 @@ defmodule Club.Brands.Projectors.Brand do
   alias Club.Brands.Events.{
     BrandAdded,
     BrandRenamed,
-    BrandUrlUpdated
+    BrandUrlUpdated,
+    NewProductWithBrandLinked,
+    ProductFromBrandUnlinked
   }
 
   project(%BrandAdded{} = brand_added, _meta, fn multi ->
@@ -40,7 +42,7 @@ defmodule Club.Brands.Projectors.Brand do
     %BrandRenamed{brand_uuid: brand_uuid, name: name},
     _meta,
     fn multi ->
-      update_brand(multi, brand_uuid, name: name)
+      update_brand(multi, brand_uuid, set: [name: name])
     end
   )
 
@@ -62,7 +64,7 @@ defmodule Club.Brands.Projectors.Brand do
     %BrandUrlUpdated{brand_uuid: brand_uuid, url: url},
     _meta,
     fn multi ->
-      update_brand(multi, brand_uuid, url: url)
+      update_brand(multi, brand_uuid, set: [url: url])
     end
   )
 
@@ -80,8 +82,52 @@ defmodule Club.Brands.Projectors.Brand do
     :ok
   end
 
+  project(
+    %NewProductWithBrandLinked{brand_uuid: brand_uuid},
+    _meta,
+    fn multi ->
+      update_brand(multi, brand_uuid, inc: [product_count: 1])
+    end
+  )
+
+  def after_update(
+        %NewProductWithBrandLinked{brand_uuid: brand_uuid},
+        _metadata,
+        _changes
+      ) do
+    Phoenix.PubSub.broadcast(
+      Club.EventBus,
+      "domain:brands",
+      {:product_linked, %{brand_uuid: brand_uuid}}
+    )
+
+    :ok
+  end
+
+  project(
+    %ProductFromBrandUnlinked{brand_uuid: brand_uuid},
+    _meta,
+    fn multi ->
+      update_brand(multi, brand_uuid, inc: [product_count: -1])
+    end
+  )
+
+  def after_update(
+        %ProductFromBrandUnlinked{brand_uuid: brand_uuid},
+        _metadata,
+        _changes
+      ) do
+    Phoenix.PubSub.broadcast(
+      Club.EventBus,
+      "domain:brands",
+      {:product_unlinked, %{brand_uuid: brand_uuid}}
+    )
+
+    :ok
+  end
+
   defp update_brand(multi, brand_uuid, changes) do
-    Ecto.Multi.update_all(multi, :brand, brand_query(brand_uuid), set: changes)
+    Ecto.Multi.update_all(multi, :brand, brand_query(brand_uuid), changes)
   end
 
   defp brand_query(brand_uuid) do

@@ -31,6 +31,21 @@ defmodule Club.Factories.Brands do
           url: Faker.Internet.url()
         }
       end
+
+      def link_new_product_with_brand_factory do
+        %{
+          brand_uuid: UUID.uuid4(),
+          product_uuid: UUID.uuid4(),
+          product_name: Faker.Company.En.buzzword()
+        }
+      end
+
+      def unlink_product_from_brand_factory do
+        %{
+          brand_uuid: UUID.uuid4(),
+          product_uuid: UUID.uuid4()
+        }
+      end
     end
   end
 end
