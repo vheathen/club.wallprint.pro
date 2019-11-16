@@ -15,6 +15,13 @@ defmodule Club.Factories.SurfaceTypes do
           name: Faker.Company.En.buzzword()
         }
       end
+
+      def rename_surface_type_factory do
+        %{
+          surface_type_uuid: UUID.uuid4(),
+          name: Faker.Company.En.buzzword()
+        }
+      end
     end
   end
 end

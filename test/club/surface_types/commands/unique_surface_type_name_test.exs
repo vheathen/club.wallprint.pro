@@ -69,44 +69,54 @@ defmodule Club.SurfaceTypes.Commands.UniqueSurfaceTypeNameTest do
     end
   end
 
-  # describe "RenameSurfaceType" do
-  #   @describetag :integration
+  describe "RenameSurfaceType" do
+    @describetag :integration
 
-  #   test "with unique name should succeed", %{surface_type: %{surface_type_uuid: surface_type_uuid}} do
-  #     rename_surface_type = rename_surface_type(%{surface_type_uuid: surface_type_uuid})
-  #     :ok = SurfaceTypes.rename_surface_type(rename_surface_type, meta())
-  #     assert_receive {:surface_type_renamed, %{surface_type_uuid: ^surface_type_uuid}}, 1_000
-  #     assert length(Repo.all(SurfaceTypeProjection)) == 1
-  #   end
+    test "with unique name should succeed", %{
+      surface_type: %{surface_type_uuid: surface_type_uuid}
+    } do
+      rename_surface_type = rename_surface_type(%{surface_type_uuid: surface_type_uuid})
+      :ok = SurfaceTypes.rename_surface_type(rename_surface_type, meta())
+      assert_receive {:surface_type_renamed, %{surface_type_uuid: ^surface_type_uuid}}, 1_000
+      assert length(Repo.all(SurfaceTypeProjection)) == 1
+    end
 
-  #   test "with duplicate name should fail based on the cached results", %{surface_type: surface_type} do
-  #     %{surface_type_uuid: new_uuid} = new_surface_type = new_surface_type()
-  #     {:ok, _} = SurfaceTypes.add_surface_type(new_surface_type, meta())
+    test "with duplicate name should fail based on the cached results", %{
+      surface_type: surface_type
+    } do
+      %{surface_type_uuid: new_uuid} = new_surface_type = new_surface_type()
+      {:ok, _} = SurfaceTypes.add_surface_type(new_surface_type, meta())
 
-  #     assert_receive {:surface_type_added, %{surface_type_uuid: ^new_uuid}}, 1_000
-  #     assert length(Repo.all(SurfaceTypeProjection)) == 2
+      assert_receive {:surface_type_added, %{surface_type_uuid: ^new_uuid}}, 1_000
+      assert length(Repo.all(SurfaceTypeProjection)) == 2
 
-  #     Repo.delete_all(SurfaceTypeProjection)
+      Repo.delete_all(SurfaceTypeProjection)
 
-  #     rename_surface_type = rename_surface_type(%{surface_type_uuid: new_uuid, name: surface_type.name})
-  #     result = SurfaceTypes.rename_surface_type(rename_surface_type, meta())
-  #     assert result == {:error, :validation_failure, [surface_type: "has already exist"]}
-  #   end
+      rename_surface_type =
+        rename_surface_type(%{surface_type_uuid: new_uuid, name: surface_type.name})
 
-  #   test "with duplicate name should fail based on the readstore results", %{surface_type: surface_type} do
-  #     %{surface_type_uuid: new_uuid} = new_surface_type = new_surface_type()
-  #     {:ok, _} = SurfaceTypes.add_surface_type(new_surface_type, meta())
+      result = SurfaceTypes.rename_surface_type(rename_surface_type, meta())
+      assert result == {:error, :validation_failure, [surface_type: "has already exist"]}
+    end
 
-  #     assert_receive {:surface_type_added, %{surface_type_uuid: ^new_uuid}}, 1_000
-  #     assert length(Repo.all(SurfaceTypeProjection)) == 2
+    test "with duplicate name should fail based on the readstore results", %{
+      surface_type: surface_type
+    } do
+      %{surface_type_uuid: new_uuid} = new_surface_type = new_surface_type()
+      {:ok, _} = SurfaceTypes.add_surface_type(new_surface_type, meta())
 
-  #     Cachex.clear(@cachex_adapter)
+      assert_receive {:surface_type_added, %{surface_type_uuid: ^new_uuid}}, 1_000
+      assert length(Repo.all(SurfaceTypeProjection)) == 2
 
-  #     rename_surface_type = rename_surface_type(%{surface_type_uuid: new_uuid, name: surface_type.name})
-  #     result = SurfaceTypes.rename_surface_type(rename_surface_type, meta())
-  #     assert result == {:error, :validation_failure, [surface_type: "has already exist"]}
-  #   end
-  # end
+      Cachex.clear(@cachex_adapter)
+
+      rename_surface_type =
+        rename_surface_type(%{surface_type_uuid: new_uuid, name: surface_type.name})
+
+      result = SurfaceTypes.rename_surface_type(rename_surface_type, meta())
+      assert result == {:error, :validation_failure, [surface_type: "has already exist"]}
+    end
+  end
 
   defp new_surface_type(attrs \\ []) do
     build(:new_surface_type, attrs)

@@ -8,7 +8,8 @@ defmodule Club.SurfaceTypes do
   alias Club.Commanded
 
   alias Club.SurfaceTypes.Commands.{
-    AddSurfaceType
+    AddSurfaceType,
+    RenameSurfaceType
   }
 
   alias Club.SurfaceTypes.Queries.NameExists
@@ -33,6 +34,16 @@ defmodule Club.SurfaceTypes do
       reply ->
         reply
     end
+  end
+
+  @spec rename_surface_type(rename_surface_type :: map(), metadata :: maybe_improper_list | map) ::
+          :ok | {:error, any}
+  def rename_surface_type(rename_surface_type, metadata)
+      when (is_map(rename_surface_type) or is_list(rename_surface_type)) and
+             (is_map(metadata) or is_list(metadata)) do
+    cmd = RenameSurfaceType.new(rename_surface_type)
+
+    Commanded.validate_and_dispatch(cmd, metadata: metadata)
   end
 
   @spec surface_type_unique?(surface_type :: map()) :: boolean()

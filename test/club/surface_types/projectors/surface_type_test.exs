@@ -8,7 +8,8 @@ defmodule Club.SurfaceTypes.Projectors.SurfaceTypeTest do
   alias Club.SurfaceTypes.Projections.SurfaceType, as: SurfaceTypeProjection
 
   alias Club.SurfaceTypes.Events.{
-    SurfaceTypeAdded
+    SurfaceTypeAdded,
+    SurfaceTypeRenamed
   }
 
   @topic "domain:surface_types"
@@ -47,28 +48,27 @@ defmodule Club.SurfaceTypes.Projectors.SurfaceTypeTest do
       assert 0 == surface_type_projection.product_count
     end
 
-    # test "SurfaceTypeRenamed event shoud update an existing surface_type record", %{
-    #   surface_type: %{surface_type_uuid: surface_type_uuid} = surface_type
-    # } do
-    #   %{name: name} =
-    #     rename_surface_type = build(:rename_surface_type, surface_type_uuid: surface_type_uuid)
+    test "SurfaceTypeRenamed event shoud update an existing surface_type record", %{
+      surface_type: %{surface_type_uuid: surface_type_uuid} = surface_type
+    } do
+      %{name: name} =
+        rename_surface_type = build(:rename_surface_type, surface_type_uuid: surface_type_uuid)
 
-    #   :ok = SurfaceTypes.rename_surface_type(rename_surface_type, meta())
+      :ok = SurfaceTypes.rename_surface_type(rename_surface_type, meta())
 
-    #   wait_for_event(Club.Commanded, SurfaceTypeRenamed)
+      wait_for_event(Club.Commanded, SurfaceTypeRenamed)
 
-    #   assert_receive {:surface_type_renamed,
-    #                   %{surface_type_uuid: ^surface_type_uuid, name: ^name}},
-    #                  1_000
+      assert_receive {:surface_type_renamed,
+                      %{surface_type_uuid: ^surface_type_uuid, name: ^name}},
+                     1_000
 
-    #   result = Repo.all(SurfaceTypeProjection)
-    #   assert length(result) == 1
-    #   [surface_type_projection] = result
+      result = Repo.all(SurfaceTypeProjection)
+      assert length(result) == 1
+      [surface_type_projection] = result
 
-    #   assert surface_type.surface_type_uuid == surface_type_projection.surface_type_uuid
-    #   assert rename_surface_type.name == surface_type_projection.name
-    #   assert surface_type.url == surface_type_projection.url
-    #   assert 0 == surface_type_projection.product_count
-    # end
+      assert surface_type.surface_type_uuid == surface_type_projection.surface_type_uuid
+      assert rename_surface_type.name == surface_type_projection.name
+      assert 0 == surface_type_projection.product_count
+    end
   end
 end

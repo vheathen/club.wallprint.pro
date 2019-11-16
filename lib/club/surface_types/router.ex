@@ -4,14 +4,16 @@ defmodule Club.SurfaceTypes.Router do
   alias Club.SurfaceTypes.Aggregates.SurfaceType
 
   alias Club.SurfaceTypes.Commands.{
-    AddSurfaceType
+    AddSurfaceType,
+    RenameSurfaceType
   }
 
   identify(SurfaceType, by: :surface_type_uuid, prefix: "surface_type-")
 
   dispatch(
     [
-      AddSurfaceType
+      AddSurfaceType,
+      RenameSurfaceType
     ],
     to: SurfaceType
   )

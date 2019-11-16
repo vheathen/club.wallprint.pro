@@ -7,8 +7,8 @@ defmodule Club.SurfaceTypes.Projectors.SurfaceType do
   alias Club.SurfaceTypes.Projections.SurfaceType
 
   alias Club.SurfaceTypes.Events.{
-    SurfaceTypeAdded
-    # SurfaceTypeRenamed
+    SurfaceTypeAdded,
+    SurfaceTypeRenamed
   }
 
   project(%SurfaceTypeAdded{} = surface_type_added, _meta, fn multi ->
@@ -37,35 +37,35 @@ defmodule Club.SurfaceTypes.Projectors.SurfaceType do
     :ok
   end
 
-  # project(
-  #   %SurfaceTypeRenamed{surface_type_uuid: surface_type_uuid, name: name},
-  #   _meta,
-  #   fn multi ->
-  #     update_surface_type(multi, surface_type_uuid, name: name)
-  #   end
-  # )
+  project(
+    %SurfaceTypeRenamed{surface_type_uuid: surface_type_uuid, name: name},
+    _meta,
+    fn multi ->
+      update_surface_type(multi, surface_type_uuid, name: name)
+    end
+  )
 
-  # def after_update(
-  #       %SurfaceTypeRenamed{surface_type_uuid: surface_type_uuid, name: name},
-  #       _metadata,
-  #       _changes
-  #     ) do
-  #   Phoenix.PubSub.broadcast(
-  #     Club.EventBus,
-  #     "domain:surface_types",
-  #     {:surface_type_renamed, %{surface_type_uuid: surface_type_uuid, name: name}}
-  #   )
+  def after_update(
+        %SurfaceTypeRenamed{surface_type_uuid: surface_type_uuid, name: name},
+        _metadata,
+        _changes
+      ) do
+    Phoenix.PubSub.broadcast(
+      Club.EventBus,
+      "domain:surface_types",
+      {:surface_type_renamed, %{surface_type_uuid: surface_type_uuid, name: name}}
+    )
 
-  #   :ok
-  # end
+    :ok
+  end
 
-  # defp update_surface_type(multi, surface_type_uuid, changes) do
-  #   Ecto.Multi.update_all(multi, :surface_type, surface_type_query(surface_type_uuid),
-  #     set: changes
-  #   )
-  # end
+  defp update_surface_type(multi, surface_type_uuid, changes) do
+    Ecto.Multi.update_all(multi, :surface_type, surface_type_query(surface_type_uuid),
+      set: changes
+    )
+  end
 
-  # defp surface_type_query(surface_type_uuid) do
-  #   from b in SurfaceType, where: b.surface_type_uuid == ^surface_type_uuid
-  # end
+  defp surface_type_query(surface_type_uuid) do
+    from b in SurfaceType, where: b.surface_type_uuid == ^surface_type_uuid
+  end
 end
