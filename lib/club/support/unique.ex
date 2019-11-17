@@ -14,11 +14,23 @@ defmodule Club.Support.Unique do
   """
   alias Club.Support.Config
 
+  @doc """
+  Returns an adapter child_spec to inject into a supervisor tree
+  """
   @callback child_spec() :: Supervisor.child_spec()
+
+  @doc """
+  Claims a {id, value, owner} or report that this combination has already been claimed.
+
+  If a {id, new_value, owner} has to be claimed and old value exists it
+   releases first.
+  """
   @callback claim(id :: term, value :: term, owner :: term) ::
               :ok | {:error, :already_exists} | {:error, :unknown_error}
   @callback release(id :: term, value :: term, owner :: term) ::
               :ok | {:error, :claimed_by_another_owner} | {:error, :unknown_error}
+  @callback release(id :: term, owner :: term) ::
+              :ok | {:error, :unknown_error}
 
   @spec child_spec :: Supervisor.child_spec() | nil
   def child_spec do
