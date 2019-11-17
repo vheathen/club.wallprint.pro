@@ -8,7 +8,9 @@ defmodule Club.SurfaceTypes.Projectors.SurfaceType do
 
   alias Club.SurfaceTypes.Events.{
     SurfaceTypeAdded,
-    SurfaceTypeRenamed
+    SurfaceTypeRenamed,
+    SurfaceTypeSupportToProductAdded,
+    SurfaceTypeSupportFromProductWithdrawn
   }
 
   project(%SurfaceTypeAdded{} = surface_type_added, _meta, fn multi ->
@@ -41,7 +43,7 @@ defmodule Club.SurfaceTypes.Projectors.SurfaceType do
     %SurfaceTypeRenamed{surface_type_uuid: surface_type_uuid, name: name},
     _meta,
     fn multi ->
-      update_surface_type(multi, surface_type_uuid, name: name)
+      update_surface_type(multi, surface_type_uuid, set: [name: name])
     end
   )
 
@@ -59,10 +61,52 @@ defmodule Club.SurfaceTypes.Projectors.SurfaceType do
     :ok
   end
 
-  defp update_surface_type(multi, surface_type_uuid, changes) do
-    Ecto.Multi.update_all(multi, :surface_type, surface_type_query(surface_type_uuid),
-      set: changes
+  project(
+    %SurfaceTypeSupportToProductAdded{surface_type_uuid: surface_type_uuid},
+    _meta,
+    fn multi ->
+      update_surface_type(multi, surface_type_uuid, inc: [product_count: 1])
+    end
+  )
+
+  def after_update(
+        %SurfaceTypeSupportToProductAdded{surface_type_uuid: surface_type_uuid},
+        _metadata,
+        _changes
+      ) do
+    Phoenix.PubSub.broadcast(
+      Club.EventBus,
+      "domain:surface_types",
+      {:support_added, %{surface_type_uuid: surface_type_uuid}}
     )
+
+    :ok
+  end
+
+  project(
+    %SurfaceTypeSupportFromProductWithdrawn{surface_type_uuid: surface_type_uuid},
+    _meta,
+    fn multi ->
+      update_surface_type(multi, surface_type_uuid, inc: [product_count: -1])
+    end
+  )
+
+  def after_update(
+        %SurfaceTypeSupportFromProductWithdrawn{surface_type_uuid: surface_type_uuid},
+        _metadata,
+        _changes
+      ) do
+    Phoenix.PubSub.broadcast(
+      Club.EventBus,
+      "domain:surface_types",
+      {:support_withdrawn, %{surface_type_uuid: surface_type_uuid}}
+    )
+
+    :ok
+  end
+
+  defp update_surface_type(multi, surface_type_uuid, changes) do
+    Ecto.Multi.update_all(multi, :surface_type, surface_type_query(surface_type_uuid), changes)
   end
 
   defp surface_type_query(surface_type_uuid) do

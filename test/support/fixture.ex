@@ -3,6 +3,7 @@ defmodule Club.Fixture do
   import Club.Factory
 
   use Club.Fixtures.Brands
+  use Club.Fixtures.SurfaceTypes
 
   def meta(attrs \\ []) do
     build(:metadata, attrs)

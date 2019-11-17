@@ -5,7 +5,9 @@ defmodule Club.SurfaceTypes.Router do
 
   alias Club.SurfaceTypes.Commands.{
     AddSurfaceType,
-    RenameSurfaceType
+    RenameSurfaceType,
+    AddSurfaceTypeSupportToProduct,
+    WithdrawSurfaceTypeSupportFromProduct
   }
 
   identify(SurfaceType, by: :surface_type_uuid, prefix: "surface_type-")
@@ -13,7 +15,9 @@ defmodule Club.SurfaceTypes.Router do
   dispatch(
     [
       AddSurfaceType,
-      RenameSurfaceType
+      RenameSurfaceType,
+      AddSurfaceTypeSupportToProduct,
+      WithdrawSurfaceTypeSupportFromProduct
     ],
     to: SurfaceType
   )
