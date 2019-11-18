@@ -10,6 +10,8 @@ defmodule Club.Support.Middleware.UniquenessTest do
   @uniqueness_key Club.Support.Unique
   @cachex_adapter Module.concat(@uniqueness_key, Cachex)
 
+  @by_value_key :bv
+
   setup_all do
     case Cachex.get(@cachex_adapter, :anything) do
       {:error, :no_cache} ->
@@ -120,8 +122,8 @@ defmodule Club.Support.Middleware.UniquenessTest do
       refute p.halted
       refute p.response
 
-      assert Cachex.get!(@cachex_adapter, {:name, "NewName"}) == 1
-      assert Cachex.get!(@cachex_adapter, {:email, "one@example.com"}) == 1
+      assert Cachex.get!(@cachex_adapter, {@by_value_key, :name, "NewName"}) == 1
+      assert Cachex.get!(@cachex_adapter, {@by_value_key, :email, "one@example.com"}) == 1
 
       #
       cmd = %TestCommandExternalCheck{
@@ -137,8 +139,8 @@ defmodule Club.Support.Middleware.UniquenessTest do
       assert p.response ==
                {:error, :validation_failure, [{:name, "has already been taken"}]}
 
-      assert Cachex.get!(@cachex_adapter, {:name, "ExternallyTakenName"}) == 2
-      assert Cachex.get!(@cachex_adapter, {:email, "two@example.com"}) == nil
+      assert Cachex.get!(@cachex_adapter, {@by_value_key, :name, "ExternallyTakenName"}) == 2
+      assert Cachex.get!(@cachex_adapter, {@by_value_key, :email, "two@example.com"}) == nil
     end
   end
 
