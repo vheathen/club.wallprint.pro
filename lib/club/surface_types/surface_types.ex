@@ -9,7 +9,8 @@ defmodule Club.SurfaceTypes do
 
   alias Club.SurfaceTypes.Commands.{
     AddSurfaceType,
-    RenameSurfaceType
+    RenameSurfaceType,
+    DeleteSurfaceType
   }
 
   alias Club.SurfaceTypes.Queries.NameExists
@@ -42,6 +43,16 @@ defmodule Club.SurfaceTypes do
       when (is_map(rename_surface_type) or is_list(rename_surface_type)) and
              (is_map(metadata) or is_list(metadata)) do
     cmd = RenameSurfaceType.new(rename_surface_type)
+
+    Commanded.validate_and_dispatch(cmd, metadata: metadata)
+  end
+
+  @spec delete_surface_type(delete_surface_type :: map(), metadata :: maybe_improper_list | map) ::
+          :ok | {:error, any}
+  def delete_surface_type(delete_surface_type, metadata)
+      when (is_map(delete_surface_type) or is_list(delete_surface_type)) and
+             (is_map(metadata) or is_list(metadata)) do
+    cmd = DeleteSurfaceType.new(delete_surface_type)
 
     Commanded.validate_and_dispatch(cmd, metadata: metadata)
   end

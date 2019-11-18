@@ -7,7 +7,8 @@ defmodule Club.SurfaceTypes.Router do
     AddSurfaceType,
     RenameSurfaceType,
     AddSurfaceTypeSupportToProduct,
-    WithdrawSurfaceTypeSupportFromProduct
+    WithdrawSurfaceTypeSupportFromProduct,
+    DeleteSurfaceType
   }
 
   identify(SurfaceType, by: :surface_type_uuid, prefix: "surface_type-")
@@ -17,7 +18,8 @@ defmodule Club.SurfaceTypes.Router do
       AddSurfaceType,
       RenameSurfaceType,
       AddSurfaceTypeSupportToProduct,
-      WithdrawSurfaceTypeSupportFromProduct
+      WithdrawSurfaceTypeSupportFromProduct,
+      DeleteSurfaceType
     ],
     to: SurfaceType
   )

@@ -4,12 +4,14 @@ defmodule Club.SurfaceTypes.Aggregates.SurfaceType do
   defstruct uuid: nil,
             name: nil,
             product_count: 0,
-            products: []
+            products: [],
+            deleted?: false
 
   alias Club.SurfaceTypes.Aggregates.SurfaceType
 
   alias Club.SurfaceTypes.Commands.{
     AddSurfaceType,
+    DeleteSurfaceType,
     RenameSurfaceType,
     AddSurfaceTypeSupportToProduct,
     WithdrawSurfaceTypeSupportFromProduct
@@ -17,6 +19,7 @@ defmodule Club.SurfaceTypes.Aggregates.SurfaceType do
 
   alias Club.SurfaceTypes.Events.{
     SurfaceTypeAdded,
+    SurfaceTypeDeleted,
     SurfaceTypeRenamed,
     SurfaceTypeSupportToProductAdded,
     SurfaceTypeSupportFromProductWithdrawn
@@ -27,19 +30,28 @@ defmodule Club.SurfaceTypes.Aggregates.SurfaceType do
 
   def execute(%SurfaceType{}, %AddSurfaceType{}), do: {:error, :surface_type_already_exists}
 
-  # RenameSurfaceType
-  def execute(%SurfaceType{uuid: nil}, %RenameSurfaceType{}),
+  # if SurfaceType doesn't exists we should return error for all but AddSurfaceType commands
+  def execute(%SurfaceType{uuid: nil}, _),
     do: {:error, :surface_type_doesnt_exist}
 
+  # DeleteSurfaceType
+  def execute(%SurfaceType{deleted?: true}, %DeleteSurfaceType{}), do: nil
+
+  def execute(%SurfaceType{product_count: count}, %DeleteSurfaceType{}) when count > 0,
+    do: {:error, :surface_type_is_linked_to_products}
+
+  def execute(%SurfaceType{}, %DeleteSurfaceType{} = cmd), do: SurfaceTypeDeleted.new(cmd)
+
+  # if SurfaceType deleted we should return error for all but DeleteSurfaceType commands
+  def execute(%SurfaceType{deleted?: true}, _), do: {:error, :surface_type_has_been_deleted}
+
+  # RenameSurfaceType
   def execute(%SurfaceType{name: name}, %RenameSurfaceType{name: name}), do: nil
 
   def execute(%SurfaceType{uuid: uuid}, %RenameSurfaceType{surface_type_uuid: uuid} = cmd),
     do: SurfaceTypeRenamed.new(cmd)
 
   # AddSurfaceTypeSupportToProduct
-  def execute(%SurfaceType{uuid: nil}, %AddSurfaceTypeSupportToProduct{}),
-    do: {:error, :surface_type_doesnt_exist}
-
   def execute(
         %SurfaceType{products: products},
         %AddSurfaceTypeSupportToProduct{product_uuid: product_uuid} = cmd
@@ -51,9 +63,6 @@ defmodule Club.SurfaceTypes.Aggregates.SurfaceType do
   end
 
   # WithdrawSurfaceTypeSupportFromProduct
-  def execute(%SurfaceType{uuid: nil}, %WithdrawSurfaceTypeSupportFromProduct{}),
-    do: {:error, :surface_type_doesnt_exist}
-
   def execute(
         %SurfaceType{products: products},
         %WithdrawSurfaceTypeSupportFromProduct{product_uuid: product_uuid} = cmd
@@ -105,6 +114,16 @@ defmodule Club.SurfaceTypes.Aggregates.SurfaceType do
       surface_type
       | product_count: product_count - 1,
         products: products -- [product_uuid]
+    }
+  end
+
+  def apply(
+        %SurfaceType{} = surface_type,
+        %SurfaceTypeDeleted{}
+      ) do
+    %SurfaceType{
+      surface_type
+      | deleted?: true
     }
   end
 end

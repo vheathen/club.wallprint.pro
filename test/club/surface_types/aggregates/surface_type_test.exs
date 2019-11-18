@@ -9,6 +9,7 @@ defmodule Club.SurfaceTypes.Aggregates.SurfaceTypeTest do
 
   alias Club.SurfaceTypes.Events.{
     SurfaceTypeAdded,
+    SurfaceTypeDeleted,
     SurfaceTypeRenamed,
     SurfaceTypeSupportToProductAdded,
     SurfaceTypeSupportFromProductWithdrawn
@@ -233,6 +234,92 @@ defmodule Club.SurfaceTypes.Aggregates.SurfaceTypeTest do
     } do
       withdraw_support = withdraw_surface_type_support_cmd(surface_type_uuid: surface_type_uuid)
       assert_events(start_events, withdraw_support, [])
+    end
+  end
+
+  describe "DeleteSurfaceType command" do
+    @describetag :unit
+
+    setup %{add_surface_type: add_surface_type, surface_type: surface_type} do
+      surface_type_added = SurfaceTypeAdded.new(add_surface_type)
+
+      add_surface_type_support1 =
+        add_surface_type_support_cmd(surface_type_uuid: add_surface_type.surface_type_uuid)
+
+      surface_type_support1_added =
+        SurfaceTypeSupportToProductAdded.new(add_surface_type_support1)
+
+      withdraw_surface_type_support1 =
+        withdraw_surface_type_support_cmd(
+          surface_type_uuid: add_surface_type.surface_type_uuid,
+          product_uuid: add_surface_type_support1.product_uuid
+        )
+
+      surface_type_support1_withdrawn =
+        SurfaceTypeSupportFromProductWithdrawn.new(withdraw_surface_type_support1)
+
+      start_state = %{
+        surface_type
+        | product_count: 1,
+          products: [add_surface_type_support1.product_uuid]
+      }
+
+      delete_surface_type = delete_surface_type_cmd(surface_type_uuid: start_state.uuid)
+      surface_type_deleted = SurfaceTypeDeleted.new(delete_surface_type)
+
+      [
+        start_events: [surface_type_added, surface_type_support1_added],
+        start_state: start_state,
+        surface_type_support_withdrawn: surface_type_support1_withdrawn,
+        delete_surface_type: delete_surface_type,
+        surface_type_deleted: surface_type_deleted
+      ]
+    end
+
+    test "should return SurfaceTypeDeleted event for the existing surface_type and product_count = 0",
+         %{
+           start_events: start_events,
+           start_state: start_state,
+           surface_type_support_withdrawn: surface_type_support1_withdrawn,
+           delete_surface_type: delete_surface_type,
+           surface_type_deleted: surface_type_deleted
+         } do
+      assert_events(start_events ++ [surface_type_support1_withdrawn], delete_surface_type, [
+        surface_type_deleted
+      ])
+
+      assert_state(start_events ++ [surface_type_support1_withdrawn], delete_surface_type, %{
+        start_state
+        | product_count: 0,
+          products: [],
+          deleted?: true
+      })
+    end
+
+    test "should return {:error, :surface_type_doesnt_exist} if no such surface_type exists" do
+      delete_surface_type = delete_surface_type_cmd()
+      assert_error(delete_surface_type, {:error, :surface_type_doesnt_exist})
+    end
+
+    test "should return {:error, :surface_type_is_linked_to_products} if surface_type has linked products",
+         %{
+           start_events: start_events,
+           delete_surface_type: delete_surface_type
+         } do
+      assert_error(start_events, delete_surface_type, {:error, :surface_type_is_linked_to_products})
+    end
+
+    test "should not return any events if surface_type already deleted", %{
+      start_events: start_events,
+      surface_type_support_withdrawn: surface_type_support1_withdrawn,
+      delete_surface_type: delete_surface_type,
+      surface_type_deleted: surface_type_deleted
+    } do
+      assert_events(
+        start_events ++ [surface_type_support1_withdrawn, surface_type_deleted],
+        delete_surface_type,
+        []
+      )
     end
   end
 end

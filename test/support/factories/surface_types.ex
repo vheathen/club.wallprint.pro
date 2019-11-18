@@ -37,6 +37,12 @@ defmodule Club.Factories.SurfaceTypes do
           product_uuid: UUID.uuid4()
         }
       end
+
+      def delete_surface_type_factory do
+        %{
+          surface_type_uuid: UUID.uuid4()
+        }
+      end
     end
   end
 end

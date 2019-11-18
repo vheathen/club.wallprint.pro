@@ -8,10 +8,13 @@ defmodule Club.SurfaceTypes.Projectors.SurfaceType do
 
   alias Club.SurfaceTypes.Events.{
     SurfaceTypeAdded,
+    SurfaceTypeDeleted,
     SurfaceTypeRenamed,
     SurfaceTypeSupportToProductAdded,
     SurfaceTypeSupportFromProductWithdrawn
   }
+
+  @topic "domain:surface_types"
 
   project(%SurfaceTypeAdded{} = surface_type_added, _meta, fn multi ->
     Ecto.Multi.insert(
@@ -32,8 +35,26 @@ defmodule Club.SurfaceTypes.Projectors.SurfaceType do
       ) do
     Phoenix.PubSub.broadcast(
       Club.EventBus,
-      "domain:surface_types",
+      @topic,
       {:surface_type_added, %{surface_type_uuid: surface_type_uuid, name: name}}
+    )
+
+    :ok
+  end
+
+  project(%SurfaceTypeDeleted{surface_type_uuid: surface_type_uuid}, _meta, fn multi ->
+    Ecto.Multi.delete_all(
+      multi,
+      :surface_type,
+      surface_type_query(surface_type_uuid)
+    )
+  end)
+
+  def after_update(%SurfaceTypeDeleted{surface_type_uuid: surface_type_uuid}, _metadata, _changes) do
+    Phoenix.PubSub.broadcast(
+      Club.EventBus,
+      @topic,
+      {:surface_type_deleted, %{surface_type_uuid: surface_type_uuid}}
     )
 
     :ok
@@ -54,7 +75,7 @@ defmodule Club.SurfaceTypes.Projectors.SurfaceType do
       ) do
     Phoenix.PubSub.broadcast(
       Club.EventBus,
-      "domain:surface_types",
+      @topic,
       {:surface_type_renamed, %{surface_type_uuid: surface_type_uuid, name: name}}
     )
 
@@ -76,7 +97,7 @@ defmodule Club.SurfaceTypes.Projectors.SurfaceType do
       ) do
     Phoenix.PubSub.broadcast(
       Club.EventBus,
-      "domain:surface_types",
+      @topic,
       {:support_added, %{surface_type_uuid: surface_type_uuid}}
     )
 
@@ -98,7 +119,7 @@ defmodule Club.SurfaceTypes.Projectors.SurfaceType do
       ) do
     Phoenix.PubSub.broadcast(
       Club.EventBus,
-      "domain:surface_types",
+      @topic,
       {:support_withdrawn, %{surface_type_uuid: surface_type_uuid}}
     )
 

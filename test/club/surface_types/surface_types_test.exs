@@ -10,7 +10,8 @@ defmodule Club.SurfaceTypesTest do
 
   alias Club.SurfaceTypes.Events.{
     SurfaceTypeAdded,
-    SurfaceTypeRenamed
+    SurfaceTypeRenamed,
+    SurfaceTypeDeleted
   }
 
   describe "add_surface_type/2" do
@@ -120,6 +121,23 @@ defmodule Club.SurfaceTypesTest do
                SurfaceTypes.rename_surface_type(rename_surface_type, meta())
     end
 
+    test "should fail and return error surface type with this id has been deleted" do
+      add_surface_type = build(:new_surface_type)
+      {:ok, surface_type_uuid} = SurfaceTypes.add_surface_type(add_surface_type, meta())
+
+      wait_for_event(Commanded, SurfaceTypeAdded)
+
+      delete_surface_type = build(:delete_surface_type, surface_type_uuid: surface_type_uuid)
+      :ok = SurfaceTypes.delete_surface_type(delete_surface_type, meta())
+
+      wait_for_event(Commanded, SurfaceTypeDeleted)
+
+      rename_surface_type = build(:rename_surface_type, surface_type_uuid: surface_type_uuid)
+
+      assert {:error, :surface_type_has_been_deleted} ==
+               SurfaceTypes.rename_surface_type(rename_surface_type, meta())
+    end
+
     test "should fail and return error if no user_uuid and user_name in metadata" do
       rename_surface_type = build(:rename_surface_type)
       meta = %{}
@@ -171,6 +189,68 @@ defmodule Club.SurfaceTypesTest do
         true -> name
         false -> unique_name(old_name)
       end
+    end
+  end
+
+  describe "delete_surface_type/2" do
+    @describetag :integration
+
+    test "should succeed and return :ok if parameters are correct" do
+      add_surface_type = :new_surface_type |> build()
+      {:ok, surface_type_uuid} = SurfaceTypes.add_surface_type(add_surface_type, meta())
+
+      wait_for_event(Commanded, SurfaceTypeAdded)
+
+      delete_surface_type = build(:delete_surface_type, surface_type_uuid: surface_type_uuid)
+      :ok = SurfaceTypes.delete_surface_type(delete_surface_type, meta())
+
+      assert_receive_event(Commanded, SurfaceTypeDeleted, fn event ->
+        assert surface_type_uuid == event.surface_type_uuid
+      end)
+
+      assert Aggregate.aggregate_state(
+               Commanded,
+               SurfaceType,
+               "surface_type-" <> surface_type_uuid
+             ) ==
+               %SurfaceType{
+                 uuid: surface_type_uuid,
+                 name: add_surface_type.name,
+                 deleted?: true
+               }
+    end
+
+    test "should fail and return error if parameters are incorrect" do
+      delete_surface_type =
+        :delete_surface_type
+        |> build()
+        |> Map.delete(:surface_type_uuid)
+
+      assert {:error, {:validation_failure, %{surface_type_uuid: ["can't be blank"]}}} ==
+               SurfaceTypes.delete_surface_type(delete_surface_type, meta())
+    end
+
+    test "should fail and return error if no surface_type with this id exists" do
+      add_surface_type = build(:new_surface_type)
+      {:ok, _surface_type_uuid} = SurfaceTypes.add_surface_type(add_surface_type, meta())
+
+      wait_for_event(Commanded, SurfaceTypeAdded)
+
+      delete_surface_type = build(:delete_surface_type)
+
+      assert {:error, :surface_type_doesnt_exist} ==
+               SurfaceTypes.delete_surface_type(delete_surface_type, meta())
+    end
+
+    test "should fail and return error if no user_uuid and user_name in metadata" do
+      delete_surface_type = build(:delete_surface_type)
+      meta = %{}
+
+      assert {:error, :validation_failure,
+              [
+                {:user_name, "must be provided"},
+                {:user_uuid, "must be provided"}
+              ]} == SurfaceTypes.delete_surface_type(delete_surface_type, meta)
     end
   end
 end

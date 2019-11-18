@@ -134,5 +134,20 @@ defmodule Club.SurfaceTypes.Projectors.SurfaceTypeTest do
       assert surface_type.name == surface_type_projection.name
       assert 1 == surface_type_projection.product_count
     end
+
+    test "SurfaceTypeDeleted event shoud delete an old surface_type record", %{
+      surface_type: %{surface_type_uuid: surface_type_uuid}
+    } do
+      assert_receive {:surface_type_added, %{surface_type_uuid: ^surface_type_uuid}}, 1_000
+
+      assert [_] = Repo.all(SurfaceTypeProjection)
+
+      delete_surface_type = delete_surface_type_cmd(surface_type_uuid: surface_type_uuid)
+      :ok = Club.Commanded.dispatch(delete_surface_type, metadata: meta())
+
+      assert_receive {:surface_type_deleted, %{surface_type_uuid: ^surface_type_uuid}}, 1_000
+
+      assert [] = Repo.all(SurfaceTypeProjection)
+    end
   end
 end

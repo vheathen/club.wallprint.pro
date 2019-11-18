@@ -156,7 +156,7 @@ defmodule Club.Brands.Projectors.BrandTest do
     } do
       assert_receive {:brand_added, %{brand_uuid: ^brand_uuid}}, 1_000
 
-      assert [brand_projection] = Repo.all(BrandProjection)
+      assert [_] = Repo.all(BrandProjection)
 
       delete_brand = delete_brand_cmd(brand_uuid: brand_uuid)
       :ok = Club.Commanded.dispatch(delete_brand, metadata: meta())

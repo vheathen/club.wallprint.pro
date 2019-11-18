@@ -8,7 +8,8 @@ defmodule Club.SurfaceTypes.Supervisor do
   def init(_arg) do
     Supervisor.init(
       [
-        Club.SurfaceTypes.Projectors.SurfaceType
+        Club.SurfaceTypes.Projectors.SurfaceType,
+        Club.SurfaceTypes.Projectors.UniquenessCache
       ],
       strategy: :one_for_one
     )
