@@ -10,7 +10,8 @@ defmodule Club.Brands do
   alias Club.Brands.Commands.{
     AddBrand,
     RenameBrand,
-    UpdateBrandUrl
+    UpdateBrandUrl,
+    DeleteBrand
   }
 
   alias Club.Brands.Queries.NameExists
@@ -52,6 +53,16 @@ defmodule Club.Brands do
       when (is_map(update_url) or is_list(update_url)) and
              (is_map(metadata) or is_list(metadata)) do
     cmd = UpdateBrandUrl.new(update_url)
+
+    Commanded.validate_and_dispatch(cmd, metadata: metadata)
+  end
+
+  @spec delete_brand(delete_brand :: map(), metadata :: maybe_improper_list | map) ::
+          :ok | {:error, any}
+  def delete_brand(delete_brand, metadata)
+      when (is_map(delete_brand) or is_list(delete_brand)) and
+             (is_map(metadata) or is_list(metadata)) do
+    cmd = DeleteBrand.new(delete_brand)
 
     Commanded.validate_and_dispatch(cmd, metadata: metadata)
   end

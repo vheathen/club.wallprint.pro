@@ -13,7 +13,8 @@ defmodule Club.Brands.Aggregates.BrandTest do
     BrandRenamed,
     BrandUrlUpdated,
     NewProductWithBrandLinked,
-    ProductFromBrandUnlinked
+    ProductFromBrandUnlinked,
+    BrandDeleted
   }
 
   setup do
@@ -247,6 +248,81 @@ defmodule Club.Brands.Aggregates.BrandTest do
     } do
       unlink_product = unlink_product_cmd(brand_uuid: brand_uuid)
       assert_events(start_events, unlink_product, [])
+    end
+  end
+
+  describe "DeleteBrand command" do
+    @describetag :unit
+
+    setup %{add_brand: add_brand, brand: brand} do
+      brand_added = BrandAdded.new(add_brand)
+
+      link_product1 = link_product_cmd(brand_uuid: add_brand.brand_uuid)
+      product1_linked = NewProductWithBrandLinked.new(link_product1)
+
+      unlink_product1 =
+        unlink_product_cmd(
+          brand_uuid: add_brand.brand_uuid,
+          product_uuid: link_product1.product_uuid
+        )
+
+      product1_unlinked = ProductFromBrandUnlinked.new(unlink_product1)
+
+      start_state = %{
+        brand
+        | product_count: 1,
+          products: [link_product1.product_uuid]
+      }
+
+      delete_brand = delete_brand_cmd(brand_uuid: start_state.uuid)
+      brand_deleted = BrandDeleted.new(delete_brand)
+
+      [
+        start_events: [brand_added, product1_linked],
+        start_state: start_state,
+        product_unlinked: product1_unlinked,
+        delete_brand: delete_brand,
+        brand_deleted: brand_deleted
+      ]
+    end
+
+    test "should return BrandDeleted event for the existing brand and product_count = 0",
+         %{
+           start_events: start_events,
+           start_state: start_state,
+           product_unlinked: product1_unlinked,
+           delete_brand: delete_brand,
+           brand_deleted: brand_deleted
+         } do
+      assert_events(start_events ++ [product1_unlinked], delete_brand, [brand_deleted])
+
+      assert_state(start_events ++ [product1_unlinked], delete_brand, %{
+        start_state
+        | product_count: 0,
+          products: [],
+          deleted?: true
+      })
+    end
+
+    test "should return {:error, :brand_doesnt_exist} if no such brand exists" do
+      delete_brand = delete_brand_cmd()
+      assert_error(delete_brand, {:error, :brand_doesnt_exist})
+    end
+
+    test "should return {:error, :brand_has_linked_products} if brand has linked products", %{
+      start_events: start_events,
+      delete_brand: delete_brand
+    } do
+      assert_error(start_events, delete_brand, {:error, :brand_has_linked_products})
+    end
+
+    test "should not return any events if brand already deleted", %{
+      start_events: start_events,
+      product_unlinked: product1_unlinked,
+      delete_brand: delete_brand,
+      brand_deleted: brand_deleted
+    } do
+      assert_events(start_events ++ [product1_unlinked, brand_deleted], delete_brand, [])
     end
   end
 end

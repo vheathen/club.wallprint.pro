@@ -5,7 +5,8 @@ defmodule Club.Brands.Aggregates.Brand do
             name: nil,
             url: "",
             product_count: 0,
-            products: []
+            products: [],
+            deleted?: false
 
   alias Club.Brands.Aggregates.Brand
 
@@ -14,7 +15,8 @@ defmodule Club.Brands.Aggregates.Brand do
     RenameBrand,
     UpdateBrandUrl,
     LinkNewProductWithBrand,
-    UnlinkProductFromBrand
+    UnlinkProductFromBrand,
+    DeleteBrand
   }
 
   alias Club.Brands.Events.{
@@ -22,7 +24,8 @@ defmodule Club.Brands.Aggregates.Brand do
     BrandRenamed,
     BrandUrlUpdated,
     NewProductWithBrandLinked,
-    ProductFromBrandUnlinked
+    ProductFromBrandUnlinked,
+    BrandDeleted
   }
 
   # AddBrand
@@ -30,24 +33,32 @@ defmodule Club.Brands.Aggregates.Brand do
 
   def execute(%Brand{}, %AddBrand{}), do: {:error, :brand_already_exists}
 
-  # RenameBrand
-  def execute(%Brand{uuid: nil}, %RenameBrand{}), do: {:error, :brand_doesnt_exist}
+  # if Brand doesn't exists we should return error for all but AddBrand commands
+  def execute(%Brand{uuid: nil}, _), do: {:error, :brand_doesnt_exist}
 
+  # DeleteBrand
+  def execute(%Brand{deleted?: true}, %DeleteBrand{}), do: nil
+
+  def execute(%Brand{product_count: count}, %DeleteBrand{}) when count > 0,
+    do: {:error, :brand_has_linked_products}
+
+  def execute(%Brand{}, %DeleteBrand{} = cmd), do: BrandDeleted.new(cmd)
+
+  # if Brand deleted we should return error for all but DeleteBrand commands
+  def execute(%Brand{deleted?: true}, _), do: {:error, :brand_has_been_deleted}
+
+  # RenameBrand
   def execute(%Brand{name: name}, %RenameBrand{name: name}), do: nil
 
   def execute(%Brand{uuid: uuid}, %RenameBrand{brand_uuid: uuid} = cmd), do: BrandRenamed.new(cmd)
 
   # UpdateBrandUrl
-  def execute(%Brand{uuid: nil}, %UpdateBrandUrl{}), do: {:error, :brand_doesnt_exist}
-
   def execute(%Brand{url: url}, %UpdateBrandUrl{url: url}), do: nil
 
   def execute(%Brand{uuid: uuid}, %UpdateBrandUrl{brand_uuid: uuid} = cmd),
     do: BrandUrlUpdated.new(cmd)
 
   # LinkNewProductWithBrand
-  def execute(%Brand{uuid: nil}, %LinkNewProductWithBrand{}), do: {:error, :brand_doesnt_exist}
-
   def execute(
         %Brand{products: products},
         %LinkNewProductWithBrand{product_uuid: product_uuid} = cmd
@@ -59,8 +70,6 @@ defmodule Club.Brands.Aggregates.Brand do
   end
 
   # UnlinkProductFromBrand
-  def execute(%Brand{uuid: nil}, %UnlinkProductFromBrand{}), do: {:error, :brand_doesnt_exist}
-
   def execute(
         %Brand{products: products},
         %UnlinkProductFromBrand{product_uuid: product_uuid} = cmd
@@ -119,6 +128,16 @@ defmodule Club.Brands.Aggregates.Brand do
       brand
       | product_count: product_count - 1,
         products: products -- [product_uuid]
+    }
+  end
+
+  def apply(
+        %Brand{} = brand,
+        %BrandDeleted{}
+      ) do
+    %Brand{
+      brand
+      | deleted?: true
     }
   end
 end

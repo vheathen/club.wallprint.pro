@@ -9,11 +9,14 @@ defmodule Club.Brands.Projectors.Brand do
 
   alias Club.Brands.Events.{
     BrandAdded,
+    BrandDeleted,
     BrandRenamed,
     BrandUrlUpdated,
     NewProductWithBrandLinked,
     ProductFromBrandUnlinked
   }
+
+  @topic "domain:brands"
 
   project(%BrandAdded{} = brand_added, _meta, fn multi ->
     Ecto.Multi.insert(
@@ -31,8 +34,26 @@ defmodule Club.Brands.Projectors.Brand do
   def after_update(%BrandAdded{brand_uuid: brand_uuid}, _metadata, _changes) do
     Phoenix.PubSub.broadcast(
       Club.EventBus,
-      "domain:brands",
+      @topic,
       {:brand_added, %{brand_uuid: brand_uuid}}
+    )
+
+    :ok
+  end
+
+  project(%BrandDeleted{brand_uuid: brand_uuid}, _meta, fn multi ->
+    Ecto.Multi.delete_all(
+      multi,
+      :brand,
+      brand_query(brand_uuid)
+    )
+  end)
+
+  def after_update(%BrandDeleted{brand_uuid: brand_uuid}, _metadata, _changes) do
+    Phoenix.PubSub.broadcast(
+      Club.EventBus,
+      @topic,
+      {:brand_deleted, %{brand_uuid: brand_uuid}}
     )
 
     :ok
@@ -53,7 +74,7 @@ defmodule Club.Brands.Projectors.Brand do
       ) do
     Phoenix.PubSub.broadcast(
       Club.EventBus,
-      "domain:brands",
+      @topic,
       {:brand_renamed, %{brand_uuid: brand_uuid, name: name}}
     )
 
@@ -75,7 +96,7 @@ defmodule Club.Brands.Projectors.Brand do
       ) do
     Phoenix.PubSub.broadcast(
       Club.EventBus,
-      "domain:brands",
+      @topic,
       {:url_updated, %{brand_uuid: brand_uuid, url: url}}
     )
 
@@ -97,7 +118,7 @@ defmodule Club.Brands.Projectors.Brand do
       ) do
     Phoenix.PubSub.broadcast(
       Club.EventBus,
-      "domain:brands",
+      @topic,
       {:product_linked, %{brand_uuid: brand_uuid}}
     )
 
@@ -119,7 +140,7 @@ defmodule Club.Brands.Projectors.Brand do
       ) do
     Phoenix.PubSub.broadcast(
       Club.EventBus,
-      "domain:brands",
+      @topic,
       {:product_unlinked, %{brand_uuid: brand_uuid}}
     )
 

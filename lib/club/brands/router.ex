@@ -8,7 +8,8 @@ defmodule Club.Brands.Router do
     RenameBrand,
     UpdateBrandUrl,
     LinkNewProductWithBrand,
-    UnlinkProductFromBrand
+    UnlinkProductFromBrand,
+    DeleteBrand
   }
 
   identify(Brand, by: :brand_uuid, prefix: "brand-")
@@ -19,7 +20,8 @@ defmodule Club.Brands.Router do
       RenameBrand,
       UpdateBrandUrl,
       LinkNewProductWithBrand,
-      UnlinkProductFromBrand
+      UnlinkProductFromBrand,
+      DeleteBrand
     ],
     to: Brand
   )

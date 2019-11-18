@@ -4,7 +4,8 @@ defmodule Club.Fixtures.Brands do
     # RenameBrand,
     # UpdateBrandUrl,
     LinkNewProductWithBrand,
-    UnlinkProductFromBrand
+    UnlinkProductFromBrand,
+    DeleteBrand
   }
 
   # alias Club.Brands.Events.{
@@ -28,6 +29,13 @@ defmodule Club.Fixtures.Brands do
         :unlink_product_from_brand
         |> build(attrs)
         |> UnlinkProductFromBrand.new()
+        |> Ecto.Changeset.apply_changes()
+      end
+
+      def delete_brand_cmd(attrs \\ []) do
+        :delete_brand
+        |> build(attrs)
+        |> DeleteBrand.new()
         |> Ecto.Changeset.apply_changes()
       end
     end

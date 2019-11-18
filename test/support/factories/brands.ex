@@ -6,7 +6,8 @@ defmodule Club.Factories.Brands do
           uuid: UUID.uuid4(),
           name: Faker.Company.En.buzzword(),
           url: Faker.Internet.url(),
-          product_count: 0
+          product_count: 0,
+          products: []
         }
       end
 
@@ -44,6 +45,12 @@ defmodule Club.Factories.Brands do
         %{
           brand_uuid: UUID.uuid4(),
           product_uuid: UUID.uuid4()
+        }
+      end
+
+      def delete_brand_factory do
+        %{
+          brand_uuid: UUID.uuid4()
         }
       end
     end

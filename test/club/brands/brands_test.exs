@@ -11,7 +11,8 @@ defmodule Club.BrandsTest do
   alias Club.Brands.Events.{
     BrandAdded,
     BrandRenamed,
-    BrandUrlUpdated
+    BrandUrlUpdated,
+    BrandDeleted
   }
 
   describe "add_brand/2" do
@@ -30,8 +31,7 @@ defmodule Club.BrandsTest do
                %Brand{
                  uuid: brand_uuid,
                  name: brand.name,
-                 url: brand.url,
-                 product_count: 0
+                 url: brand.url
                }
     end
 
@@ -86,8 +86,7 @@ defmodule Club.BrandsTest do
                %Brand{
                  uuid: brand_uuid,
                  name: rename_brand.name,
-                 url: add_brand.url,
-                 product_count: 0
+                 url: add_brand.url
                }
     end
 
@@ -110,6 +109,22 @@ defmodule Club.BrandsTest do
       rename_brand = build(:rename_brand)
 
       assert {:error, :brand_doesnt_exist} == Brands.rename_brand(rename_brand, meta())
+    end
+
+    test "should fail and return error brand with this id has been deleted" do
+      add_brand = build(:new_brand)
+      {:ok, brand_uuid} = Brands.add_brand(add_brand, meta())
+
+      wait_for_event(Commanded, BrandAdded)
+
+      delete_brand = build(:delete_brand, brand_uuid: brand_uuid)
+      :ok = Brands.delete_brand(delete_brand, meta())
+
+      wait_for_event(Commanded, BrandDeleted)
+
+      rename_brand = build(:rename_brand, brand_uuid: brand_uuid)
+
+      assert {:error, :brand_has_been_deleted} == Brands.rename_brand(rename_brand, meta())
     end
 
     test "should fail and return error if no user_uuid and user_name in metadata" do
@@ -146,8 +161,7 @@ defmodule Club.BrandsTest do
                %Brand{
                  uuid: brand_uuid,
                  name: add_brand.name,
-                 url: update_url.url,
-                 product_count: 0
+                 url: update_url.url
                }
     end
 
@@ -172,6 +186,22 @@ defmodule Club.BrandsTest do
       assert {:error, :brand_doesnt_exist} == Brands.update_url(update_url, meta())
     end
 
+    test "should fail and return error brand with this id has been deleted" do
+      add_brand = build(:new_brand)
+      {:ok, brand_uuid} = Brands.add_brand(add_brand, meta())
+
+      wait_for_event(Commanded, BrandAdded)
+
+      delete_brand = build(:delete_brand, brand_uuid: brand_uuid)
+      :ok = Brands.delete_brand(delete_brand, meta())
+
+      wait_for_event(Commanded, BrandDeleted)
+
+      update_url = build(:update_url, brand_uuid: brand_uuid)
+
+      assert {:error, :brand_has_been_deleted} == Brands.update_url(update_url, meta())
+    end
+
     test "should fail and return error if no user_uuid and user_name in metadata" do
       update_url = build(:update_url)
       meta = %{}
@@ -185,7 +215,7 @@ defmodule Club.BrandsTest do
     end
   end
 
-  describe "brand_exists?/1" do
+  describe "brand_unique?/1" do
     @describetag :integration
 
     setup do
@@ -220,6 +250,64 @@ defmodule Club.BrandsTest do
         true -> name
         false -> unique_name(old_name)
       end
+    end
+  end
+
+  describe "delete_brand/2" do
+    @describetag :integration
+
+    test "should succeed and return :ok if parameters are correct" do
+      add_brand = :new_brand |> build()
+      {:ok, brand_uuid} = Brands.add_brand(add_brand, meta())
+
+      wait_for_event(Commanded, BrandAdded)
+
+      delete_brand = build(:delete_brand, brand_uuid: brand_uuid)
+      :ok = Brands.delete_brand(delete_brand, meta())
+
+      assert_receive_event(Commanded, BrandDeleted, fn event ->
+        assert brand_uuid == event.brand_uuid
+      end)
+
+      assert Aggregate.aggregate_state(Commanded, Brand, "brand-" <> brand_uuid) ==
+               %Brand{
+                 uuid: brand_uuid,
+                 name: add_brand.name,
+                 url: add_brand.url,
+                 deleted?: true
+               }
+    end
+
+    test "should fail and return error if parameters are incorrect" do
+      delete_brand =
+        :delete_brand
+        |> build()
+        |> Map.delete(:brand_uuid)
+
+      assert {:error, {:validation_failure, %{brand_uuid: ["can't be blank"]}}} ==
+               Brands.delete_brand(delete_brand, meta())
+    end
+
+    test "should fail and return error if no brand with this id exists" do
+      add_brand = build(:new_brand)
+      {:ok, _brand_uuid} = Brands.add_brand(add_brand, meta())
+
+      wait_for_event(Commanded, BrandAdded)
+
+      delete_brand = build(:delete_brand)
+
+      assert {:error, :brand_doesnt_exist} == Brands.delete_brand(delete_brand, meta())
+    end
+
+    test "should fail and return error if no user_uuid and user_name in metadata" do
+      delete_brand = build(:delete_brand)
+      meta = %{}
+
+      assert {:error, :validation_failure,
+              [
+                {:user_name, "must be provided"},
+                {:user_uuid, "must be provided"}
+              ]} == Brands.delete_brand(delete_brand, meta)
     end
   end
 end

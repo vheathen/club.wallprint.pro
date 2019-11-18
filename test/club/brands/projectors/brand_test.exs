@@ -12,7 +12,8 @@ defmodule Club.Brands.Projectors.BrandTest do
     BrandRenamed,
     BrandUrlUpdated,
     NewProductWithBrandLinked,
-    ProductFromBrandUnlinked
+    ProductFromBrandUnlinked,
+    BrandDeleted
   }
 
   @topic "domain:brands"
@@ -29,7 +30,7 @@ defmodule Club.Brands.Projectors.BrandTest do
     [brand: brand]
   end
 
-  describe "Brands.Projectors.Brand" do
+  describe "Brands.Projectors.Brand on" do
     @describetag :integration
 
     test "BrandAdded event shoud insert a new brand record", %{
@@ -148,6 +149,21 @@ defmodule Club.Brands.Projectors.BrandTest do
       assert brand.name == brand_projection.name
       assert brand.url == brand_projection.url
       assert 1 == brand_projection.product_count
+    end
+
+    test "BrandDeleted event shoud delete an old brand record", %{
+      brand: %{brand_uuid: brand_uuid}
+    } do
+      assert_receive {:brand_added, %{brand_uuid: ^brand_uuid}}, 1_000
+
+      assert [brand_projection] = Repo.all(BrandProjection)
+
+      delete_brand = delete_brand_cmd(brand_uuid: brand_uuid)
+      :ok = Club.Commanded.dispatch(delete_brand, metadata: meta())
+
+      assert_receive {:brand_deleted, %{brand_uuid: ^brand_uuid}}, 1_000
+
+      assert [] = Repo.all(BrandProjection)
     end
   end
 end

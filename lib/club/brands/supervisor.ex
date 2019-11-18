@@ -8,7 +8,8 @@ defmodule Club.Brands.Supervisor do
   def init(_arg) do
     Supervisor.init(
       [
-        Club.Brands.Projectors.Brand
+        Club.Brands.Projectors.Brand,
+        Club.Brands.Projectors.UniquenessCache
       ],
       strategy: :one_for_one
     )
