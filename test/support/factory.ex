@@ -5,6 +5,7 @@ defmodule Club.Factory do
   use Club.Factories.Brands
   use Club.Factories.Devices
   use Club.Factories.SurfaceTypes
+  use Club.Factories.Colors
 
   def metadata_factory do
     %{

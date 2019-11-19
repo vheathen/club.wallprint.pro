@@ -32,7 +32,10 @@ defmodule Club.Application do
       Club.Devices.Supervisor,
 
       # SurfaceTypes domain
-      Club.SurfaceTypes.Supervisor
+      Club.SurfaceTypes.Supervisor,
+
+      # Colors domain
+      Club.Colors.Supervisor
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html

@@ -42,6 +42,7 @@ defmodule Club.Storage do
   defp truncate_readstore_tables do
     """
     TRUNCATE TABLE
+      colors_colors,
       surface_types_surface_types,
       brands_brands,
       projection_versions

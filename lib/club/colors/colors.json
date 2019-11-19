@@ -1,0 +1,4782 @@
+[
+  {
+    "hex": "39A78E",
+    "name": "Zomp",
+    "uuid": "9e218e99-773e-4d05-b031-b05e9161d929"
+  },
+  {
+    "hex": "0014A8",
+    "name": "Zaffre",
+    "uuid": "4faf6653-69ec-46ec-9884-5d0037b7e646"
+  },
+  {
+    "hex": "2E5090",
+    "name": "YInMn Blue",
+    "uuid": "60fc74e8-e2f2-4ad5-8d02-5e14820f60de"
+  },
+  {
+    "hex": "FFF700",
+    "name": "Yellow Sunshine",
+    "uuid": "d14439d3-0e44-426d-9494-86f25876a4ed"
+  },
+  {
+    "hex": "FF9505",
+    "name": "Yellow Orange (Color Wheel)",
+    "uuid": "4ef4d978-986c-4786-ba39-28840f1819c3"
+  },
+  {
+    "hex": "FFAE42",
+    "name": "Yellow Orange",
+    "uuid": "99df13e5-2d09-4815-a246-5293bcac421f"
+  },
+  {
+    "hex": "30B21A",
+    "name": "Yellow-green (Color Wheel)",
+    "uuid": "72a93c30-3a63-46ae-8444-3c7388f6a99e"
+  },
+  {
+    "hex": "C5E384",
+    "name": "Yellow-green (Crayola)",
+    "uuid": "4aa87f24-b185-481e-8a53-072ecb914bbc"
+  },
+  {
+    "hex": "9ACD32",
+    "name": "Yellow-green",
+    "uuid": "feb6dc65-159a-47ae-a40a-e214ca015f79"
+  },
+  {
+    "hex": "FEFE33",
+    "name": "Yellow (RYB)",
+    "uuid": "5ddf29d8-4dd0-4aa5-9a98-a3ca7730430c"
+  },
+  {
+    "hex": "FFEF00",
+    "name": "Yellow (process)",
+    "uuid": "51f9faed-c857-4bd1-a8de-9c4d0db8f507"
+  },
+  {
+    "hex": "FEDF00",
+    "name": "Yellow (Pantone)",
+    "uuid": "edf9c8f8-1846-420b-a792-436bd5d6953a"
+  },
+  {
+    "hex": "FFD300",
+    "name": "Yellow (NCS)",
+    "uuid": "6c72d59d-3fa9-4756-845c-1ca1bfdb3d1f"
+  },
+  {
+    "hex": "EFCC00",
+    "name": "Yellow (Munsell)",
+    "uuid": "311be37e-d436-4909-8044-be85649c5df9"
+  },
+  {
+    "hex": "FCE883",
+    "name": "Yellow (Crayola)",
+    "uuid": "02b6ef94-e473-4f82-9049-4145a2c67d26"
+  },
+  {
+    "hex": "FFFF00",
+    "name": "Yellow",
+    "uuid": "11f0af7c-c9f0-4943-bf6d-450495158485"
+  },
+  {
+    "hex": "0F4D92",
+    "name": "Yale Blue",
+    "uuid": "7de904d7-9df9-44d5-874a-4b24b5f655fb"
+  },
+  {
+    "hex": "0C020F",
+    "name": "Xiketic",
+    "uuid": "2e330634-9308-4ab7-9c8d-d6fd06f17a1f"
+  },
+  {
+    "hex": "738678",
+    "name": "Xanadu",
+    "uuid": "aa55b4e2-8553-47f4-bb06-df26d21756db"
+  },
+  {
+    "hex": "EEED09",
+    "name": "Xanthic",
+    "uuid": "f7308090-b74f-41e6-bb20-7557d565c177"
+  },
+  {
+    "hex": "C19A6B",
+    "name": "Wood brown",
+    "uuid": "e0aed005-38e0-4e80-9eaf-18d8dc2fdf0c"
+  },
+  {
+    "hex": "C9A0DC",
+    "name": "Wisteria",
+    "uuid": "2e621371-953a-4ed1-adba-cc407b48d28b"
+  },
+  {
+    "hex": "56887D",
+    "name": "Wintergreen Dream",
+    "uuid": "2ebe676d-b2c3-4912-a7a4-6dc855d79fd7"
+  },
+  {
+    "hex": "FF007C",
+    "name": "Winter Sky",
+    "uuid": "ead7e916-1161-4bdc-8876-707feb192d76"
+  },
+  {
+    "hex": "673147",
+    "name": "Wine dregs",
+    "uuid": "2df70bfb-9978-45f3-9d61-db627a9d7d37"
+  },
+  {
+    "hex": "722F37",
+    "name": "Wine",
+    "uuid": "da37adc4-2517-45fc-b18f-ce05f3dd6867"
+  },
+  {
+    "hex": "A75502",
+    "name": "Windsor tan",
+    "uuid": "b60f5ff0-4c02-4300-9153-7a0056113778"
+  },
+  {
+    "hex": "FC6C85",
+    "name": "Wild watermelon",
+    "uuid": "bf868e48-8e19-4e0d-8c22-31b930574f9c"
+  },
+  {
+    "hex": "FF43A4",
+    "name": "Wild Strawberry",
+    "uuid": "e8f6f0bf-a3c8-40f1-a2eb-8b6b11fc2015"
+  },
+  {
+    "hex": "D470A2",
+    "name": "Wild orchid",
+    "uuid": "3227aa72-7a37-4860-9879-b22fdbf23737"
+  },
+  {
+    "hex": "A2ADD0",
+    "name": "Wild blue yonder",
+    "uuid": "6f531c25-864a-4370-8935-4c9181b4ee62"
+  },
+  {
+    "hex": "FFFFFF",
+    "name": "White",
+    "uuid": "553fb058-bd72-4745-ac95-a139fbf96d37"
+  },
+  {
+    "hex": "F5DEB3",
+    "name": "Wheat",
+    "uuid": "9246661e-c05d-4b02-9dfb-5c50d7958087"
+  },
+  {
+    "hex": "004242",
+    "name": "Warm black",
+    "uuid": "c99e4edf-737e-4c5f-8ec3-442d4269fe9e"
+  },
+  {
+    "hex": "CEFF00",
+    "name": "Volt",
+    "uuid": "2a54e9de-f09d-4892-9bb5-0ce15453c21e"
+  },
+  {
+    "hex": "9F00FF",
+    "name": "Vivid violet",
+    "uuid": "5e38ec84-3180-4871-bb55-3727d70cbb94"
+  },
+  {
+    "hex": "FFA089",
+    "name": "Vivid tangerine",
+    "uuid": "975b7859-3489-4c4e-80e4-8b1676428574"
+  },
+  {
+    "hex": "00CCFF",
+    "name": "Vivid sky blue",
+    "uuid": "162974ae-90a5-4677-a7d6-d966d4f54ef5"
+  },
+  {
+    "hex": "9F1D35",
+    "name": "Vivid burgundy",
+    "uuid": "a8306b8e-2a53-4352-a55c-662ed7658058"
+  },
+  {
+    "hex": "009698",
+    "name": "Viridian green",
+    "uuid": "d3a3883c-ffa6-44a2-b4b9-6dc8a2602058"
+  },
+  {
+    "hex": "40826D",
+    "name": "Viridian",
+    "uuid": "7403832a-ae45-4ae5-8ca1-fb00c90366db"
+  },
+  {
+    "hex": "F75394",
+    "name": "Violet-red",
+    "uuid": "34c68ab4-1da6-41f2-a93a-b15ce31c72de"
+  },
+  {
+    "hex": "766EC8",
+    "name": "Violet-blue (Crayola)",
+    "uuid": "5e4a6de8-d32e-4e71-af00-b91124dd1a35"
+  },
+  {
+    "hex": "324AB2",
+    "name": "Violet-blue",
+    "uuid": "190f7ff6-0f68-4618-b258-599daa931748"
+  },
+  {
+    "hex": "EE82EE",
+    "name": "Violet (web)",
+    "uuid": "11617a78-9975-478e-b15b-861291b945b0"
+  },
+  {
+    "hex": "8601AF",
+    "name": "Violet (RYB)",
+    "uuid": "f0c8deb8-d3a6-4ed8-9e88-e063484b8af4"
+  },
+  {
+    "hex": "963D7F",
+    "name": "Violet (crayola)",
+    "uuid": "10de0b14-edbc-4964-961a-902e54950746"
+  },
+  {
+    "hex": "7F00FF",
+    "name": "Violet (color wheel)",
+    "uuid": "2ba6c21b-def6-4494-9f52-622f26047ffd"
+  },
+  {
+    "hex": "8F00FF",
+    "name": "Violet",
+    "uuid": "65f5151b-1b9f-4d79-b4d0-758ca3a866ce"
+  },
+  {
+    "hex": "A020F0",
+    "name": "Veronica",
+    "uuid": "22dd45d3-236a-4302-b397-7b4e641f550b"
+  },
+  {
+    "hex": "D9381E",
+    "name": "Vermilion",
+    "uuid": "79cc01f7-3ac2-46bb-9d6b-c11508597072"
+  },
+  {
+    "hex": "E34234",
+    "name": "Vermilion",
+    "uuid": "4f015cb8-182e-4940-b526-4e5b0220075a"
+  },
+  {
+    "hex": "43B3AE",
+    "name": "Verdigris",
+    "uuid": "75a97c00-8d2b-4cf0-8c55-73f89534bc33"
+  },
+  {
+    "hex": "C80815",
+    "name": "Venetian red",
+    "uuid": "41705340-5f28-466f-9477-17b6c9945eee"
+  },
+  {
+    "hex": "C5B358",
+    "name": "Vegas gold",
+    "uuid": "62c8e293-2dfe-4f1a-8cbe-ccfe17c4838a"
+  },
+  {
+    "hex": "F38FA9",
+    "name": "Vanilla ice",
+    "uuid": "070066db-5fed-46b3-946c-6dc932c65b0b"
+  },
+  {
+    "hex": "F3E5AB",
+    "name": "Vanilla",
+    "uuid": "a25afedb-5719-4720-9d49-408d33072b8d"
+  },
+  {
+    "hex": "664228",
+    "name": "Van Dyke brown",
+    "uuid": "7bf25834-269f-43c8-8dc0-096ea68dde7b"
+  },
+  {
+    "hex": "004F98",
+    "name": "USAFA blue",
+    "uuid": "455b499c-f8aa-49a9-8f58-b85bcfecafc1"
+  },
+  {
+    "hex": "AFDBF5",
+    "name": "Uranian blue",
+    "uuid": "c027b1b9-e951-44d1-8531-39840a09f5cd"
+  },
+  {
+    "hex": "AE2029",
+    "name": "Upsdell red",
+    "uuid": "e0323a41-a800-4e74-b970-808a9cee3c46"
+  },
+  {
+    "hex": "7B1113",
+    "name": "UP maroon",
+    "uuid": "21b56d32-ff42-47f8-a3c4-99d822baf73b"
+  },
+  {
+    "hex": "014421",
+    "name": "UP Forest green",
+    "uuid": "61d973e6-26c7-4c70-a0f3-802ba7d248d7"
+  },
+  {
+    "hex": "FFFF66",
+    "name": "Unmellow yellow",
+    "uuid": "ec449233-0b54-40b6-b142-4c8c0d68072f"
+  },
+  {
+    "hex": "5B92E5",
+    "name": "United Nations blue",
+    "uuid": "a8f43911-033f-4594-9c46-e1a154bcd574"
+  },
+  {
+    "hex": "FFDDCA",
+    "name": "Unbleached silk",
+    "uuid": "e1609e37-07aa-4ff9-81e4-a80252bea147"
+  },
+  {
+    "hex": "635147",
+    "name": "Umber",
+    "uuid": "941d6dd8-1891-429e-a114-3481d2a8d655"
+  },
+  {
+    "hex": "FC6C85",
+    "name": "Ultra red",
+    "uuid": "4f2e0a45-6b1e-4881-83cc-df7897653900"
+  },
+  {
+    "hex": "FF6FFF",
+    "name": "Ultra pink",
+    "uuid": "d1e04803-44cb-4168-961b-fc359ba7e69c"
+  },
+  {
+    "hex": "4166F5",
+    "name": "Ultramarine blue",
+    "uuid": "9f9c8833-3912-4075-b63c-769b4116fccd"
+  },
+  {
+    "hex": "3F00FF",
+    "name": "Ultramarine",
+    "uuid": "f615053a-4e09-44fa-9b7f-d2782cc9fb30"
+  },
+  {
+    "hex": "D9004C",
+    "name": "UA red",
+    "uuid": "239fbe77-65a8-4f17-907a-66d894173b65"
+  },
+  {
+    "hex": "0033AA",
+    "name": "UA blue",
+    "uuid": "6e556ebe-48eb-4035-a59b-25acd904db96"
+  },
+  {
+    "hex": "66023C",
+    "name": "Tyrian purple",
+    "uuid": "46211bc9-d50b-4b76-b7d7-b8030c931b76"
+  },
+  {
+    "hex": "8A496B",
+    "name": "Twilight lavender",
+    "uuid": "0882a784-9189-4769-8437-3ddfd72ecad6"
+  },
+  {
+    "hex": "C09999",
+    "name": "Tuscany",
+    "uuid": "6b12c802-e07f-4a16-bbe0-bd05e93760fa"
+  },
+  {
+    "hex": "A67B5B",
+    "name": "Tuscan tan",
+    "uuid": "3d5e65b9-d5b8-4189-947b-7030fc63c0f5"
+  },
+  {
+    "hex": "7C4848",
+    "name": "Tuscan red",
+    "uuid": "e656c5f4-1e46-4b5f-a8d7-b9bc58d95ac0"
+  },
+  {
+    "hex": "6F4E37",
+    "name": "Tuscan brown",
+    "uuid": "a9a320aa-887e-42a0-a730-de85c769723a"
+  },
+  {
+    "hex": "FAD6A5",
+    "name": "Tuscan",
+    "uuid": "9dbc6b2f-002b-4315-ac2d-d5295a3ead6e"
+  },
+  {
+    "hex": "8A9A5B",
+    "name": "Turtle green",
+    "uuid": "6cfedc67-7714-4db3-914f-ec2a6d9da16e"
+  },
+  {
+    "hex": "A0D6B4",
+    "name": "Turquoise green",
+    "uuid": "e4817246-3195-438c-a562-97d97432cf09"
+  },
+  {
+    "hex": "00FFEF",
+    "name": "Turquoise blue",
+    "uuid": "b4cff612-1e27-46fa-bc7a-0b5c56c553ea"
+  },
+  {
+    "hex": "40E0D0",
+    "name": "Turquoise",
+    "uuid": "d0eaee42-b4bb-4c58-9a7e-a47562eaa65e"
+  },
+  {
+    "hex": "DEAA88",
+    "name": "Tumbleweed",
+    "uuid": "8cb00760-53c0-4729-b809-cb838afbb3e9"
+  },
+  {
+    "hex": "3E8EDE",
+    "name": "Tufts blue",
+    "uuid": "16fc7e7d-a2cd-4b5b-89d0-6038014dcd9f"
+  },
+  {
+    "hex": "1C05B3",
+    "name": "Trypan Blue",
+    "uuid": "a8049052-c2ad-43c7-803a-452bd889dd51"
+  },
+  {
+    "hex": "2D68C4",
+    "name": "True Blue",
+    "uuid": "ab0464fa-b5e8-44f6-a239-ee603dc37887"
+  },
+  {
+    "hex": "00755E",
+    "name": "Tropical rain forest",
+    "uuid": "0ebb419f-53b1-42fc-b239-d71b3e0754fc"
+  },
+  {
+    "hex": "FF6347",
+    "name": "Tomato",
+    "uuid": "2adbd11d-164c-413b-81a6-4f772f53a402"
+  },
+  {
+    "hex": "EEE600",
+    "name": "Titanium yellow",
+    "uuid": "52231741-242a-44b3-a3f5-63a9c82bbaa7"
+  },
+  {
+    "hex": "DBD7D2",
+    "name": "Timberwolf",
+    "uuid": "93d0a5b3-76f1-4cbf-8f74-cceade0d7f36"
+  },
+  {
+    "hex": "0ABAB5",
+    "name": "Tiffany Blue",
+    "uuid": "234c0d55-53e2-4b24-a8c8-0757a3d244e3"
+  },
+  {
+    "hex": "FC89AC",
+    "name": "Tickle Me Pink",
+    "uuid": "e321c2f4-18bc-483d-8237-2bd61b7a420e"
+  },
+  {
+    "hex": "DE6FA1",
+    "name": "Thulian pink",
+    "uuid": "94d96992-94ab-451c-9058-1ddc856b64b0"
+  },
+  {
+    "hex": "D8BFD8",
+    "name": "Thistle",
+    "uuid": "006256e1-e42e-49db-b54b-9b9da087bece"
+  },
+  {
+    "hex": "E2725B",
+    "name": "Terra cotta",
+    "uuid": "cbdbe76f-1ed9-41ff-8b28-0ab2696ed6e5"
+  },
+  {
+    "hex": "CD5700",
+    "name": "TennÃ© (tawny)\n",
+    "uuid": "2b0c2def-fd8f-433d-a33a-19961b7a45d1"
+  },
+  {
+    "hex": "CF3476",
+    "name": "Telemagenta",
+    "uuid": "b8a4428b-91dd-487a-8bec-f82566d31a84"
+  },
+  {
+    "hex": "367588",
+    "name": "Teal blue",
+    "uuid": "2af133c9-90fd-41f5-8eb9-ce3f243bc288"
+  },
+  {
+    "hex": "008080",
+    "name": "Teal",
+    "uuid": "e99a25c9-b447-4ace-829a-7b7fdbf62ca9"
+  },
+  {
+    "hex": "F4C2C2",
+    "name": "Tea rose",
+    "uuid": "b2c37f8f-5eac-4282-93c8-7a86fbc1b5ac"
+  },
+  {
+    "hex": "F88379",
+    "name": "Tea rose",
+    "uuid": "34ddb600-946b-454e-b122-685c7a43bca2"
+  },
+  {
+    "hex": "D0F0C0",
+    "name": "Tea green",
+    "uuid": "7a46621d-1c3b-4c00-9c3d-1160f41a6176"
+  },
+  {
+    "hex": "8B8589",
+    "name": "Taupe gray",
+    "uuid": "1bd83a01-40fc-4124-9a1f-6973d8c714eb"
+  },
+  {
+    "hex": "483C32",
+    "name": "Taupe",
+    "uuid": "30e11eea-1797-4105-a453-d27658f35236"
+  },
+  {
+    "hex": "FB4D46",
+    "name": "Tart Orange",
+    "uuid": "4a4abf78-b66a-4ff7-9b25-de46acdde000"
+  },
+  {
+    "hex": "E4717A",
+    "name": "Tango pink",
+    "uuid": "4528237a-9501-4fae-b1dd-9a121a8bf075"
+  },
+  {
+    "hex": "F28500",
+    "name": "Tangerine",
+    "uuid": "3fa3245e-61d0-499e-9854-21f4c3e2a4e4"
+  },
+  {
+    "hex": "D99A6C",
+    "name": "Tan (Crayola)",
+    "uuid": "62c4d796-4974-4a7d-b730-c96bc2580772"
+  },
+  {
+    "hex": "D2B48C",
+    "name": "Tan",
+    "uuid": "a19328da-e020-486b-8a60-adf34bd43cab"
+  },
+  {
+    "hex": "A83731",
+    "name": "Sweet Brown",
+    "uuid": "775145cf-c6ee-4af2-a17d-af59f91ca9d8"
+  },
+  {
+    "hex": "CF6BA9",
+    "name": "Super pink",
+    "uuid": "5a97051e-fc70-4c4d-bd26-2c6c12aef5e0"
+  },
+  {
+    "hex": "FAD6A5",
+    "name": "Sunset",
+    "uuid": "61c8d144-cf20-4d28-ae93-9624bd4330f3"
+  },
+  {
+    "hex": "E3AB57",
+    "name": "Sunray",
+    "uuid": "dbee5bed-8703-482e-b684-ea8e8f036ac9"
+  },
+  {
+    "hex": "FFCC33",
+    "name": "Sunglow",
+    "uuid": "0d24deaf-f31d-43e0-9869-e122906980d7"
+  },
+  {
+    "hex": "914E75",
+    "name": "Sugar Plum",
+    "uuid": "91dcec37-7569-4cb2-9140-cbeafa6486ec"
+  },
+  {
+    "hex": "E4D96F",
+    "name": "Straw",
+    "uuid": "dc2bc65d-dbca-46f6-8c52-059086dd79de"
+  },
+  {
+    "hex": "FADA5E",
+    "name": "Stil de grain yellow",
+    "uuid": "94197b41-3ada-49e6-94f8-5e64a694123d"
+  },
+  {
+    "hex": "5F8A8B",
+    "name": "Steel Teal",
+    "uuid": "c0ab10cc-4c83-47e0-a965-b79233f8b41e"
+  },
+  {
+    "hex": "CC33CC",
+    "name": "Steel pink",
+    "uuid": "f9006f04-4f1b-43b0-bd97-3e6b39c7ff59"
+  },
+  {
+    "hex": "4682B4",
+    "name": "Steel blue",
+    "uuid": "4db35380-6749-4a8a-99ca-7c9cdac37058"
+  },
+  {
+    "hex": "007BB8",
+    "name": "Star command blue",
+    "uuid": "1a2684c6-e82b-4838-b9a0-e7e835c85b59"
+  },
+  {
+    "hex": "ECEBBD",
+    "name": "Spring green (Crayola)",
+    "uuid": "ff321ac1-5368-47e3-a4e7-6564787d745f"
+  },
+  {
+    "hex": "00FF7F",
+    "name": "Spring green",
+    "uuid": "dab64906-953e-4564-a1fc-cd9e58b77e47"
+  },
+  {
+    "hex": "87FF2A",
+    "name": "Spring Frost",
+    "uuid": "2eaaa8fc-1b46-4540-893c-cabfe89b8344"
+  },
+  {
+    "hex": "A7FC00",
+    "name": "Spring bud",
+    "uuid": "9c8064a1-096c-4417-aa0c-5c37b5d59990"
+  },
+  {
+    "hex": "007F5C",
+    "name": "Spanish viridian",
+    "uuid": "0456dae7-e2a0-4738-be96-e01269b5d6f8"
+  },
+  {
+    "hex": "4C2882",
+    "name": "Spanish violet",
+    "uuid": "d4f6b09c-3816-4ed1-be45-e912850c19ee"
+  },
+  {
+    "hex": "00FFFF",
+    "name": "Spanish sky blue",
+    "uuid": "039ac7ca-77e8-41ab-9bdd-abcc44beff00"
+  },
+  {
+    "hex": "E60026",
+    "name": "Spanish red",
+    "uuid": "a333ef40-e5c0-430c-84f6-148e9e6bc014"
+  },
+  {
+    "hex": "F7BFBE",
+    "name": "Spanish pink",
+    "uuid": "db01cbab-590a-45c0-81a3-098158a8bdfe"
+  },
+  {
+    "hex": "E86100",
+    "name": "Spanish orange",
+    "uuid": "8147fed4-0fba-4f20-8827-b6602ed77ecc"
+  },
+  {
+    "hex": "009150",
+    "name": "Spanish green",
+    "uuid": "c3dc8ff3-483c-403b-8986-fe655e99caf6"
+  },
+  {
+    "hex": "989898",
+    "name": "Spanish gray",
+    "uuid": "1a8bb9cc-bfcc-4ce4-8f18-4b0542ff9ccf"
+  },
+  {
+    "hex": "D10047",
+    "name": "Spanish carmine",
+    "uuid": "9ec85abe-6b57-44c3-abb8-c78aaffe2b17"
+  },
+  {
+    "hex": "0070B8",
+    "name": "Spanish blue",
+    "uuid": "73894e70-c699-466b-9d14-4016ddcafa78"
+  },
+  {
+    "hex": "807532",
+    "name": "Spanish bistre",
+    "uuid": "c2394404-8a4b-4220-9f30-342763068795"
+  },
+  {
+    "hex": "1D2951",
+    "name": "Space cadet",
+    "uuid": "53c2609b-4c19-4e0c-9721-1536b29ca3c4"
+  },
+  {
+    "hex": "757575",
+    "name": "Sonic silver",
+    "uuid": "7bfd5e8c-3011-4fa9-ab6c-38436a8dbbc1"
+  },
+  {
+    "hex": "893843",
+    "name": "Solid pink",
+    "uuid": "a73ada5d-408c-4741-ba58-7b67e53a597f"
+  },
+  {
+    "hex": "FFFAFA",
+    "name": "Snow",
+    "uuid": "e7f32b4b-5d2d-48bf-8547-0102f54a1390"
+  },
+  {
+    "hex": "100C08",
+    "name": "Smoky black",
+    "uuid": "190b145a-a811-4422-aaed-eeffa4866d8e"
+  },
+  {
+    "hex": "C84186",
+    "name": "Smitten",
+    "uuid": "259ae6a0-c045-44a4-8714-3977e982b00c"
+  },
+  {
+    "hex": "299617",
+    "name": "Slimy green",
+    "uuid": "34a95d0e-d232-4f0e-9da2-35fb236f3ccc"
+  },
+  {
+    "hex": "708090",
+    "name": "Slate gray",
+    "uuid": "180c928f-eee8-4b20-b0bb-b0c69d98236d"
+  },
+  {
+    "hex": "6A5ACD",
+    "name": "Slate blue",
+    "uuid": "831bed86-b1f1-4391-ab64-9881c41427b1"
+  },
+  {
+    "hex": "CF71AF",
+    "name": "Sky magenta",
+    "uuid": "4c34f46d-92a7-4721-9815-370d8f2fda7b"
+  },
+  {
+    "hex": "76D7EA",
+    "name": "Sky blue (Crayola)",
+    "uuid": "1e91d784-2773-47c1-b5f8-0676b3d7e1b6"
+  },
+  {
+    "hex": "87CEEB",
+    "name": "Sky blue",
+    "uuid": "435eff73-e63d-4f15-9f10-7512a2affffc"
+  },
+  {
+    "hex": "007474",
+    "name": "Skobeloff",
+    "uuid": "73f3c4c1-16a1-4eae-91a6-844c7f86b16d"
+  },
+  {
+    "hex": "FFDB00",
+    "name": "Sizzling Sunrise",
+    "uuid": "7e2789f9-ac27-4df2-a653-07df08a5407a"
+  },
+  {
+    "hex": "FF3855",
+    "name": "Sizzling Red",
+    "uuid": "a322553f-a45a-4090-9e22-15369ca4d938"
+  },
+  {
+    "hex": "CB410B",
+    "name": "Sinopia",
+    "uuid": "cb08f9ca-86b1-4c45-a6a3-13ef2d81977b"
+  },
+  {
+    "hex": "BFC1C2",
+    "name": "Silver sand",
+    "uuid": "ddfe69cb-cb57-4a3a-bcba-9dbb47407587"
+  },
+  {
+    "hex": "C4AEAD",
+    "name": "Silver pink",
+    "uuid": "939d0d66-e9f6-460d-a089-f0e7f5dc42e5"
+  },
+  {
+    "hex": "ACACAC",
+    "name": "Silver chalice",
+    "uuid": "f086ecda-60ab-414d-82a2-26245988dea5"
+  },
+  {
+    "hex": "AAA9AD",
+    "name": "Silver (Metallic)",
+    "uuid": "511870eb-666f-4ec6-a0dc-a5201cdc97a2"
+  },
+  {
+    "hex": "C9C0BB",
+    "name": "Silver (Crayola)",
+    "uuid": "b102a325-62ba-48dc-a391-78a97eb688dd"
+  },
+  {
+    "hex": "C0C0C0",
+    "name": "Silver",
+    "uuid": "dec4ea8f-f282-4e3f-a019-200c8596f02a"
+  },
+  {
+    "hex": "882D17",
+    "name": "Sienna",
+    "uuid": "3250a6b6-a7a9-4ba7-a539-b6c3eecd13e4"
+  },
+  {
+    "hex": "FF6FFF",
+    "name": "Shocking pink (Crayola)",
+    "uuid": "db5f274e-590c-4635-9301-d7e9b12c8dd0"
+  },
+  {
+    "hex": "FC0FC0",
+    "name": "Shocking pink",
+    "uuid": "1d97e12d-cfd0-4eb9-9232-58f50726ac63"
+  },
+  {
+    "hex": "5FA778",
+    "name": "Shiny Shamrock",
+    "uuid": "e491c74b-f441-4b62-8766-bd48145d055b"
+  },
+  {
+    "hex": "D98695",
+    "name": "Shimmering Blush",
+    "uuid": "8f20e8ac-3860-4426-8ddb-29e327aebded"
+  },
+  {
+    "hex": "8FD400",
+    "name": "Sheen green",
+    "uuid": "adb4fd1c-e8c5-4605-82cc-0fb670e4e580"
+  },
+  {
+    "hex": "009E60",
+    "name": "Shamrock green",
+    "uuid": "10e5c8bd-653a-4d06-9e31-adc79897e208"
+  },
+  {
+    "hex": "778BA5",
+    "name": "Shadow blue",
+    "uuid": "4178f2db-eb7e-4ff8-a5e8-f62c173c9e10"
+  },
+  {
+    "hex": "8A795D",
+    "name": "Shadow",
+    "uuid": "78c8fe26-5ee7-4769-8cfc-239e9eaeb5aa"
+  },
+  {
+    "hex": "704214",
+    "name": "Sepia",
+    "uuid": "1465f623-41ac-4901-b6ff-fe4d3514f26e"
+  },
+  {
+    "hex": "FFBA00",
+    "name": "Selective yellow",
+    "uuid": "bd69a656-dff8-48f1-8e56-deeb45519374"
+  },
+  {
+    "hex": "FFF5EE",
+    "name": "Seashell",
+    "uuid": "f939b772-f07a-4dc5-80df-25a1bfcebac8"
+  },
+  {
+    "hex": "59260B",
+    "name": "Seal brown",
+    "uuid": "8298df2e-94b7-4eb5-a5e3-d71d610e4893"
+  },
+  {
+    "hex": "00FFCD",
+    "name": "Sea green (Crayola)",
+    "uuid": "c2194341-d15f-44ac-8fdc-47e0872b2c53"
+  },
+  {
+    "hex": "2E8B57",
+    "name": "Sea green",
+    "uuid": "f70aec40-3ce3-400b-b327-0ab8143ba847"
+  },
+  {
+    "hex": "66FF66",
+    "name": "Screamin' Green",
+    "uuid": "9b434399-2b45-4d4c-b69c-893194ce7ee3"
+  },
+  {
+    "hex": "FFD800",
+    "name": "School bus yellow",
+    "uuid": "6a29d501-5fd2-4c34-a436-d9c6deeafa99"
+  },
+  {
+    "hex": "FF91AF",
+    "name": "Schauss pink",
+    "uuid": "85dc8bc7-ba71-4306-b0b6-dc4c01d7b164"
+  },
+  {
+    "hex": "FF2400",
+    "name": "Scarlet",
+    "uuid": "28bee993-2bc5-4036-a5ed-4598abd0568a"
+  },
+  {
+    "hex": "CBA135",
+    "name": "Satin sheen gold",
+    "uuid": "35bbd338-f8e6-455c-ac17-70fba9249399"
+  },
+  {
+    "hex": "0067A5",
+    "name": "Sapphire (Crayola)",
+    "uuid": "623cbcd5-4ca6-4e01-a2a1-4a5928194621"
+  },
+  {
+    "hex": "0067A5",
+    "name": "Sapphire blue",
+    "uuid": "e26cfe85-f937-43cd-a470-ccfa4420f65f"
+  },
+  {
+    "hex": "0F52BA",
+    "name": "Sapphire",
+    "uuid": "a3bac37c-8fc9-449e-b121-c93eeee6a0ea"
+  },
+  {
+    "hex": "507D2A",
+    "name": "Sap green",
+    "uuid": "536298c7-4a5a-4478-9369-70bd57c3f2d0"
+  },
+  {
+    "hex": "F4A460",
+    "name": "Sandy brown",
+    "uuid": "9e3ef803-94d0-40bb-820f-5d8fa7f76c44"
+  },
+  {
+    "hex": "967117",
+    "name": "Sand dune",
+    "uuid": "1be520a9-5d8b-4c44-a355-a3dabc189a0b"
+  },
+  {
+    "hex": "C2B280",
+    "name": "Sand",
+    "uuid": "610bdb32-dbb8-4333-83f3-c2c5a486ed48"
+  },
+  {
+    "hex": "FF91A4",
+    "name": "Salmon pink",
+    "uuid": "7aa4c564-d500-4e6a-ab79-b31e710183ae"
+  },
+  {
+    "hex": "FA8072",
+    "name": "Salmon",
+    "uuid": "ed785a59-ca1e-4407-8e87-35a15d25f248"
+  },
+  {
+    "hex": "23297A",
+    "name": "St. Patrick's blue",
+    "uuid": "e136657b-5f48-40df-bbc9-620e17a853f7"
+  },
+  {
+    "hex": "BCB88A",
+    "name": "Sage",
+    "uuid": "9bba2e6d-3f32-4406-a6b8-1d2f00e2676c"
+  },
+  {
+    "hex": "F4C430",
+    "name": "Saffron",
+    "uuid": "66c95672-99c6-47c3-8a52-c0664b6bb0e2"
+  },
+  {
+    "hex": "EED202",
+    "name": "Safety yellow",
+    "uuid": "5e0facbd-c47c-4888-a59a-5f91f51ba34c"
+  },
+  {
+    "hex": "FF6700",
+    "name": "Safety orange (blaze orange)",
+    "uuid": "8fe78057-9a78-4544-a812-1d7a4226de23"
+  },
+  {
+    "hex": "FF7800",
+    "name": "Safety orange",
+    "uuid": "51fbf143-bd0a-4434-82e9-fb40cb567d26"
+  },
+  {
+    "hex": "8B4513",
+    "name": "Saddle brown",
+    "uuid": "eaa76ec3-a316-498c-8e13-7e5f986e58e2"
+  },
+  {
+    "hex": "043927",
+    "name": "Sacramento State green",
+    "uuid": "99cfea3f-7c3c-4474-9550-1322749f18b3"
+  },
+  {
+    "hex": "DA2C43",
+    "name": "Rusty red",
+    "uuid": "1f127e22-29c3-48fe-8955-e4c14112eb5e"
+  },
+  {
+    "hex": "B7410E",
+    "name": "Rust",
+    "uuid": "9dd7b7a9-2734-4b87-ba94-9703afe1556f"
+  },
+  {
+    "hex": "32174D",
+    "name": "Russian violet",
+    "uuid": "daea0863-d55e-4096-8a06-5ad9fa1f4faf"
+  },
+  {
+    "hex": "679267",
+    "name": "Russian green",
+    "uuid": "54e73bf5-0aa3-4be0-8227-22f4a6186d43"
+  },
+  {
+    "hex": "80461B",
+    "name": "Russet",
+    "uuid": "d125943e-a233-4cbc-adbb-3dfb2408692f"
+  },
+  {
+    "hex": "A81C07",
+    "name": "Rufous",
+    "uuid": "2b662728-0e7e-4075-85ea-48396ad88ff9"
+  },
+  {
+    "hex": "9B111E",
+    "name": "Ruby red",
+    "uuid": "4f72385d-d7de-4c0f-b60c-68ff485f2de6"
+  },
+  {
+    "hex": "E0115F",
+    "name": "Ruby",
+    "uuid": "31d0f48b-ef2d-4987-a36b-d57bc1fb7805"
+  },
+  {
+    "hex": "D10056",
+    "name": "Rubine red",
+    "uuid": "29a9cff8-3133-4297-a2c6-1eace20ab6f4"
+  },
+  {
+    "hex": "CE4676",
+    "name": "Ruber",
+    "uuid": "7b22d8b7-19fd-4afc-88ef-693e8fdc00ae"
+  },
+  {
+    "hex": "FADA5E",
+    "name": "Royal yellow",
+    "uuid": "943e1617-abf6-40bc-8920-e795c620b86c"
+  },
+  {
+    "hex": "7851A9",
+    "name": "Royal purple",
+    "uuid": "6b22fbb0-8b77-4ddf-897d-8b25fddeeca0"
+  },
+  {
+    "hex": "4169E1",
+    "name": "Royal blue (light)",
+    "uuid": "5fb75c76-249f-4020-ad73-49a5e1477ddb"
+  },
+  {
+    "hex": "002366",
+    "name": "Royal blue (dark)",
+    "uuid": "a4e1c883-2c5f-4eba-9a8a-e7391738bf73"
+  },
+  {
+    "hex": "BC8F8F",
+    "name": "Rosy brown",
+    "uuid": "a0d2d32b-9f16-4401-bb91-7f1437f471b2"
+  },
+  {
+    "hex": "D40000",
+    "name": "Rosso corsa",
+    "uuid": "bd2000e6-5707-4c2f-ae9f-43234121afd3"
+  },
+  {
+    "hex": "65000B",
+    "name": "Rosewood",
+    "uuid": "4bda5e44-5382-4e1a-8f04-bac4ad625d53"
+  },
+  {
+    "hex": "AB4E52",
+    "name": "Rose vale",
+    "uuid": "59b721c8-124d-443f-869b-08c509ebf8bc"
+  },
+  {
+    "hex": "905D5D",
+    "name": "Rose taupe",
+    "uuid": "574bf757-c916-46b9-8b1a-f0727d8f80f2"
+  },
+  {
+    "hex": "C21E56",
+    "name": "Rose red",
+    "uuid": "94ecf2af-57b4-4b7e-a0a0-f9876a6ee9ba"
+  },
+  {
+    "hex": "AA98A9",
+    "name": "Rose quartz",
+    "uuid": "29858437-7228-404e-977c-03fc671792c3"
+  },
+  {
+    "hex": "FF66CC",
+    "name": "Rose pink",
+    "uuid": "a1aa9c4e-17ad-458c-8e4e-7784d55a48ea"
+  },
+  {
+    "hex": "E32636",
+    "name": "Rose madder",
+    "uuid": "1d0b50f3-cd60-49cd-97d7-81189254e208"
+  },
+  {
+    "hex": "674846",
+    "name": "Rose ebony",
+    "uuid": "d31d82b4-d99a-4cfb-bb24-4bfa38956f09"
+  },
+  {
+    "hex": "9E5E6F",
+    "name": "Rose Dust",
+    "uuid": "aa880fa4-4ac2-484b-86ba-3ef37bf21ce6"
+  },
+  {
+    "hex": "F9429E",
+    "name": "Rose bonbon",
+    "uuid": "546076b7-96fd-4629-a58a-b3e7735965a0"
+  },
+  {
+    "hex": "FF007F",
+    "name": "Rose",
+    "uuid": "b8d95a29-32c1-497e-a380-b560599d1ffc"
+  },
+  {
+    "hex": "838996",
+    "name": "Roman silver",
+    "uuid": "0f93cf35-2f57-4ef7-a04f-e736c58afd38"
+  },
+  {
+    "hex": "8A7F80",
+    "name": "Rocket metallic",
+    "uuid": "6165ed35-ba1d-4698-868d-623229e325bd"
+  },
+  {
+    "hex": "00CCCC",
+    "name": "Robin egg blue",
+    "uuid": "c30e16d4-9ca8-42ee-bcc3-f713e6bc3c4b"
+  },
+  {
+    "hex": "444C38",
+    "name": "Rifle green",
+    "uuid": "571c7f03-67fb-41a9-8785-c6a0e77facc6"
+  },
+  {
+    "hex": "010203",
+    "name": "Rich black (FOGRA39)",
+    "uuid": "7b845200-ff3f-4cab-b83d-9577909e1cc7"
+  },
+  {
+    "hex": "010B13",
+    "name": "Rich black (FOGRA29)",
+    "uuid": "2d155c53-e670-4a05-a2ee-360df6c53885"
+  },
+  {
+    "hex": "004040",
+    "name": "Rich black",
+    "uuid": "f2ab1281-bdda-48be-a1df-04ce6928af8e"
+  },
+  {
+    "hex": "777696",
+    "name": "Rhythm",
+    "uuid": "517e6177-7f5e-4c18-8eed-141130a2c8a9"
+  },
+  {
+    "hex": "002387",
+    "name": "Resolution blue",
+    "uuid": "4e14e8c1-9d44-4d7e-a49b-654e216afc04"
+  },
+  {
+    "hex": "A45A52",
+    "name": "Redwood",
+    "uuid": "5c4071f1-4b28-4c7d-9b7c-0aa110aff558"
+  },
+  {
+    "hex": "922B3E",
+    "name": "Red-violet (Color wheel)",
+    "uuid": "fe5bce17-2ade-46ea-a3e1-dd0c0f0f00f0"
+  },
+  {
+    "hex": "C0448F",
+    "name": "Red-violet (Crayola)",
+    "uuid": "cb7690cd-9d0f-4b7d-8299-cb0ce3049e0d"
+  },
+  {
+    "hex": "C71585",
+    "name": "Red-violet",
+    "uuid": "29a10234-1200-49e0-b512-dc9507458638"
+  },
+  {
+    "hex": "FD3A4A",
+    "name": "Red Salsa",
+    "uuid": "c23f96b9-8253-4432-bbe8-fb699282148b"
+  },
+  {
+    "hex": "E40078",
+    "name": "Red-purple",
+    "uuid": "df213d50-48dd-4619-a4a2-06796db145b3"
+  },
+  {
+    "hex": "FF4500",
+    "name": "Red-orange (Color wheel)",
+    "uuid": "a8e7c3ab-79b7-4a13-88d4-33257017173a"
+  },
+  {
+    "hex": "FF681F",
+    "name": "Red-orange (Crayola)",
+    "uuid": "589b8608-214c-457d-99e6-9924e656039e"
+  },
+  {
+    "hex": "FF5349",
+    "name": "Red-orange",
+    "uuid": "f920a616-8206-43ee-8ec2-b34cf64d04de"
+  },
+  {
+    "hex": "FE2712",
+    "name": "Red (RYB)",
+    "uuid": "ff37b296-b4b6-4b6a-8109-6c811bcf9b3d"
+  },
+  {
+    "hex": "ED1C24",
+    "name": "Red (pigment)",
+    "uuid": "4a37b9f5-686b-4351-a40c-a4adbd87ab6c"
+  },
+  {
+    "hex": "ED2939",
+    "name": "Red (Pantone)",
+    "uuid": "43213ab1-3b30-4f20-a436-cebbf90c3162"
+  },
+  {
+    "hex": "C40233",
+    "name": "Red (NCS)",
+    "uuid": "f120e47f-5de8-4e9a-8251-7302b3c4d799"
+  },
+  {
+    "hex": "F2003C",
+    "name": "Red (Munsell)",
+    "uuid": "ebea4f55-64be-42c1-a045-beb52ae43c79"
+  },
+  {
+    "hex": "EE204D",
+    "name": "Red (Crayola)",
+    "uuid": "ed99fd9d-4790-4cc5-81df-b141b0bb6926"
+  },
+  {
+    "hex": "FF0000",
+    "name": "Red",
+    "uuid": "467b086c-91c4-4cdb-9476-110c279cf280"
+  },
+  {
+    "hex": "663399",
+    "name": "Rebecca Purple",
+    "uuid": "90b7156e-b4e3-40e8-a353-126ff0f272f5"
+  },
+  {
+    "hex": "8D4E85",
+    "name": "Razzmic Berry",
+    "uuid": "d0ea42f9-ee51-4b44-b891-36f9323c23ac"
+  },
+  {
+    "hex": "E3256B",
+    "name": "Razzmatazz",
+    "uuid": "b53e0c72-11a7-41d9-8945-7eedfb2281c7"
+  },
+  {
+    "hex": "FF33CC",
+    "name": "Razzle dazzle rose",
+    "uuid": "60beedd5-71c1-460d-8c95-e984b121d0af"
+  },
+  {
+    "hex": "826644",
+    "name": "Raw umber",
+    "uuid": "af6d9915-5218-48b4-9e69-77c562d6c2a4"
+  },
+  {
+    "hex": "D68A59",
+    "name": "Raw Sienna",
+    "uuid": "a436fe9f-d0e7-4c62-9f1c-7ed30fc2f6ca"
+  },
+  {
+    "hex": "B3446C",
+    "name": "Raspberry rose",
+    "uuid": "6b2aa4c8-74fb-43ec-9ecd-92b22da7cedf"
+  },
+  {
+    "hex": "915F6D",
+    "name": "Raspberry glace",
+    "uuid": "f9df34f7-1d7c-4d86-b2de-c4292d549144"
+  },
+  {
+    "hex": "E30B5D",
+    "name": "Raspberry",
+    "uuid": "8d1cfd01-4624-4aad-9875-d36c9e7f3977"
+  },
+  {
+    "hex": "FBAB60",
+    "name": "Rajah",
+    "uuid": "58aa6478-f6b6-4d7b-9dd9-14b762228489"
+  },
+  {
+    "hex": "242124",
+    "name": "Raisin black",
+    "uuid": "bce54a76-a1b3-4172-930e-b3c15c5bbe97"
+  },
+  {
+    "hex": "FF355E",
+    "name": "Radical Red",
+    "uuid": "5ba68b18-4c86-4dbe-850d-c3768f0670da"
+  },
+  {
+    "hex": "8E3A59",
+    "name": "Quinacridone magenta",
+    "uuid": "fe736f86-e729-46e9-a84f-e039b41e7e84"
+  },
+  {
+    "hex": "A6A6A6",
+    "name": "Quick Silver",
+    "uuid": "fdceff2e-9bc5-4f83-99bf-ede097693bb3"
+  },
+  {
+    "hex": "E8CCD7",
+    "name": "Queen pink",
+    "uuid": "50d1bfc4-ee3d-4012-a66c-0830b097794d"
+  },
+  {
+    "hex": "436B95",
+    "name": "Queen blue",
+    "uuid": "82c6ae9b-f84d-4cb1-959e-5dc1ff984c18"
+  },
+  {
+    "hex": "9A4EAE",
+    "name": "Purpureus",
+    "uuid": "098483c8-a8d2-4034-81bf-64cd85642e60"
+  },
+  {
+    "hex": "9C51B6",
+    "name": "Purple Plum",
+    "uuid": "ef1107bb-bc35-4730-8588-e2703ff2d455"
+  },
+  {
+    "hex": "FE4EDA",
+    "name": "Purple pizzazz",
+    "uuid": "21b890f7-459e-46a7-af24-98ab789849f6"
+  },
+  {
+    "hex": "4E5180",
+    "name": "Purple navy",
+    "uuid": "849b1b7a-ae89-43e0-a4e4-59c3eaad56c6"
+  },
+  {
+    "hex": "9678B6",
+    "name": "Purple mountain majesty",
+    "uuid": "633bf46e-7d5b-43d7-a34f-f0f02bfffd06"
+  },
+  {
+    "hex": "A020F0",
+    "name": "Purple (X11)",
+    "uuid": "3b7e2113-be8a-4ec0-b169-391ccd47e9d2"
+  },
+  {
+    "hex": "9F00C5",
+    "name": "Purple (Munsell)",
+    "uuid": "fcf51715-791c-4e0e-b1d7-56c677e7b08a"
+  },
+  {
+    "hex": "800080",
+    "name": "Purple (web)",
+    "uuid": "0cab664e-1b7b-4eff-a0ef-7e72b0c2b283"
+  },
+  {
+    "hex": "6A0DAD",
+    "name": "Purple",
+    "uuid": "1dc99902-7e9e-40e3-985f-0ba23de5913c"
+  },
+  {
+    "hex": "FF7518",
+    "name": "Pumpkin",
+    "uuid": "99af25f2-14a1-457a-a598-56f7ecb16c7d"
+  },
+  {
+    "hex": "644117",
+    "name": "Pullman Brown (UPS Brown)",
+    "uuid": "6036c14a-afba-4603-98d0-a3059394ea02"
+  },
+  {
+    "hex": "CC8899",
+    "name": "Puce",
+    "uuid": "d1dedac3-bc1f-4ecf-80a6-89d03ae529dc"
+  },
+  {
+    "hex": "DF00FF",
+    "name": "Psychedelic purple",
+    "uuid": "ee08d9dc-2d16-4ec3-82c8-09ddec87595b"
+  },
+  {
+    "hex": "003153",
+    "name": "Prussian blue",
+    "uuid": "2c55eb2e-aba0-426b-9ab7-e6a56638efa9"
+  },
+  {
+    "hex": "701C1C",
+    "name": "Prune",
+    "uuid": "ec49b6ae-45b5-479b-8f72-b5e1ad282036"
+  },
+  {
+    "hex": "F58025",
+    "name": "Princeton orange",
+    "uuid": "6cc10ec7-bfeb-4c18-adcf-e7eb548c11d2"
+  },
+  {
+    "hex": "B0E0E6",
+    "name": "Powder blue",
+    "uuid": "ce1daf60-0677-4aa7-a72c-fdc3a8147f17"
+  },
+  {
+    "hex": "FF5A36",
+    "name": "Portland Orange",
+    "uuid": "6702f6ad-29d2-4f62-81a4-af20aa2267c2"
+  },
+  {
+    "hex": "BE4F62",
+    "name": "Popstar",
+    "uuid": "a2bdb214-d2c7-45a9-a205-9b7783345da6"
+  },
+  {
+    "hex": "86608E",
+    "name": "Pomp and Power",
+    "uuid": "bc738463-c436-4c77-b914-d11c9ffd6df1"
+  },
+  {
+    "hex": "5DA493",
+    "name": "Polished Pine",
+    "uuid": "2dd09490-e90c-4229-b5e3-f49112c9db06"
+  },
+  {
+    "hex": "5946B2",
+    "name": "Plump Purple",
+    "uuid": "d3ff4c94-8dd2-4690-90d1-3845a51fbccb"
+  },
+  {
+    "hex": "DDA0DD",
+    "name": "Plum (web)",
+    "uuid": "04024b2c-8eef-4537-b496-879ba1ff9f45"
+  },
+  {
+    "hex": "8E4585",
+    "name": "Plum",
+    "uuid": "2b0cf6f9-3693-455d-8eb3-b8a35a80ba35"
+  },
+  {
+    "hex": "E5E4E2",
+    "name": "Platinum",
+    "uuid": "318b9747-2a90-474b-8241-929a903d52a5"
+  },
+  {
+    "hex": "93C572",
+    "name": "Pistachio",
+    "uuid": "6fdb8452-00f8-4fc2-aabc-4adc43df3f5e"
+  },
+  {
+    "hex": "F78FA7",
+    "name": "Pink Sherbet",
+    "uuid": "ce1ce8af-52a7-4ffe-828e-1834e9765f7e"
+  },
+  {
+    "hex": "D8B2D1",
+    "name": "Pink lavender",
+    "uuid": "8e1ad25f-e6d3-4505-935e-391be0b49ec2"
+  },
+  {
+    "hex": "FFDDF4",
+    "name": "Pink lace",
+    "uuid": "b09b186b-9ed1-491a-a00a-e72df3af650c"
+  },
+  {
+    "hex": "FC74FD",
+    "name": "Pink flamingo",
+    "uuid": "42a06cd1-b9d3-487c-8f7c-2316bd766b1a"
+  },
+  {
+    "hex": "D74894",
+    "name": "Pink (Pantone)",
+    "uuid": "b89cb808-09ce-4db4-8152-adc4b5680515"
+  },
+  {
+    "hex": "FFC0CB",
+    "name": "Pink",
+    "uuid": "ea84739b-bdc9-417f-8c85-e54c21595172"
+  },
+  {
+    "hex": "2A2F23",
+    "name": "Pine tree",
+    "uuid": "b999523b-29b8-4eff-a5af-65ac1a9c831e"
+  },
+  {
+    "hex": "01796F",
+    "name": "Pine green",
+    "uuid": "68a576fb-4464-4f0b-96d3-c40ad9c6fd7d"
+  },
+  {
+    "hex": "FDDDE6",
+    "name": "Piggy pink",
+    "uuid": "5e6d3ad3-5bfa-4697-8f45-6d595153de3f"
+  },
+  {
+    "hex": "C30B4E",
+    "name": "Pictorial carmine",
+    "uuid": "f6d8f825-8803-4a21-b805-6bd81a26778c"
+  },
+  {
+    "hex": "2E2787",
+    "name": "Picotee blue",
+    "uuid": "02e1ca2a-56de-4d3a-ab63-6f537672a17b"
+  },
+  {
+    "hex": "123524",
+    "name": "Phthalo green",
+    "uuid": "ae02487d-90a7-4515-9b60-ccf7aca1e516"
+  },
+  {
+    "hex": "000F89",
+    "name": "Phthalo blue",
+    "uuid": "0b9fb0b6-c299-448c-b4d2-e70912ba9cd5"
+  },
+  {
+    "hex": "DF00FF",
+    "name": "Phlox",
+    "uuid": "2ca31081-d8cb-4df2-9664-383287ad8546"
+  },
+  {
+    "hex": "8BA8B7",
+    "name": "Pewter Blue",
+    "uuid": "95ae85ec-d36b-436f-b979-2ee76e0a775b"
+  },
+  {
+    "hex": "EC5800",
+    "name": "Persimmon",
+    "uuid": "74da5b28-f8b6-4095-9d80-ac642797160f"
+  },
+  {
+    "hex": "FE28A2",
+    "name": "Persian rose",
+    "uuid": "e169b52b-ab57-4c76-9e53-08283ec49ffd"
+  },
+  {
+    "hex": "CC3333",
+    "name": "Persian red",
+    "uuid": "e12684d0-567e-4381-9805-426704bfdf76"
+  },
+  {
+    "hex": "701C1C",
+    "name": "Persian plum",
+    "uuid": "063a091f-77d1-4f67-9212-d872e20c2aef"
+  },
+  {
+    "hex": "F77FBE",
+    "name": "Persian pink",
+    "uuid": "b65e8892-d213-47b1-bd62-ff2452992721"
+  },
+  {
+    "hex": "D99058",
+    "name": "Persian orange",
+    "uuid": "566daa47-2001-4ce3-b67a-434acc772fd7"
+  },
+  {
+    "hex": "32127A",
+    "name": "Persian indigo",
+    "uuid": "44c56fbc-74b0-4a15-a2ce-76dcba6a46bf"
+  },
+  {
+    "hex": "00A693",
+    "name": "Persian green",
+    "uuid": "bacafff3-ce05-4820-81a5-91469bb9af7e"
+  },
+  {
+    "hex": "1C39BB",
+    "name": "Persian blue",
+    "uuid": "d42a8bae-e2e3-4f43-bc35-b91d0d8ea1b4"
+  },
+  {
+    "hex": "E12C2C",
+    "name": "Permanent Geranium Lake",
+    "uuid": "9450f889-21f6-4a8d-8472-2efa5908ed7e"
+  },
+  {
+    "hex": "C3CDE6",
+    "name": "Periwinkle (Crayola)",
+    "uuid": "b426b2d2-6b5d-458f-909f-46d45d74dfa2"
+  },
+  {
+    "hex": "CCCCFF",
+    "name": "Periwinkle",
+    "uuid": "c66a96b7-ce96-460a-944f-72c8954513e8"
+  },
+  {
+    "hex": "B768A2",
+    "name": "Pearly purple",
+    "uuid": "e2898407-7a0a-450d-950f-aee6236f3ddb"
+  },
+  {
+    "hex": "D1E231",
+    "name": "Pear",
+    "uuid": "6d8802ec-f259-4a69-a370-853802f735bf"
+  },
+  {
+    "hex": "FFDAB9",
+    "name": "Peach puff",
+    "uuid": "85eea003-57c9-443d-a868-e317c4b81174"
+  },
+  {
+    "hex": "FFCBA4",
+    "name": "Peach (Crayola)",
+    "uuid": "7bd57734-d0ff-43f4-aa9a-7c2a2300f8ae"
+  },
+  {
+    "hex": "FFE5B4",
+    "name": "Peach",
+    "uuid": "57f12bc3-6ec0-43f9-8bd2-09b447676db3"
+  },
+  {
+    "hex": "536878",
+    "name": "Payne's grey",
+    "uuid": "446eeb65-2276-4499-86a2-0ea879438af5"
+  },
+  {
+    "hex": "800080",
+    "name": "Patriarch",
+    "uuid": "46ad8005-282d-4001-bc4a-311cc3b62b0f"
+  },
+  {
+    "hex": "DEA5A4",
+    "name": "Pastel pink",
+    "uuid": "1f8b19b4-69f2-48ad-8b1e-42478beb38e3"
+  },
+  {
+    "hex": "50C878",
+    "name": "Paris Green",
+    "uuid": "34532183-9595-407f-a4e0-f38630e08319"
+  },
+  {
+    "hex": "E63E62",
+    "name": "Paradise pink",
+    "uuid": "d9973767-cfa4-4911-9d94-64f7fa2b8da1"
+  },
+  {
+    "hex": "FFEFD5",
+    "name": "Papaya whip",
+    "uuid": "52420140-0cbc-46e1-ab9f-03d0434afd22"
+  },
+  {
+    "hex": "009B7D",
+    "name": "Paolo Veronese green",
+    "uuid": "ef46e807-53bb-405b-b5db-a863e69f6d63"
+  },
+  {
+    "hex": "78184A",
+    "name": "Pansy purple",
+    "uuid": "758f3e2d-aa4b-4792-9ce7-4fdb785bbe52"
+  },
+  {
+    "hex": "ECEBBD",
+    "name": "Pale spring bud",
+    "uuid": "262d4ee3-73ef-4a54-b951-11dfd0a5367e"
+  },
+  {
+    "hex": "C9C0BB",
+    "name": "Pale silver",
+    "uuid": "b5d2c4eb-cac8-44f8-8e9d-e59695825a77"
+  },
+  {
+    "hex": "FAE6FA",
+    "name": "Pale purple (Pantone)",
+    "uuid": "8ff583bb-d759-4899-820b-ecf256c19001"
+  },
+  {
+    "hex": "FADADD",
+    "name": "Pale pink",
+    "uuid": "7fd73867-e492-4490-bf19-ece33bd27357"
+  },
+  {
+    "hex": "9BC4E2",
+    "name": "Pale cerulean",
+    "uuid": "8de9ce71-8eea-4115-bb39-d427f2ce7616"
+  },
+  {
+    "hex": "BCD4E6",
+    "name": "Pale aqua",
+    "uuid": "7d3e8c38-8005-47d6-b361-650d3d8e2c06"
+  },
+  {
+    "hex": "682860",
+    "name": "Palatinate purple",
+    "uuid": "f43eeb34-f00a-4c9e-87e9-e0a785581b31"
+  },
+  {
+    "hex": "006600",
+    "name": "Pakistan green",
+    "uuid": "923668c1-17ff-4f34-acf6-f81cbb1d085f"
+  },
+  {
+    "hex": "1CA9C9",
+    "name": "Pacific blue",
+    "uuid": "7232a3d1-4952-44e9-b233-f7ef3e7dc269"
+  },
+  {
+    "hex": "841617",
+    "name": "OU Crimson red",
+    "uuid": "25fd7d55-4e88-40d3-b4c7-be185ece6d67"
+  },
+  {
+    "hex": "002147",
+    "name": "Oxford blue",
+    "uuid": "33930029-e5ec-49df-8c39-9db5643a9519"
+  },
+  {
+    "hex": "800020",
+    "name": "Oxblood",
+    "uuid": "73efec71-03e4-4fec-b023-50b90bde5010"
+  },
+  {
+    "hex": "FF6E4A",
+    "name": "Outrageous Orange",
+    "uuid": "30abb204-6df2-4f08-870d-3993fd9cdc52"
+  },
+  {
+    "hex": "2D383A",
+    "name": "Outer space (Crayola)",
+    "uuid": "49428604-d486-4e1c-9e9e-fcfe6b4dbf82"
+  },
+  {
+    "hex": "E29CD2",
+    "name": "Orchid (Crayola)",
+    "uuid": "3ed476da-2d1b-443e-84f3-0d1b0ce70612"
+  },
+  {
+    "hex": "F2BDCD",
+    "name": "Orchid pink",
+    "uuid": "ae625d33-11ec-490c-aa61-40f4958b5d1d"
+  },
+  {
+    "hex": "DA70D6",
+    "name": "Orchid",
+    "uuid": "9cf18c0a-a20d-41c0-bcbd-c05142c615d7"
+  },
+  {
+    "hex": "F8D568",
+    "name": "Orange-yellow (Crayola)",
+    "uuid": "3b4e401f-7643-4f1c-a841-81ae6956ae9b"
+  },
+  {
+    "hex": "F5BD1F",
+    "name": "Orange-yellow",
+    "uuid": "fb7d2232-0afc-4232-b059-75678f412307"
+  },
+  {
+    "hex": "FA5B3D",
+    "name": "Orange soda",
+    "uuid": "b9ef57ba-0826-4f63-b3fd-1809ccd35f2d"
+  },
+  {
+    "hex": "FF5349",
+    "name": "Orange-red (Crayola)",
+    "uuid": "be306542-804b-458a-ab9f-d64d01ecba04"
+  },
+  {
+    "hex": "FF681F",
+    "name": "Orange-red",
+    "uuid": "973cb537-9336-49c6-81ce-71135294382a"
+  },
+  {
+    "hex": "FF9F00",
+    "name": "Orange peel",
+    "uuid": "e7260b2c-e941-4117-a195-a696edaaadb6"
+  },
+  {
+    "hex": "FFA500",
+    "name": "Orange (web)",
+    "uuid": "cf4e2210-dc07-4509-b095-e8cd2789a3e4"
+  },
+  {
+    "hex": "FF5800",
+    "name": "Orange (Pantone)",
+    "uuid": "9fb53fe2-1bd6-4eba-97f7-bffb4d9159a3"
+  },
+  {
+    "hex": "FF7538",
+    "name": "Orange (Crayola)",
+    "uuid": "920eb7f3-20f0-4884-9e2f-0c0dd9b3a39b"
+  },
+  {
+    "hex": "FF7F00",
+    "name": "Orange",
+    "uuid": "3c4c8b6e-a1de-4fbc-a738-894dad872cb1"
+  },
+  {
+    "hex": "B784A7",
+    "name": "Opera mauve",
+    "uuid": "989efe16-6bd7-424b-8919-db9e8d93d46c"
+  },
+  {
+    "hex": "A8C3BC",
+    "name": "Opal",
+    "uuid": "cd302128-37bb-4410-9967-c6f9d361b127"
+  },
+  {
+    "hex": "353839",
+    "name": "Onyx",
+    "uuid": "3e6a95a3-ce3c-432a-859b-21559694c16a"
+  },
+  {
+    "hex": "9AB973",
+    "name": "Olivine",
+    "uuid": "1f470429-ae36-4606-8380-cbb11e8dcf23"
+  },
+  {
+    "hex": "B5B35C",
+    "name": "Olive green",
+    "uuid": "88d189e8-c4f0-4f9e-88e9-ef5bd72e1739"
+  },
+  {
+    "hex": "3C341F",
+    "name": "Olive Drab #7",
+    "uuid": "36ac6ec1-0979-4cd9-aad4-d24aab1f15e6"
+  },
+  {
+    "hex": "6B8E23",
+    "name": "Olive Drab (#3)",
+    "uuid": "8b8b2235-6829-480b-9ca0-1eda8eedad1e"
+  },
+  {
+    "hex": "808000",
+    "name": "Olive",
+    "uuid": "2fd101fb-308f-4b23-b7eb-8bd0149b0bc3"
+  },
+  {
+    "hex": "848482",
+    "name": "Old silver",
+    "uuid": "5a210e36-29b1-471a-ab46-55a822bf833f"
+  },
+  {
+    "hex": "C08081",
+    "name": "Old rose",
+    "uuid": "d494662b-b1dd-4e51-9a63-11f31d1995b6"
+  },
+  {
+    "hex": "673147",
+    "name": "Old mauve",
+    "uuid": "e163e057-4d5e-4477-8daa-5e95c9279161"
+  },
+  {
+    "hex": "796878",
+    "name": "Old lavender",
+    "uuid": "816fc1c5-05f7-42ab-9882-0ad6c9d6c24a"
+  },
+  {
+    "hex": "FDF5E6",
+    "name": "Old lace",
+    "uuid": "bbc2d70b-b4ac-424f-b5f7-4a7f66b0131d"
+  },
+  {
+    "hex": "CFB53B",
+    "name": "Old gold",
+    "uuid": "7a69de9c-fe48-4709-b76c-674e9f991003"
+  },
+  {
+    "hex": "43302E",
+    "name": "Old burgundy",
+    "uuid": "f923c4cf-cbf1-4bf5-9128-b7938ac91bfe"
+  },
+  {
+    "hex": "CC7722",
+    "name": "Ochre",
+    "uuid": "35c0dbbd-e33a-4e82-be57-8482d84a848e"
+  },
+  {
+    "hex": "48BF91",
+    "name": "Ocean green",
+    "uuid": "3f1acf0b-a51f-43ab-94d7-039aee96579c"
+  },
+  {
+    "hex": "4F42B5",
+    "name": "Ocean Blue",
+    "uuid": "8d6776b5-a436-4c13-abc7-ab5aa3143a5e"
+  },
+  {
+    "hex": "E9FFDB",
+    "name": "Nyanza",
+    "uuid": "935fc2ae-8e33-4f67-9323-1796c4bd101d"
+  },
+  {
+    "hex": "A4DDED",
+    "name": "Non-photo blue",
+    "uuid": "ae0fd94f-cd46-480e-8a83-2d5ff01a2f9b"
+  },
+  {
+    "hex": "727472",
+    "name": "Nickel",
+    "uuid": "15ae7803-9260-4de9-9efe-c0083dbd6b2c"
+  },
+  {
+    "hex": "D7837F",
+    "name": "New York pink",
+    "uuid": "09390269-b6dd-440b-a558-f50703e25f8d"
+  },
+  {
+    "hex": "39FF14",
+    "name": "Neon green",
+    "uuid": "953b5314-fcff-42c9-8dbf-02b2f2a82079"
+  },
+  {
+    "hex": "4666FF",
+    "name": "Neon blue",
+    "uuid": "32c2fa69-c314-4409-a7f2-b90b435c1614"
+  },
+  {
+    "hex": "1974D2",
+    "name": "Navy blue (Crayola)",
+    "uuid": "08b298e6-79d0-49a7-a757-49616f4bf506"
+  },
+  {
+    "hex": "000080",
+    "name": "Navy blue",
+    "uuid": "0cca9bc5-d381-45b8-807b-bff9ce252c84"
+  },
+  {
+    "hex": "FFDEAD",
+    "name": "Navajo white",
+    "uuid": "30c3da95-09d9-4680-8136-3e3d8a417ebe"
+  },
+  {
+    "hex": "FADA5E",
+    "name": "Naples yellow",
+    "uuid": "c510aca2-c671-4670-837b-7956a62f89bd"
+  },
+  {
+    "hex": "F6ADC6",
+    "name": "Nadeshiko pink",
+    "uuid": "0cb991c0-128b-4a40-8175-673d037341f2"
+  },
+  {
+    "hex": "AD4379",
+    "name": "Mystic maroon",
+    "uuid": "268e1972-721d-4cb7-9a49-9eee765fcaad"
+  },
+  {
+    "hex": "D65282",
+    "name": "Mystic",
+    "uuid": "68150cc9-96ec-4189-82a1-537098627bf7"
+  },
+  {
+    "hex": "317873",
+    "name": "Myrtle green",
+    "uuid": "e7521074-9fc3-4aa1-b0a5-dab12d249a19"
+  },
+  {
+    "hex": "FFDB58",
+    "name": "Mustard",
+    "uuid": "b3ee24a7-cc3c-4a2c-ab63-9bd3d7881b9c"
+  },
+  {
+    "hex": "C8509B",
+    "name": "Mulberry (Crayola)",
+    "uuid": "5d70d00c-6c5a-4ae7-ad45-f23b5d91beca"
+  },
+  {
+    "hex": "C54B8C",
+    "name": "Mulberry",
+    "uuid": "3f06f1e3-1788-45ae-9fb4-ca61b0aa57d3"
+  },
+  {
+    "hex": "18453B",
+    "name": "MSU green",
+    "uuid": "2e1979f1-096c-41bd-8242-ecbca6c71fab"
+  },
+  {
+    "hex": "997A8D",
+    "name": "Mountbatten pink",
+    "uuid": "9e3c8501-c7cf-4b24-b694-c11767347e33"
+  },
+  {
+    "hex": "30BA8F",
+    "name": "Mountain Meadow",
+    "uuid": "c17ec62b-3e26-41d9-bdf0-5411cd424ea9"
+  },
+  {
+    "hex": "8A9A5B",
+    "name": "Moss green",
+    "uuid": "2b938867-1f72-4dc7-8883-5bf035ab2307"
+  },
+  {
+    "hex": "8DA399",
+    "name": "Morning blue",
+    "uuid": "67aa2918-6dba-4285-b084-ddaa71cd5bf8"
+  },
+  {
+    "hex": "967117",
+    "name": "Mode beige",
+    "uuid": "3c2356d3-817a-46cd-a386-b1745489c6b6"
+  },
+  {
+    "hex": "FFE4E1",
+    "name": "Misty rose",
+    "uuid": "c569ee27-9726-47a0-9d6b-cbcadf89f86e"
+  },
+  {
+    "hex": "BBB477",
+    "name": "Misty moss",
+    "uuid": "61bbdccf-5aee-4fc9-83b3-5b9d31258085"
+  },
+  {
+    "hex": "98FF98",
+    "name": "Mint green",
+    "uuid": "df3487ae-3092-41ad-b547-1ee674ff5b82"
+  },
+  {
+    "hex": "F5FFFA",
+    "name": "Mint cream",
+    "uuid": "82f72e47-2187-48b6-8eaa-59331518ce0d"
+  },
+  {
+    "hex": "3EB489",
+    "name": "Mint",
+    "uuid": "e23a2e8e-f73d-46b7-8bf6-9471747542db"
+  },
+  {
+    "hex": "F5E050",
+    "name": "Minion yellow",
+    "uuid": "dd01ff90-3185-463d-8621-92528eb3a92f"
+  },
+  {
+    "hex": "36747D",
+    "name": "Ming",
+    "uuid": "cc6b41f9-ef99-4b1c-9ff2-9aea7a652186"
+  },
+  {
+    "hex": "E3F988",
+    "name": "Mindaro",
+    "uuid": "918f3f5c-f0da-4e7d-a71a-da3bfc1163b8"
+  },
+  {
+    "hex": "FFDAE9",
+    "name": "Mimi pink",
+    "uuid": "642d0b44-64a1-455d-b557-a335ea759a1d"
+  },
+  {
+    "hex": "FFC40C",
+    "name": "Mikado yellow",
+    "uuid": "9a5257a3-3f96-4884-9e68-d61c4bd6cefc"
+  },
+  {
+    "hex": "004953",
+    "name": "Midnight green (eagle green)",
+    "uuid": "494a36b7-4409-47f4-aa10-3db8b3173397"
+  },
+  {
+    "hex": "191970",
+    "name": "Midnight blue",
+    "uuid": "f09a8dae-cfbe-4d9e-81ff-d489907aa832"
+  },
+  {
+    "hex": "702670",
+    "name": "Midnight",
+    "uuid": "2bddf768-7a57-44fb-bdd2-317b579212a5"
+  },
+  {
+    "hex": "ECB176",
+    "name": "Middle yellow red",
+    "uuid": "1024ab64-9e43-4ef1-95e1-8e47da65c0a2"
+  },
+  {
+    "hex": "FFEB00",
+    "name": "Middle yellow",
+    "uuid": "a6d67720-f1f3-4d70-b798-700c99423254"
+  },
+  {
+    "hex": "A55353",
+    "name": "Middle red purple",
+    "uuid": "2165703f-c997-4e2d-a93c-17f179146583"
+  },
+  {
+    "hex": "E58E73",
+    "name": "Middle red",
+    "uuid": "28a419e1-b1a7-423b-b1bb-4236ee1bbd7c"
+  },
+  {
+    "hex": "D982B5",
+    "name": "Middle purple",
+    "uuid": "25228acd-1faf-4047-97e9-44108c5aaf72"
+  },
+  {
+    "hex": "ACBF60",
+    "name": "Middle green yellow",
+    "uuid": "87374825-8a78-4068-93cb-0859697eafbb"
+  },
+  {
+    "hex": "4D8C57",
+    "name": "Middle green",
+    "uuid": "fcdd3caf-8103-4bd1-adf4-8ef05b809cd0"
+  },
+  {
+    "hex": "8B8680",
+    "name": "Middle grey",
+    "uuid": "836ecffa-4d5a-4d45-b4c5-d1379bf6d15e"
+  },
+  {
+    "hex": "8B72BE",
+    "name": "Middle blue purple",
+    "uuid": "bd64da11-231d-41ce-9c36-c98bab5899b9"
+  },
+  {
+    "hex": "8DD9CC",
+    "name": "Middle blue green",
+    "uuid": "851c6e69-4035-4d40-9ee9-47a961086a43"
+  },
+  {
+    "hex": "7ED4E6",
+    "name": "Middle blue",
+    "uuid": "6c786c5d-2a52-43a2-bd34-e1f19433ec69"
+  },
+  {
+    "hex": "E4007C",
+    "name": "Mexican pink",
+    "uuid": "f58440cb-6a87-42ae-84b8-51c28d24a372"
+  },
+  {
+    "hex": "9C7C38",
+    "name": "Metallic Sunburst",
+    "uuid": "20b672a7-204b-49f1-91c6-263e85fb2834"
+  },
+  {
+    "hex": "0A7E8C",
+    "name": "Metallic Seaweed",
+    "uuid": "dfcb0ed5-82b2-4655-a874-bd21f1918eb1"
+  },
+  {
+    "hex": "D3AF37",
+    "name": "Metallic gold",
+    "uuid": "02707985-ceac-4dc1-afaf-1e69df40f37f"
+  },
+  {
+    "hex": "FEBAAD",
+    "name": "Melon",
+    "uuid": "8a2847f0-cb85-46a7-b612-2202bab039ef"
+  },
+  {
+    "hex": "F8DE7E",
+    "name": "Mellow yellow",
+    "uuid": "6b681a40-0426-4d43-8c6b-fdd85e01479b"
+  },
+  {
+    "hex": "F8B878",
+    "name": "Mellow apricot",
+    "uuid": "cbc1317b-21c8-4b54-96bf-694bc4cd365b"
+  },
+  {
+    "hex": "C71585",
+    "name": "Medium violet-red",
+    "uuid": "bc836add-7b2d-4841-a3c4-c90a7092b76a"
+  },
+  {
+    "hex": "48D1CC",
+    "name": "Medium turquoise",
+    "uuid": "b45d93bc-1c9e-4d6a-83b8-a106b9d4d8ba"
+  },
+  {
+    "hex": "00FA9A",
+    "name": "Medium spring green",
+    "uuid": "fa8dce44-0c29-4eb2-8fa7-42027178632d"
+  },
+  {
+    "hex": "7B68EE",
+    "name": "Medium slate blue",
+    "uuid": "462f3bb0-4f62-421b-be8b-06cc5b057d35"
+  },
+  {
+    "hex": "3CB371",
+    "name": "Medium sea green",
+    "uuid": "a070fb62-dc4e-415b-90ef-2476fb87e60e"
+  },
+  {
+    "hex": "9370DB",
+    "name": "Medium purple",
+    "uuid": "5573eed9-ca92-4f4b-8e3a-dd224562d581"
+  },
+  {
+    "hex": "BA55D3",
+    "name": "Medium orchid",
+    "uuid": "c4e74070-943f-4f1d-8c37-e1b423186547"
+  },
+  {
+    "hex": "F3E5AB",
+    "name": "Medium champagne",
+    "uuid": "8e7e3308-fdda-4a04-9b26-38c4105dee01"
+  },
+  {
+    "hex": "AF4035",
+    "name": "Medium carmine",
+    "uuid": "12624203-cbcd-433b-87e7-cddc8af88ec1"
+  },
+  {
+    "hex": "E2062C",
+    "name": "Medium candy apple red",
+    "uuid": "a55b511f-a8e3-43d6-9a68-f92273a27569"
+  },
+  {
+    "hex": "0000CD",
+    "name": "Medium blue",
+    "uuid": "688cd1b2-1880-4aa4-b400-14abd2693cec"
+  },
+  {
+    "hex": "66DDAA",
+    "name": "Medium aquamarine",
+    "uuid": "4c8d3eaf-07fc-47a1-889d-f035a3425f40"
+  },
+  {
+    "hex": "73C2FB",
+    "name": "Maya blue",
+    "uuid": "9215e36c-e838-4354-88fc-bbca71495975"
+  },
+  {
+    "hex": "4C9141",
+    "name": "May green",
+    "uuid": "5abe3dfe-b053-4348-a952-719e396b3803"
+  },
+  {
+    "hex": "F2BA49",
+    "name": "Maximum yellow red",
+    "uuid": "bf76aba0-0de1-4ec9-8d8b-03e70e22b591"
+  },
+  {
+    "hex": "FAFA37",
+    "name": "Maximum yellow",
+    "uuid": "bf69c853-bdc5-4e7d-85ca-cb49194ae912"
+  },
+  {
+    "hex": "A63A79",
+    "name": "Maximum red purple",
+    "uuid": "787edea7-abcc-4a99-a944-90b745c61690"
+  },
+  {
+    "hex": "D92121",
+    "name": "Maximum red",
+    "uuid": "2241f700-65a6-4353-942d-587fe6e96886"
+  },
+  {
+    "hex": "733380",
+    "name": "Maximum purple",
+    "uuid": "363c3c47-8a26-4bfe-ba7e-2e02c65d71a4"
+  },
+  {
+    "hex": "D9E650",
+    "name": "Maximum green yellow",
+    "uuid": "e4cf5278-9d8e-401b-aa70-29e9aaeb107c"
+  },
+  {
+    "hex": "5E8C31",
+    "name": "Maximum green",
+    "uuid": "9922d4be-c461-4c05-af24-9a5d43486c1e"
+  },
+  {
+    "hex": "ACACE6",
+    "name": "Maximum blue purple",
+    "uuid": "2a715a78-f534-49f7-9c19-29efc2d9ce1c"
+  },
+  {
+    "hex": "30BFBF",
+    "name": "Maximum blue green",
+    "uuid": "8a716298-f385-401b-8580-8bb6d8eb3d5b"
+  },
+  {
+    "hex": "47ABCC",
+    "name": "Maximum blue",
+    "uuid": "79f9471a-b823-48b0-9f74-82187e6dda51"
+  },
+  {
+    "hex": "EF98AA",
+    "name": "Mauvelous",
+    "uuid": "8131f975-c279-4312-baf2-c198292d905e"
+  },
+  {
+    "hex": "915F6D",
+    "name": "Mauve taupe",
+    "uuid": "ea5d2e3b-a330-4550-ade5-3f8b075b0828"
+  },
+  {
+    "hex": "E0B0FF",
+    "name": "Mauve",
+    "uuid": "152115d9-b738-4e3e-a12d-ec5e099ad41b"
+  },
+  {
+    "hex": "B03060",
+    "name": "Maroon (X11)",
+    "uuid": "d7dbab4e-21ef-4ff5-abda-39146ea329b3"
+  },
+  {
+    "hex": "800000",
+    "name": "Maroon (web)",
+    "uuid": "ec68067f-9dc3-4d85-a35d-ea7ba71660f0"
+  },
+  {
+    "hex": "C32148",
+    "name": "Maroon (Crayola)",
+    "uuid": "3471ee90-4ccd-483a-a598-250ec4378d86"
+  },
+  {
+    "hex": "EAA221",
+    "name": "Marigold",
+    "uuid": "9ff46c86-16c2-492c-bb90-69ed64c56e73"
+  },
+  {
+    "hex": "880085",
+    "name": "Mardi Gras",
+    "uuid": "80fec871-04da-485b-bf84-7de107f59200"
+  },
+  {
+    "hex": "74C365",
+    "name": "Mantis",
+    "uuid": "f0309a73-b7e5-4a95-bdc1-d92dacb59f6b"
+  },
+  {
+    "hex": "FF8243",
+    "name": "Mango Tango",
+    "uuid": "f0322398-cbef-47f7-b835-a5c39a00bca3"
+  },
+  {
+    "hex": "FDBE02",
+    "name": "Mango",
+    "uuid": "ea325e5f-d5cf-4218-a64b-cb2cf7366d9b"
+  },
+  {
+    "hex": "F37A48",
+    "name": "Mandarin",
+    "uuid": "80391f25-5242-4830-bfff-fa5f79bc11d4"
+  },
+  {
+    "hex": "979AAA",
+    "name": "Manatee",
+    "uuid": "5a0cc504-4d4f-403a-918a-0e8bef0859a6"
+  },
+  {
+    "hex": "0BDA51",
+    "name": "Malachite",
+    "uuid": "e7bee837-eee4-42fd-9912-a5a5d7aeb132"
+  },
+  {
+    "hex": "6050DC",
+    "name": "Majorelle blue",
+    "uuid": "23799c3d-b346-4ca5-9ea0-2780ee0c27c8"
+  },
+  {
+    "hex": "F2C649",
+    "name": "Maize (Crayola)",
+    "uuid": "e25816f3-7380-450d-afe6-28ccafdfe5e1"
+  },
+  {
+    "hex": "FBEC5D",
+    "name": "Maize",
+    "uuid": "40cd8464-8d9c-4fec-b3e5-b9e7b6ca3b0c"
+  },
+  {
+    "hex": "C04000",
+    "name": "Mahogany",
+    "uuid": "f26aee74-667a-4950-99a6-a5d3c67d9fd5"
+  },
+  {
+    "hex": "F8F4FF",
+    "name": "Magnolia",
+    "uuid": "14b2c5e7-1cb2-4303-8738-e9cfbb03618c"
+  },
+  {
+    "hex": "AAF0D1",
+    "name": "Magic mint",
+    "uuid": "054db13a-2168-4900-95b2-9d228866cdd0"
+  },
+  {
+    "hex": "9F4576",
+    "name": "Magenta haze",
+    "uuid": "327944f3-271d-4026-b595-d9777f00a708"
+  },
+  {
+    "hex": "FF0090",
+    "name": "Magenta (process)",
+    "uuid": "2e7cc8a3-5381-418a-be63-a69958aacbc1"
+  },
+  {
+    "hex": "D0417E",
+    "name": "Magenta (Pantone)",
+    "uuid": "5a3aafce-0258-4b64-93f6-04ea40d71bef"
+  },
+  {
+    "hex": "CA1F7B",
+    "name": "Magenta (dye)",
+    "uuid": "bdab777d-cbd8-4553-beb0-e8730e11278e"
+  },
+  {
+    "hex": "F653A6",
+    "name": "Magenta (Crayola)",
+    "uuid": "a75f584b-6931-4db1-82ee-ee06687f9aac"
+  },
+  {
+    "hex": "FF00FF",
+    "name": "Magenta",
+    "uuid": "ad5a75eb-4aa7-467e-b005-5bdf37aa60ab"
+  },
+  {
+    "hex": "CC3336",
+    "name": "Madder Lake",
+    "uuid": "3fe41ec0-feec-4216-9a2c-ee685f2ef75a"
+  },
+  {
+    "hex": "FFBD88",
+    "name": "Macaroni and Cheese",
+    "uuid": "45b66804-3418-4b04-9a75-9aefc290c125"
+  },
+  {
+    "hex": "6699CC",
+    "name": "Livid",
+    "uuid": "ac71d286-4b03-49e9-9313-e6ba44356868"
+  },
+  {
+    "hex": "987456",
+    "name": "Liver chestnut",
+    "uuid": "2e78a145-c969-47ab-b875-ed1881a8a710"
+  },
+  {
+    "hex": "6C2E1F",
+    "name": "Liver (organ)",
+    "uuid": "4cbe6229-094e-4e85-a250-d07682eb44a0"
+  },
+  {
+    "hex": "B86D29",
+    "name": "Liver (dogs)",
+    "uuid": "555a1748-7ac6-4e6d-964f-5a0b0038d0e7"
+  },
+  {
+    "hex": "674C47",
+    "name": "Liver",
+    "uuid": "85511eae-7e7c-4cb1-acdf-ed1ac8b88fc4"
+  },
+  {
+    "hex": "6CA0DC",
+    "name": "Little boy blue",
+    "uuid": "c0d26457-9fd9-4283-b239-443cc680328b"
+  },
+  {
+    "hex": "DE6FA1",
+    "name": "Liseran purple",
+    "uuid": "9a3040f2-a72a-4e6e-9ed4-a0b37fda361d"
+  },
+  {
+    "hex": "C19A6B",
+    "name": "Lion",
+    "uuid": "73cb0586-cd2e-4f03-b44b-347d8b7f2bb2"
+  },
+  {
+    "hex": "FAF0E6",
+    "name": "Linen",
+    "uuid": "4231480a-b2bb-4999-803e-9aa3f2389aa5"
+  },
+  {
+    "hex": "195905",
+    "name": "Lincoln green",
+    "uuid": "42424246-03de-4205-89ea-231f02f910d9"
+  },
+  {
+    "hex": "32CD32",
+    "name": "Lime green",
+    "uuid": "60459736-59ce-4037-a38b-68e139bac201"
+  },
+  {
+    "hex": "00FF00",
+    "name": "Lime (web) (X11 green)",
+    "uuid": "30cb864e-4aa6-44d6-a0b6-8740300bb9d3"
+  },
+  {
+    "hex": "BFFF00",
+    "name": "Lime (color wheel)",
+    "uuid": "65d13126-a9b4-416a-b6eb-a3dbfb570568"
+  },
+  {
+    "hex": "AE98AA",
+    "name": "Lilac Luster",
+    "uuid": "1a8090ef-71da-4c13-bbf7-27f79dd96587"
+  },
+  {
+    "hex": "C8A2C8",
+    "name": "Lilac",
+    "uuid": "ed74eeac-dd44-40fc-9593-bc3cd6a3ff8f"
+  },
+  {
+    "hex": "FFFFE0",
+    "name": "Light yellow",
+    "uuid": "20f69005-71ae-42e9-9813-e9d06d3d8776"
+  },
+  {
+    "hex": "B0C4DE",
+    "name": "Light steel blue",
+    "uuid": "b7c373da-4892-4df1-aa10-9bc3cabcce93"
+  },
+  {
+    "hex": "778899",
+    "name": "Light slate gray",
+    "uuid": "030c0744-2a4e-4ece-99ed-ed08100248d2"
+  },
+  {
+    "hex": "87CEFA",
+    "name": "Light sky blue",
+    "uuid": "0e88efc7-e2d3-4c52-8c6e-bd42ade89166"
+  },
+  {
+    "hex": "20B2AA",
+    "name": "Light sea green",
+    "uuid": "aa734fae-7dc3-4858-a877-c85df74b550e"
+  },
+  {
+    "hex": "FFA07A",
+    "name": "Light salmon",
+    "uuid": "f2fd85b6-0e07-4250-b7d5-56320246a8e9"
+  },
+  {
+    "hex": "FFB6C1",
+    "name": "Light pink",
+    "uuid": "7d9a27a4-95db-4279-8512-96e89e535ef0"
+  },
+  {
+    "hex": "C5CBE1",
+    "name": "Light periwinkle",
+    "uuid": "3e08235c-8944-4b6b-8f01-91b35fffdeb2"
+  },
+  {
+    "hex": "FED8B1",
+    "name": "Light orange",
+    "uuid": "7ee0384b-abd2-472b-b92d-1c2f0eca97bd"
+  },
+  {
+    "hex": "90EE90",
+    "name": "Light green",
+    "uuid": "93dc43f8-0478-4497-827e-342d9c0fe80e"
+  },
+  {
+    "hex": "D3D3D3",
+    "name": "Light gray",
+    "uuid": "ae75cf28-b63e-48ae-a3fc-263ec04f5b09"
+  },
+  {
+    "hex": "FAFAD2",
+    "name": "Light goldenrod yellow",
+    "uuid": "ddcb1395-8e04-415a-8a6d-45b484c9b6f7"
+  },
+  {
+    "hex": "C8AD7F",
+    "name": "Light French beige",
+    "uuid": "252b3f9e-a49d-430b-a4c1-064d641d15cd"
+  },
+  {
+    "hex": "E0FFFF",
+    "name": "Light cyan",
+    "uuid": "1cc5d878-751b-4d38-b70a-cd3d5c13cdd3"
+  },
+  {
+    "hex": "93CCEA",
+    "name": "Light cornflower blue",
+    "uuid": "33f9187c-e995-43fe-8ff3-54706541344f"
+  },
+  {
+    "hex": "F08080",
+    "name": "Light coral",
+    "uuid": "06fd1fae-22c6-4426-901c-1c90ace012da"
+  },
+  {
+    "hex": "ADD8E6",
+    "name": "Light blue",
+    "uuid": "ae26624a-fd6e-4b4b-8fc8-e07b027e5405"
+  },
+  {
+    "hex": "545AA7",
+    "name": "Liberty",
+    "uuid": "b5fd1d8a-d29e-49f6-a455-a56c8f54ea75"
+  },
+  {
+    "hex": "FFFF9F",
+    "name": "Lemon yellow (Crayola)",
+    "uuid": "38442e51-1b04-4938-8b1e-5c12ea51c38e"
+  },
+  {
+    "hex": "FFF44F",
+    "name": "Lemon yellow",
+    "uuid": "187873d8-d34c-4e65-b48c-1d00090e2617"
+  },
+  {
+    "hex": "F6EABE",
+    "name": "Lemon meringue",
+    "uuid": "43a4d636-c723-4d78-967c-6fc81d77e454"
+  },
+  {
+    "hex": "FDFF00",
+    "name": "Lemon glacier",
+    "uuid": "414b353d-1715-4ac0-a5df-7461c184184c"
+  },
+  {
+    "hex": "CCA01D",
+    "name": "Lemon curry",
+    "uuid": "dba03461-1147-45ec-a8b4-4be858bf8db0"
+  },
+  {
+    "hex": "FFFACD",
+    "name": "Lemon chiffon",
+    "uuid": "e2755bd4-7bd8-4bba-8807-a4f484304153"
+  },
+  {
+    "hex": "FFF700",
+    "name": "Lemon",
+    "uuid": "670fe9e2-178e-474d-8035-94e61919b03a"
+  },
+  {
+    "hex": "7CFC00",
+    "name": "Lawn green",
+    "uuid": "7b6ba5a5-5b78-40b0-8612-ca38782f37e1"
+  },
+  {
+    "hex": "C4C3D0",
+    "name": "Lavender gray",
+    "uuid": "7bec0def-c4ae-4225-9b52-4397bda1da73"
+  },
+  {
+    "hex": "FFF0F5",
+    "name": "Lavender blush",
+    "uuid": "463cef79-7746-48b0-8f18-11e92cca3b60"
+  },
+  {
+    "hex": "CCCCFF",
+    "name": "Lavender blue",
+    "uuid": "155745be-a2ce-465e-982f-96e35511cca1"
+  },
+  {
+    "hex": "E6E6FA",
+    "name": "Lavender (web)",
+    "uuid": "5d9f4eaa-67c2-412e-a00f-28f41a5e140c"
+  },
+  {
+    "hex": "B57EDC",
+    "name": "Lavender (floral)",
+    "uuid": "9a325836-c947-4c20-9f29-253749d88d0a"
+  },
+  {
+    "hex": "CF1020",
+    "name": "Lava",
+    "uuid": "53a49187-8ffd-4e6f-8739-b9c9d478a2a9"
+  },
+  {
+    "hex": "A9BA9D",
+    "name": "Laurel green",
+    "uuid": "9bdb8909-6124-489f-abf4-1bfb3381296e"
+  },
+  {
+    "hex": "FFFF66",
+    "name": "Laser lemon",
+    "uuid": "259a88c9-0538-46f7-ba54-21f2fa60e0a6"
+  },
+  {
+    "hex": "26619C",
+    "name": "Lapis lazuli",
+    "uuid": "7815c559-5dfd-42b6-8acc-95578a5ffbc3"
+  },
+  {
+    "hex": "D6CADD",
+    "name": "Languid lavender",
+    "uuid": "fc5b4e03-c682-449b-9a1d-3b7ec97dc0af"
+  },
+  {
+    "hex": "512888",
+    "name": "KSU purple",
+    "uuid": "46c42f99-f69f-44e9-b902-ded41b10fa6f"
+  },
+  {
+    "hex": "354230",
+    "name": "Kombu green",
+    "uuid": "294d6b7a-c5c0-4555-9265-24cd68053c61"
+  },
+  {
+    "hex": "6B4423",
+    "name": "Kobicha",
+    "uuid": "b3dbf38f-aeb8-4422-9e45-95f6e35699ed"
+  },
+  {
+    "hex": "E79FC4",
+    "name": "Kobi",
+    "uuid": "526eafd5-1367-4f59-abdb-3be480c3b55b"
+  },
+  {
+    "hex": "882D17",
+    "name": "Kobe",
+    "uuid": "e8a7e404-693a-40a2-80c3-fdaf8e169529"
+  },
+  {
+    "hex": "F0E68C",
+    "name": "Khaki (X11) (Light khaki)",
+    "uuid": "9b240674-2201-4163-b0bc-2f74b10e4840"
+  },
+  {
+    "hex": "C3B091",
+    "name": "Khaki (web)",
+    "uuid": "f2baf20d-81fb-4dd7-bff8-92ff0af021d1"
+  },
+  {
+    "hex": "E8F48C",
+    "name": "Key lime",
+    "uuid": "8c7bbffd-ff61-41cb-ac4a-b4003fb3c753"
+  },
+  {
+    "hex": "3AB09E",
+    "name": "Keppel",
+    "uuid": "ee35ff09-6561-44ba-83df-4ef845dc0da9"
+  },
+  {
+    "hex": "4CBB17",
+    "name": "Kelly green",
+    "uuid": "3443b46d-ad64-41f4-8b0d-524329bc9b8d"
+  },
+  {
+    "hex": "29AB87",
+    "name": "Jungle green",
+    "uuid": "42b4585e-189d-40a5-a100-031fb6e45105"
+  },
+  {
+    "hex": "BDDA57",
+    "name": "June bud",
+    "uuid": "d4dfb87e-8c36-400f-9e99-43811c21626e"
+  },
+  {
+    "hex": "F4CA16",
+    "name": "Jonquil",
+    "uuid": "f101b306-5267-4285-b99e-c4eb1faee344"
+  },
+  {
+    "hex": "343434",
+    "name": "Jet",
+    "uuid": "92a7fbba-b53d-474a-bf56-ac171040170e"
+  },
+  {
+    "hex": "A50B5E",
+    "name": "Jazzberry jam",
+    "uuid": "4f7e90b9-b406-4c87-9aa1-49d69adfe8fa"
+  },
+  {
+    "hex": "F8DE7E",
+    "name": "Jasmine",
+    "uuid": "72a795d6-3ee1-499e-a61a-ca50a7e83070"
+  },
+  {
+    "hex": "00A86B",
+    "name": "Jade",
+    "uuid": "c4a2d98f-1c34-4344-81de-26418eac396f"
+  },
+  {
+    "hex": "FFFFF0",
+    "name": "Ivory",
+    "uuid": "a92b96cf-efb7-4d1e-8963-23df2ee216e2"
+  },
+  {
+    "hex": "B2FFFF",
+    "name": "Italian sky blue",
+    "uuid": "5123195d-dbde-40d3-b0ed-0d5cd2a6f733"
+  },
+  {
+    "hex": "F4F0EC",
+    "name": "Isabelline",
+    "uuid": "d8fcc21c-19ad-4831-9188-d6f80518a073"
+  },
+  {
+    "hex": "B3446C",
+    "name": "Irresistible",
+    "uuid": "4ee33357-a047-4c11-b114-b7a3df5e085f"
+  },
+  {
+    "hex": "5A4FCF",
+    "name": "Iris",
+    "uuid": "9e400af8-c2d5-4a37-9e6c-0f6b3420fd6c"
+  },
+  {
+    "hex": "C0362C",
+    "name": "International orange (Golden Gate Bridge)",
+    "uuid": "f9e26767-1521-41a2-b25b-b56684abec23"
+  },
+  {
+    "hex": "BA160C",
+    "name": "International orange (engineering)",
+    "uuid": "4d21ee2a-bc7c-4771-8bf2-fbf6de171fba"
+  },
+  {
+    "hex": "FF4F00",
+    "name": "International orange (aerospace)",
+    "uuid": "0febf05b-dede-437c-b910-2d1dec23c96a"
+  },
+  {
+    "hex": "002FA7",
+    "name": "International Klein Blue",
+    "uuid": "2dae3e1f-7a27-4b15-9a37-81bbb16ae107"
+  },
+  {
+    "hex": "00416A",
+    "name": "Indigo dye",
+    "uuid": "c3a38072-a488-41f4-a1f3-814869e63ebd"
+  },
+  {
+    "hex": "4B0082",
+    "name": "Indigo",
+    "uuid": "7cce774c-7f34-4106-9ebc-619b1e74ec2a"
+  },
+  {
+    "hex": "E3A857",
+    "name": "Indian yellow",
+    "uuid": "cc0ea732-4e75-4e49-9be8-3ebeed6f7278"
+  },
+  {
+    "hex": "CD5C5C",
+    "name": "Indian red",
+    "uuid": "85824c30-d9bd-4763-87db-ae958afd4303"
+  },
+  {
+    "hex": "138808",
+    "name": "India green",
+    "uuid": "13fc2a18-aae6-4215-91a8-9c1598818e6e"
+  },
+  {
+    "hex": "4C516D",
+    "name": "Independence",
+    "uuid": "2c6500c1-7ba1-4134-adc8-4a0f998c0d1e"
+  },
+  {
+    "hex": "B2EC5D",
+    "name": "Inchworm",
+    "uuid": "64d532c2-7e2d-4136-bc83-81a7d68b022b"
+  },
+  {
+    "hex": "ED2939",
+    "name": "Imperial red",
+    "uuid": "3fad5907-5c65-49fb-bcb8-92d1309fb868"
+  },
+  {
+    "hex": "319177",
+    "name": "Illuminating emerald",
+    "uuid": "d828d150-f3c5-469b-bc22-6faf35a82aa7"
+  },
+  {
+    "hex": "FCF75E",
+    "name": "Icterine",
+    "uuid": "30f49793-5f20-4518-9817-782782445537"
+  },
+  {
+    "hex": "71A6D2",
+    "name": "Iceberg",
+    "uuid": "b5b2659e-a8b3-4210-9109-a560fd22d630"
+  },
+  {
+    "hex": "355E3B",
+    "name": "Hunter green",
+    "uuid": "0db97518-9d9c-48e3-9553-7d6ec5eb88ec"
+  },
+  {
+    "hex": "FF69B4",
+    "name": "Hot pink",
+    "uuid": "43086d66-ffd4-46e6-bc5b-a228efd6918a"
+  },
+  {
+    "hex": "FF1DCE",
+    "name": "Hot magenta",
+    "uuid": "8138753e-65ec-489a-a996-677619de0644"
+  },
+  {
+    "hex": "49796B",
+    "name": "Hooker's green",
+    "uuid": "6a90de5a-6bcd-4534-8b55-fd250d3ec7c4"
+  },
+  {
+    "hex": "006DB0",
+    "name": "Honolulu blue",
+    "uuid": "9b545ad1-9e01-449b-94e0-c57329a8b290"
+  },
+  {
+    "hex": "F0FFF0",
+    "name": "Honeydew",
+    "uuid": "7634562d-2ab7-40f0-a6e4-588f19ba6f5c"
+  },
+  {
+    "hex": "F400A1",
+    "name": "Hollywood cerise",
+    "uuid": "b9ae814a-07cd-4aff-9fb6-3e2b3f540ad8"
+  },
+  {
+    "hex": "AA98A9",
+    "name": "Heliotrope gray",
+    "uuid": "a9422b3d-7903-43b6-bfe3-0f0c6abe55b4"
+  },
+  {
+    "hex": "DF73FF",
+    "name": "Heliotrope",
+    "uuid": "08b6003c-9382-466b-b1fb-adfba93830fd"
+  },
+  {
+    "hex": "FF7A00",
+    "name": "Heat Wave",
+    "uuid": "f27b6352-9189-412d-a636-5abb5b0c0ee5"
+  },
+  {
+    "hex": "DA9100",
+    "name": "Harvest gold",
+    "uuid": "20975b24-c170-4bae-bbbf-cc43bece16e8"
+  },
+  {
+    "hex": "3FFF00",
+    "name": "Harlequin",
+    "uuid": "8247a686-78f4-4d54-9bdd-5a93569c34d0"
+  },
+  {
+    "hex": "E9D66B",
+    "name": "Hansa yellow",
+    "uuid": "85a74466-26a1-4589-b213-a276895d4e60"
+  },
+  {
+    "hex": "5218FA",
+    "name": "Han purple",
+    "uuid": "7e2dd266-f430-4fbe-836f-6617008fee0a"
+  },
+  {
+    "hex": "446CCF",
+    "name": "Han blue",
+    "uuid": "88f27dda-e66a-4d37-b87c-5462e8a76b4f"
+  },
+  {
+    "hex": "2a3439",
+    "name": "Gunmetal",
+    "uuid": "f9943466-1f34-4e2b-8414-b44368bacfdd"
+  },
+  {
+    "hex": "A99A86",
+    "name": "Grullo",
+    "uuid": "5bee77b1-be57-475f-99da-2c84238eb127"
+  },
+  {
+    "hex": "F0E891",
+    "name": "Green-yellow (Crayola)",
+    "uuid": "9306970c-0a7d-4763-965b-c98963efff6f"
+  },
+  {
+    "hex": "ADFF2F",
+    "name": "Green-yellow",
+    "uuid": "74429d85-8e49-441b-9e84-e13048997754"
+  },
+  {
+    "hex": "6EAEA1",
+    "name": "Green Sheen",
+    "uuid": "23553585-96e8-4d60-94d0-42a96eea5697"
+  },
+  {
+    "hex": "A7F432",
+    "name": "Green Lizard",
+    "uuid": "d4829096-e2ca-4c4e-a1d6-91feb0f3b256"
+  },
+  {
+    "hex": "009966",
+    "name": "Green-cyan",
+    "uuid": "59c36cc3-997a-47c3-a3d8-a0b473e9645a"
+  },
+  {
+    "hex": "2887C8",
+    "name": "Green-blue (Crayola)",
+    "uuid": "beddee04-e67f-44dd-b380-a37dcae0e72f"
+  },
+  {
+    "hex": "1164B4",
+    "name": "Green-blue",
+    "uuid": "b21af3b4-3a7b-4cb1-bb02-94f3ee2a174c"
+  },
+  {
+    "hex": "66B032",
+    "name": "Green (RYB)",
+    "uuid": "04794749-409f-4f41-8768-b1a2978b4cbb"
+  },
+  {
+    "hex": "00A550",
+    "name": "Green (pigment)",
+    "uuid": "90359649-f4be-4fe3-8766-5f55db8f2148"
+  },
+  {
+    "hex": "00AD43",
+    "name": "Green (Pantone)",
+    "uuid": "5deb9684-8240-49ed-b47a-4b917ccb56e2"
+  },
+  {
+    "hex": "009F6B",
+    "name": "Green (NCS)",
+    "uuid": "1d2ad74e-f1a8-4990-97ac-7eab286a42ab"
+  },
+  {
+    "hex": "00A877",
+    "name": "Green (Munsell)",
+    "uuid": "60428748-3f96-4ec6-9dac-255f22812eff"
+  },
+  {
+    "hex": "008000",
+    "name": "Green (web)",
+    "uuid": "ba184a44-a24b-4ccd-8b0d-e1bb72d65c32"
+  },
+  {
+    "hex": "1CAC78",
+    "name": "Green (Crayola)",
+    "uuid": "29b9fdb0-2a14-4c6b-a753-9e622875e64a"
+  },
+  {
+    "hex": "00FF00",
+    "name": "Green",
+    "uuid": "c672903b-5009-410a-9cb6-3ddcda33fe21"
+  },
+  {
+    "hex": "BEBEBE",
+    "name": "Gray (X11 gray)",
+    "uuid": "3d84746e-a201-4597-bab3-1e7cdc163132"
+  },
+  {
+    "hex": "808080",
+    "name": "Gray (web)",
+    "uuid": "398cc230-4358-4a4c-9193-f3febb7c6c9a"
+  },
+  {
+    "hex": "A8E4A0",
+    "name": "Granny Smith apple",
+    "uuid": "983d6dbc-755d-4237-8f35-1e7a88b7e974"
+  },
+  {
+    "hex": "676767",
+    "name": "Granite gray",
+    "uuid": "666bb275-cbec-4d65-8c2e-84ac72d1bc33"
+  },
+  {
+    "hex": "DAA520",
+    "name": "Goldenrod",
+    "uuid": "04640c60-03ae-4720-9445-2878f426b1b6"
+  },
+  {
+    "hex": "FFDF00",
+    "name": "Golden yellow",
+    "uuid": "46831d6e-7a27-4219-8d4f-bc576a23a6e9"
+  },
+  {
+    "hex": "FCC200",
+    "name": "Golden poppy",
+    "uuid": "ea963c8d-7d96-4bd0-a989-7f53eb640dea"
+  },
+  {
+    "hex": "996515",
+    "name": "Golden brown",
+    "uuid": "b84ddefa-0c17-4fe6-94f8-993c720ddf0f"
+  },
+  {
+    "hex": "85754E",
+    "name": "Gold Fusion",
+    "uuid": "d3866dc2-1fdf-4879-8357-4516456e9591"
+  },
+  {
+    "hex": "E6BE8A",
+    "name": "Gold (Crayola)",
+    "uuid": "e64e90f9-957a-4682-adb5-b3d3b1209db6"
+  },
+  {
+    "hex": "FFD700",
+    "name": "Gold (web) (Golden)",
+    "uuid": "22d18bcb-4a4e-4198-9789-237be5ee31be"
+  },
+  {
+    "hex": "D4AF37",
+    "name": "Gold (metallic)",
+    "uuid": "b17ce9ac-0675-4ff2-8262-cc8e6b4e89de"
+  },
+  {
+    "hex": "A57C00",
+    "name": "Gold",
+    "uuid": "117948eb-99fc-4d93-8662-6094e6e9a9cb"
+  },
+  {
+    "hex": "00AB66",
+    "name": "GO green",
+    "uuid": "ea81ecff-8166-4191-a689-3e127d0be947"
+  },
+  {
+    "hex": "AB92B3",
+    "name": "Glossy grape",
+    "uuid": "ba42308c-1205-49e2-bd2a-b35a9e58bd3c"
+  },
+  {
+    "hex": "6082B6",
+    "name": "Glaucous",
+    "uuid": "dd8513d7-09c9-4413-a513-d7ead652144c"
+  },
+  {
+    "hex": "F8F8FF",
+    "name": "Ghost white",
+    "uuid": "0815d05e-5262-49c2-9441-c1d50786eb6d"
+  },
+  {
+    "hex": "007F66",
+    "name": "Generic viridian",
+    "uuid": "b7c7eca0-1c4b-4226-8212-aec1fec357b1"
+  },
+  {
+    "hex": "E49B0F",
+    "name": "Gamboge",
+    "uuid": "7b2c68ca-3d9b-483d-ade8-8b4e03ac6488"
+  },
+  {
+    "hex": "DCDCDC",
+    "name": "Gainsboro",
+    "uuid": "cea48582-f9e2-41a0-b2af-bd0d946b1c17"
+  },
+  {
+    "hex": "87421F",
+    "name": "Fuzzy Wuzzy",
+    "uuid": "f7ab7c4f-f1e9-4b35-8926-32a86f4ac80a"
+  },
+  {
+    "hex": "E48400",
+    "name": "Fulvous",
+    "uuid": "fc0c794c-0445-49ce-84d9-8e124e276183"
+  },
+  {
+    "hex": "C74375",
+    "name": "Fuchsia rose",
+    "uuid": "88863a97-aeb3-4385-b1fc-4e5986f1e3cc"
+  },
+  {
+    "hex": "CC397B",
+    "name": "Fuchsia purple",
+    "uuid": "9b3c14d8-25e2-4db5-b981-a00e77f1f41b"
+  },
+  {
+    "hex": "C154C1",
+    "name": "Fuchsia (Crayola)",
+    "uuid": "b9c32984-12ee-4406-8169-55cc2000128b"
+  },
+  {
+    "hex": "FF00FF",
+    "name": "Fuchsia",
+    "uuid": "9d329d35-102c-4e8f-9017-fdb7c23ebb2e"
+  },
+  {
+    "hex": "E936A7",
+    "name": "Frostbite",
+    "uuid": "d86638f3-03bd-480c-9e1e-109c22af4c52"
+  },
+  {
+    "hex": "8806CE",
+    "name": "French violet",
+    "uuid": "ac423839-b42b-4ce4-9930-dfd4e94b68f6"
+  },
+  {
+    "hex": "77B5FE",
+    "name": "French sky blue",
+    "uuid": "e46aac21-e9a8-47a6-9616-770e276be664"
+  },
+  {
+    "hex": "F64A8A",
+    "name": "French rose",
+    "uuid": "ab520ad1-ab7a-4206-9d86-cc8cb0da012b"
+  },
+  {
+    "hex": "C72C48",
+    "name": "French raspberry",
+    "uuid": "5c8ccc1c-212b-420c-bb60-27e498859686"
+  },
+  {
+    "hex": "FD6C9E",
+    "name": "French pink",
+    "uuid": "65aee36d-2621-44ea-af87-337af60fbbbb"
+  },
+  {
+    "hex": "D473D4",
+    "name": "French mauve",
+    "uuid": "9492e928-064d-4afd-b089-0a4d1f59961d"
+  },
+  {
+    "hex": "9EFD38",
+    "name": "French lime",
+    "uuid": "66e272af-69f4-4bd6-8862-6979fe625d54"
+  },
+  {
+    "hex": "86608E",
+    "name": "French lilac",
+    "uuid": "e693632b-72b3-414b-97ba-6644dde8a038"
+  },
+  {
+    "hex": "FD3F92",
+    "name": "French fuchsia",
+    "uuid": "a35d0b55-0d36-4f9a-923b-c7c12728603c"
+  },
+  {
+    "hex": "0072BB",
+    "name": "French blue",
+    "uuid": "03ffe832-337b-4ce4-a779-ca35c677246a"
+  },
+  {
+    "hex": "856D4D",
+    "name": "French bistre",
+    "uuid": "106bd20f-4b3a-43ca-8a41-bcbf102760c1"
+  },
+  {
+    "hex": "A67B5B",
+    "name": "French beige",
+    "uuid": "67e280bd-8248-400e-90fe-44633b302dc7"
+  },
+  {
+    "hex": "228B22",
+    "name": "Forest green (web)",
+    "uuid": "27914256-83e4-4d6e-adc6-b310ce3aa7bf"
+  },
+  {
+    "hex": "014421",
+    "name": "Forest green (traditional)",
+    "uuid": "5a6bba20-1a73-4775-b32f-8a44893236cb"
+  },
+  {
+    "hex": "5FA777",
+    "name": "Forest green (Crayola)",
+    "uuid": "e76be996-9cef-4418-8f69-40b55920e788"
+  },
+  {
+    "hex": "15F4EE",
+    "name": "Fluorescent blue",
+    "uuid": "ce43c4ef-ba27-4a41-8374-e862dfb7a8e9"
+  },
+  {
+    "hex": "FFFAF0",
+    "name": "Floral white",
+    "uuid": "f8282cb4-67c8-4c4e-8b57-1149caab5fd8"
+  },
+  {
+    "hex": "A2006D",
+    "name": "Flirt",
+    "uuid": "d9e7d7db-bf83-4e0f-8109-fe86749e0752"
+  },
+  {
+    "hex": "FB0081",
+    "name": "Flickr Pink",
+    "uuid": "a778dd09-3816-4fdd-a456-dd236eab0609"
+  },
+  {
+    "hex": "0063dc",
+    "name": "Flickr Blue",
+    "uuid": "658a1295-7866-4eb6-a168-7c6b0edbe0a2"
+  },
+  {
+    "hex": "EEDC82",
+    "name": "Flax",
+    "uuid": "366bdb2e-2fd7-428b-80be-0c19638a96da"
+  },
+  {
+    "hex": "E25822",
+    "name": "Flame",
+    "uuid": "5d6c22ec-b2aa-4192-950b-9e618b45cc48"
+  },
+  {
+    "hex": "E95C4B",
+    "name": "Fire opal",
+    "uuid": "59421fef-6fb5-4ae2-8bbf-9d150fd78db4"
+  },
+  {
+    "hex": "CE2029",
+    "name": "Fire engine red",
+    "uuid": "17256b93-3e0a-43fd-bc7a-338b6dd6a8cb"
+  },
+  {
+    "hex": "B22222",
+    "name": "Firebrick",
+    "uuid": "67b346dd-d83d-4f5a-99f6-4de0a9692eb6"
+  },
+  {
+    "hex": "FF5470",
+    "name": "Fiery rose",
+    "uuid": "0be2f3b4-a8a9-4cc7-aef7-23fce6453146"
+  },
+  {
+    "hex": "6C541E",
+    "name": "Field drab",
+    "uuid": "d7f0a17d-74f8-4d9d-aa94-bdfaf077b014"
+  },
+  {
+    "hex": "4F7942",
+    "name": "Fern green",
+    "uuid": "22ddbeec-b7b7-42f2-a1cc-e02020f0c386"
+  },
+  {
+    "hex": "4D5D53",
+    "name": "Feldgrau",
+    "uuid": "c49514bd-9f09-4325-9ae5-2afeee3c44c0"
+  },
+  {
+    "hex": "E5AA70",
+    "name": "Fawn",
+    "uuid": "af6231e0-31ef-4cae-b4d5-6bdf1def05f9"
+  },
+  {
+    "hex": "F400A1",
+    "name": "Fashion fuchsia",
+    "uuid": "ae9a1cb1-a40b-4a0a-aab5-7640f351c819"
+  },
+  {
+    "hex": "DE5285",
+    "name": "Fandango pink",
+    "uuid": "70307046-3563-41d4-9941-856369e7711d"
+  },
+  {
+    "hex": "B53389",
+    "name": "Fandango",
+    "uuid": "06b43963-ff28-4c9e-9926-395e936a9548"
+  },
+  {
+    "hex": "801818",
+    "name": "Falu red",
+    "uuid": "846bad76-f076-4cbb-9859-9051f27bed29"
+  },
+  {
+    "hex": "C19A6B",
+    "name": "Fallow",
+    "uuid": "48c6989f-091f-4891-a3d1-84d70c4f6cdd"
+  },
+  {
+    "hex": "96C8A2",
+    "name": "Eton blue",
+    "uuid": "2afb2661-150e-4d20-848f-b8b5c7e816bf"
+  },
+  {
+    "hex": "00FF40",
+    "name": "Erin",
+    "uuid": "7af26014-0cdb-4f61-b9a9-e090ef5920f7"
+  },
+  {
+    "hex": "563C5C",
+    "name": "English violet",
+    "uuid": "d54deddf-10c8-421a-90f3-3891a349dd25"
+  },
+  {
+    "hex": "CC474B",
+    "name": "English vermillion",
+    "uuid": "785759f2-4ad0-46ad-bb3c-d663b26f272b"
+  },
+  {
+    "hex": "AB4B52",
+    "name": "English red",
+    "uuid": "34ad9d62-3ee3-4b42-9b56-c0980a38d493"
+  },
+  {
+    "hex": "B48395",
+    "name": "English lavender",
+    "uuid": "3a2c6c91-e0b3-48b6-94e4-f7bc79739ae2"
+  },
+  {
+    "hex": "1B4D3E",
+    "name": "English green",
+    "uuid": "c6db79d5-3610-4dd9-907e-afc835ec2c9f"
+  },
+  {
+    "hex": "6C3082",
+    "name": "Eminence",
+    "uuid": "ab63646d-cdef-4ecd-8af1-ec0bd00ae039"
+  },
+  {
+    "hex": "50C878",
+    "name": "Emerald",
+    "uuid": "b4b97217-5a11-43b1-8782-18223b58a758"
+  },
+  {
+    "hex": "8F00FF",
+    "name": "Electric violet",
+    "uuid": "47856636-47c4-4a30-a6b0-2de22c934025"
+  },
+  {
+    "hex": "BF00FF",
+    "name": "Electric purple",
+    "uuid": "ab9555d4-e873-460e-9c57-f0cb0cb79789"
+  },
+  {
+    "hex": "CCFF00",
+    "name": "Electric lime",
+    "uuid": "f4eef876-4238-4673-b06c-edfd2534050a"
+  },
+  {
+    "hex": "6F00FF",
+    "name": "Electric indigo",
+    "uuid": "f7ddc8fa-89f8-483c-b7c2-78c74cb630c8"
+  },
+  {
+    "hex": "00FF00",
+    "name": "Electric green",
+    "uuid": "607f0602-223a-4d0b-8bc9-3d198f27d459"
+  },
+  {
+    "hex": "7DF9FF",
+    "name": "Electric blue",
+    "uuid": "2824092b-63d4-4b81-8fa7-dce81f21a5e1"
+  },
+  {
+    "hex": "1034A6",
+    "name": "Egyptian blue",
+    "uuid": "a62786c2-87b2-4d71-808f-872c95990ccf"
+  },
+  {
+    "hex": "F0EAD6",
+    "name": "Eggshell",
+    "uuid": "ee836077-070f-45ec-96c2-b1dce3972565"
+  },
+  {
+    "hex": "614051",
+    "name": "Eggplant",
+    "uuid": "86620e8e-a035-4284-b387-5d9d1ba74612"
+  },
+  {
+    "hex": "1B1B1B",
+    "name": "Eerie black",
+    "uuid": "3899bf8d-fb50-4467-bfff-2207be0baeae"
+  },
+  {
+    "hex": "C2B280",
+    "name": "Ecru",
+    "uuid": "0d2f3f05-7e51-4c9b-8c1c-2a73b105e5c2"
+  },
+  {
+    "hex": "555D50",
+    "name": "Ebony",
+    "uuid": "5aed8e10-b2f3-45ad-91cf-9ad8c95f2fc6"
+  },
+  {
+    "hex": "E1A95F",
+    "name": "Earth yellow",
+    "uuid": "7cfdb897-68ef-4c0a-90ed-cef5850d9524"
+  },
+  {
+    "hex": "EFDFBB",
+    "name": "Dutch white",
+    "uuid": "41c250c9-01c4-4a6c-9289-d384d790907f"
+  },
+  {
+    "hex": "00009C",
+    "name": "Duke blue",
+    "uuid": "03264695-2378-4180-ad67-3c854368bcf7"
+  },
+  {
+    "hex": "967117",
+    "name": "Drab",
+    "uuid": "28701207-1691-424d-8ef1-bedb20f86652"
+  },
+  {
+    "hex": "D71868",
+    "name": "Dogwood rose",
+    "uuid": "318c43f2-9c1d-4804-97c2-6f7d46ac3f21"
+  },
+  {
+    "hex": "1E90FF",
+    "name": "Dodger blue",
+    "uuid": "81dbf85e-1432-4809-aad1-72cb54440715"
+  },
+  {
+    "hex": "696969",
+    "name": "Dim gray",
+    "uuid": "5214999c-1959-444f-afba-36f7e8c4e332"
+  },
+  {
+    "hex": "EDC9AF",
+    "name": "Desert sand",
+    "uuid": "85372f07-9e54-4d50-8a1d-891245b0ce0d"
+  },
+  {
+    "hex": "C19A6B",
+    "name": "Desert",
+    "uuid": "5397aa40-93f6-4a69-a2a2-074697b8dacc"
+  },
+  {
+    "hex": "2243B6",
+    "name": "Denim blue",
+    "uuid": "189c76a9-8d58-4b0d-ac93-a0d1fa9d5415"
+  },
+  {
+    "hex": "1560BD",
+    "name": "Denim",
+    "uuid": "7d7d8b01-74ed-481c-a5aa-8b31a823e942"
+  },
+  {
+    "hex": "7E5E60",
+    "name": "Deep taupe",
+    "uuid": "93e99537-0054-41ad-aaf3-7805a479d1ab"
+  },
+  {
+    "hex": "4A646C",
+    "name": "Deep Space Sparkle",
+    "uuid": "bad159f3-79cb-4c04-ab55-cb39168c31c1"
+  },
+  {
+    "hex": "00BFFF",
+    "name": "Deep sky blue",
+    "uuid": "0f91ba9a-1487-42b4-bccc-db0e64338b77"
+  },
+  {
+    "hex": "FF9933",
+    "name": "Deep saffron",
+    "uuid": "5fc5a636-e909-4bfe-a3b8-e2123a46289a"
+  },
+  {
+    "hex": "FF1493",
+    "name": "Deep pink",
+    "uuid": "86e41251-e48f-4f9b-bf11-537a4e21386c"
+  },
+  {
+    "hex": "004B49",
+    "name": "Deep jungle green",
+    "uuid": "2cc75a92-6317-45ec-8733-f5feecca5759"
+  },
+  {
+    "hex": "B94E48",
+    "name": "Deep chestnut",
+    "uuid": "9e012431-713f-4247-aa38-826a303d666f"
+  },
+  {
+    "hex": "FAD6A5",
+    "name": "Deep champagne",
+    "uuid": "7767422d-f50e-4033-a869-ee59f5eb4a75"
+  },
+  {
+    "hex": "DA3287",
+    "name": "Deep cerise",
+    "uuid": "3a2a656c-69ee-42db-8f37-62efbd7c270c"
+  },
+  {
+    "hex": "555555",
+    "name": "Davy's grey",
+    "uuid": "9361ade7-5d41-4580-999b-e0f2e8314706"
+  },
+  {
+    "hex": "00703C",
+    "name": "Dartmouth green",
+    "uuid": "4c847b1a-eccd-4e1c-8597-c1123b5baba1"
+  },
+  {
+    "hex": "9400D3",
+    "name": "Dark violet",
+    "uuid": "b36fb25b-e0fe-401d-baab-6526291d232a"
+  },
+  {
+    "hex": "00CED1",
+    "name": "Dark turquoise",
+    "uuid": "1d3357ad-8677-4c02-8210-3adcdddf8ccf"
+  },
+  {
+    "hex": "177245",
+    "name": "Dark spring green",
+    "uuid": "01078384-3284-45e4-97ce-81ef2ab4406a"
+  },
+  {
+    "hex": "2F4F4F",
+    "name": "Dark slate gray",
+    "uuid": "6a7b3238-c697-48a8-8222-fca092607a17"
+  },
+  {
+    "hex": "483D8B",
+    "name": "Dark slate blue",
+    "uuid": "a53bdd4f-1299-4fd7-9eb5-f121205344d0"
+  },
+  {
+    "hex": "8CBED6",
+    "name": "Dark sky blue",
+    "uuid": "dd58124a-8e2a-4563-9f45-a9ce6009cf65"
+  },
+  {
+    "hex": "3C1414",
+    "name": "Dark sienna",
+    "uuid": "9347516a-ca77-419b-8a3c-e62df797620d"
+  },
+  {
+    "hex": "8FBC8F",
+    "name": "Dark sea green",
+    "uuid": "5aecb76a-9905-49dc-9a1b-681b59725b9e"
+  },
+  {
+    "hex": "E9967A",
+    "name": "Dark salmon",
+    "uuid": "84870afe-9ee1-42f7-af5f-bf8e7825f236"
+  },
+  {
+    "hex": "8B0000",
+    "name": "Dark red",
+    "uuid": "e2f64a12-34b8-4287-8623-906b20bd5be7"
+  },
+  {
+    "hex": "301934",
+    "name": "Dark purple",
+    "uuid": "8a93805c-262f-4abc-98d0-ff18e3beb340"
+  },
+  {
+    "hex": "03C03C",
+    "name": "Dark pastel green",
+    "uuid": "acf6ce34-8da5-4494-96b5-561d2da660f8"
+  },
+  {
+    "hex": "9932CC",
+    "name": "Dark orchid",
+    "uuid": "61e419a3-b610-46f9-91c3-5a0405f3f379"
+  },
+  {
+    "hex": "FF8C00",
+    "name": "Dark orange",
+    "uuid": "b0fc4cce-f447-4cdd-aed7-b17d67f54351"
+  },
+  {
+    "hex": "556B2F",
+    "name": "Dark olive green",
+    "uuid": "ffa60ab9-eb8a-49db-acbd-af5e7b759722"
+  },
+  {
+    "hex": "4A5D23",
+    "name": "Dark moss green",
+    "uuid": "58734fe5-526b-478c-ad9f-7fb53afe7fd9"
+  },
+  {
+    "hex": "8B008B",
+    "name": "Dark magenta",
+    "uuid": "7825afab-d8a3-43cb-9edc-92a9ee9a497a"
+  },
+  {
+    "hex": "543D37",
+    "name": "Dark liver (horses)",
+    "uuid": "a02eac52-73ce-4390-b1b2-4efc2997f6e8"
+  },
+  {
+    "hex": "534B4F",
+    "name": "Dark liver",
+    "uuid": "4b30e038-7f66-4805-a527-1e665cb3049b"
+  },
+  {
+    "hex": "483C32",
+    "name": "Dark lava",
+    "uuid": "a61a4d89-f70f-4892-a7f5-9695fbab6ff2"
+  },
+  {
+    "hex": "BDB76B",
+    "name": "Dark khaki",
+    "uuid": "54f40e0f-4227-4350-bfc1-24e5ad07d844"
+  },
+  {
+    "hex": "1A2421",
+    "name": "Dark jungle green",
+    "uuid": "c01ce58d-107f-4d17-81a0-39b3406ce1a4"
+  },
+  {
+    "hex": "006400",
+    "name": "Dark green (X11)",
+    "uuid": "460fd06f-1f7d-4c9c-b461-8a74d5c0814c"
+  },
+  {
+    "hex": "013220",
+    "name": "Dark green",
+    "uuid": "8a9eb804-5c57-4847-956d-99c14b66e7fb"
+  },
+  {
+    "hex": "B8860B",
+    "name": "Dark goldenrod",
+    "uuid": "f51c8677-8916-4086-b5a2-37f41e40e6c3"
+  },
+  {
+    "hex": "536878",
+    "name": "Dark electric blue",
+    "uuid": "7c7e351c-0ca8-4de4-9146-788110abbfdd"
+  },
+  {
+    "hex": "008B8B",
+    "name": "Dark cyan",
+    "uuid": "160a7e59-a458-4fa9-8055-48fe3fbcc037"
+  },
+  {
+    "hex": "26428B",
+    "name": "Dark cornflower blue",
+    "uuid": "c46e5cd2-7b80-4fc3-8199-565d641c93cb"
+  },
+  {
+    "hex": "5D3954",
+    "name": "Dark byzantium",
+    "uuid": "3a0a687a-6b1b-4ecf-8336-0d8956a65d47"
+  },
+  {
+    "hex": "654321",
+    "name": "Dark brown",
+    "uuid": "47c13b61-c37a-4320-8400-d9084d1e7b94"
+  },
+  {
+    "hex": "666699",
+    "name": "Dark blue-gray",
+    "uuid": "fc694a27-294b-4d18-a10b-a6f019586de3"
+  },
+  {
+    "hex": "F56FA1",
+    "name": "Cyclamen",
+    "uuid": "16a7748d-0fd0-403a-980f-dc224ac688ce"
+  },
+  {
+    "hex": "FFD300",
+    "name": "Cyber yellow",
+    "uuid": "8b328af2-2bd8-4090-b6cd-c42579c63101"
+  },
+  {
+    "hex": "58427C",
+    "name": "Cyber grape",
+    "uuid": "eb7d886a-dd1b-432e-a7a2-cd489b60a422"
+  },
+  {
+    "hex": "00B7EB",
+    "name": "Cyan (process)",
+    "uuid": "7e3bafe4-8fbc-49cf-84b3-10302e68adf0"
+  },
+  {
+    "hex": "00FFFF",
+    "name": "Cyan",
+    "uuid": "24e4733a-ad87-4e88-adeb-89815d803312"
+  },
+  {
+    "hex": "F5F5F5",
+    "name": "Cultured",
+    "uuid": "449253d8-831b-4815-8863-9ce14852c3ea"
+  },
+  {
+    "hex": "9E1B32",
+    "name": "Crimson (UA)",
+    "uuid": "2d3dbd81-d6e2-4b73-8e9c-d7310d83bee2"
+  },
+  {
+    "hex": "DC143C",
+    "name": "Crimson",
+    "uuid": "81bb6d41-56c8-44bc-82f4-ed162a40c2db"
+  },
+  {
+    "hex": "FFFDD0",
+    "name": "Cream",
+    "uuid": "5244637b-c40f-420e-b4c0-36a5f5736567"
+  },
+  {
+    "hex": "FFBCD9",
+    "name": "Cotton candy",
+    "uuid": "03e2ae77-8587-4057-9ab9-29b38fb2ed8b"
+  },
+  {
+    "hex": "81613C",
+    "name": "Coyote brown",
+    "uuid": "58e1afc2-ba83-473a-8427-94be4e51d974"
+  },
+  {
+    "hex": "FFF8E7",
+    "name": "Cosmic latte",
+    "uuid": "04786e80-5b90-4eb8-962a-ba7a340d896e"
+  },
+  {
+    "hex": "2E2D88",
+    "name": "Cosmic cobalt",
+    "uuid": "089d2a8f-29ae-4fb8-9a5b-486fddceef6b"
+  },
+  {
+    "hex": "FFF8DC",
+    "name": "Cornsilk",
+    "uuid": "873f4742-c0b4-4a56-a9d0-5a2867c34ef4"
+  },
+  {
+    "hex": "6495ED",
+    "name": "Cornflower blue",
+    "uuid": "b1bc0cba-44a1-4b1a-b2ec-978f960459e6"
+  },
+  {
+    "hex": "FBEC5D",
+    "name": "Corn",
+    "uuid": "72d95c13-dffa-4c5b-9229-b5f68f1d41f6"
+  },
+  {
+    "hex": "893F45",
+    "name": "Cordovan",
+    "uuid": "b2fddca4-5cde-4c5f-8961-2cf2d4d8bfe5"
+  },
+  {
+    "hex": "F88379",
+    "name": "Coral pink",
+    "uuid": "658121f0-1aa3-4d67-a8cd-ea12764a1023"
+  },
+  {
+    "hex": "FF7F50",
+    "name": "Coral",
+    "uuid": "6d565b1a-6ee1-4524-aeed-7187672575b4"
+  },
+  {
+    "hex": "FF3800",
+    "name": "Coquelicot",
+    "uuid": "01237916-1452-47cc-918f-69afdcd9263e"
+  },
+  {
+    "hex": "996666",
+    "name": "Copper rose",
+    "uuid": "5e770526-4318-4d7c-a6a6-0f23b706e9b7"
+  },
+  {
+    "hex": "CB6D51",
+    "name": "Copper red",
+    "uuid": "cd9eac4c-62a9-4124-8894-26c8c9ee6180"
+  },
+  {
+    "hex": "AD6F69",
+    "name": "Copper penny",
+    "uuid": "804ebe99-e56d-413b-b956-6d702607690c"
+  },
+  {
+    "hex": "DA8A67",
+    "name": "Copper (Crayola)",
+    "uuid": "d9568c1c-9bc3-4370-a135-c58a5228bc39"
+  },
+  {
+    "hex": "B87333",
+    "name": "Copper",
+    "uuid": "ff701227-acec-4f0a-846f-a6c05d23c655"
+  },
+  {
+    "hex": "8C92AC",
+    "name": "Cool grey",
+    "uuid": "54e0892e-e322-47b0-a2f0-062d8576a1ee"
+  },
+  {
+    "hex": "F88379",
+    "name": "Congo pink",
+    "uuid": "72ed0392-195e-46e5-a6f5-ef0851ef6d56"
+  },
+  {
+    "hex": "B9D9EB",
+    "name": "Columbia Blue",
+    "uuid": "34b176a5-9fee-4a36-9368-3f308034ca78"
+  },
+  {
+    "hex": "6F4E37",
+    "name": "Coffee",
+    "uuid": "ed9c8225-2d17-4684-8295-b49626711632"
+  },
+  {
+    "hex": "D2691E",
+    "name": "Cocoa brown",
+    "uuid": "87c14841-62a7-45b6-a238-e172d96bc48c"
+  },
+  {
+    "hex": "0047AB",
+    "name": "Cobalt blue",
+    "uuid": "c5295bea-4597-4de2-987f-df218a321fe4"
+  },
+  {
+    "hex": "7F1734",
+    "name": "Claret",
+    "uuid": "eed6f727-ad40-498f-9f57-f11e67ff8b36"
+  },
+  {
+    "hex": "9FA91F",
+    "name": "Citron",
+    "uuid": "831a08db-ebc7-4ac1-aa72-26be16ee8d05"
+  },
+  {
+    "hex": "E4D00A",
+    "name": "Citrine",
+    "uuid": "89778f2d-0e11-42c1-b74d-3cf77622340e"
+  },
+  {
+    "hex": "CD607E",
+    "name": "Cinnamon Satin",
+    "uuid": "6e834c9a-6bcf-454a-8cb8-fa36626dfcf3"
+  },
+  {
+    "hex": "E34234",
+    "name": "Cinnabar",
+    "uuid": "adcac9c8-7dca-49a8-8849-ba2f3966ad25"
+  },
+  {
+    "hex": "98817B",
+    "name": "Cinereous",
+    "uuid": "b9f7e68a-b453-40c7-96ad-eb4af6e63668"
+  },
+  {
+    "hex": "FFA700",
+    "name": "Chrome yellow",
+    "uuid": "a0a711cf-6621-4f1f-927d-bf0c3cd92ba6"
+  },
+  {
+    "hex": "D2691E",
+    "name": "Chocolate (web)",
+    "uuid": "09d66f5d-9d02-4cb7-8f31-aec15b4febec"
+  },
+  {
+    "hex": "7B3F00",
+    "name": "Chocolate (traditional)",
+    "uuid": "5026a98e-a6e3-4f0e-99db-5dd1b2ba30a6"
+  },
+  {
+    "hex": "FFB200",
+    "name": "Chinese yellow",
+    "uuid": "f63ea38c-e80a-4119-a56e-0002e54c3301"
+  },
+  {
+    "hex": "856088",
+    "name": "Chinese violet",
+    "uuid": "e56b516c-938d-4881-afea-72c107184c9b"
+  },
+  {
+    "hex": "AA381E",
+    "name": "Chinese red",
+    "uuid": "ecf795ec-8dac-41bc-b1a3-ad62dc69fc7b"
+  },
+  {
+    "hex": "A8516E",
+    "name": "China rose",
+    "uuid": "0256bdf9-9f5a-420b-889a-835ffe0e1ed8"
+  },
+  {
+    "hex": "DE6FA1",
+    "name": "China pink",
+    "uuid": "a1781f3d-e6e3-4ecb-880b-e4b7bd1e6d2b"
+  },
+  {
+    "hex": "954535",
+    "name": "Chestnut",
+    "uuid": "47cb5157-3ff8-4aa2-a9fc-0575174db982"
+  },
+  {
+    "hex": "FFB7C5",
+    "name": "Cherry blossom pink",
+    "uuid": "5fe62656-2402-4c6e-bb18-77312b0ee3c5"
+  },
+  {
+    "hex": "7FFF00",
+    "name": "Chartreuse (web)",
+    "uuid": "0193d71f-39a1-4aa5-aca9-8eb784c244d2"
+  },
+  {
+    "hex": "DFFF00",
+    "name": "Chartreuse (traditional)",
+    "uuid": "fd1d47e1-d42d-46cc-ae63-d6a419280ebd"
+  },
+  {
+    "hex": "E68FAC",
+    "name": "Charm pink",
+    "uuid": "13d287f8-a9fa-473c-a70d-949f583ef39e"
+  },
+  {
+    "hex": "232B2B",
+    "name": "Charleston green",
+    "uuid": "8f36a986-bbdd-4263-83a0-404114afcb6c"
+  },
+  {
+    "hex": "36454F",
+    "name": "Charcoal",
+    "uuid": "db16f585-7c64-4c56-aa97-4424518cb6a3"
+  },
+  {
+    "hex": "F1DDCF",
+    "name": "Champagne pink",
+    "uuid": "e84fe637-f2db-4c1d-a951-0389c2aa55eb"
+  },
+  {
+    "hex": "F7E7CE",
+    "name": "Champagne",
+    "uuid": "2059878e-dab2-41fd-beb5-062456d0a4fc"
+  },
+  {
+    "hex": "E03C31",
+    "name": "CG red",
+    "uuid": "8c45bc65-eb55-4ec9-b500-1c467d13beee"
+  },
+  {
+    "hex": "007AA5",
+    "name": "CG blue",
+    "uuid": "6b1fa93f-9d3b-4db2-b092-d79f60dfbad9"
+  },
+  {
+    "hex": "1DACD6",
+    "name": "Cerulean (Crayola)",
+    "uuid": "f272e887-52f5-485b-bafa-a5fcdabdf37d"
+  },
+  {
+    "hex": "6D9BC3",
+    "name": "Cerulean frost",
+    "uuid": "ac1b86c6-f776-4311-9570-ac3580294c98"
+  },
+  {
+    "hex": "2A52BE",
+    "name": "Cerulean blue",
+    "uuid": "ec12b86b-54a7-40a2-a63a-3f0f2c11df22"
+  },
+  {
+    "hex": "007BA7",
+    "name": "Cerulean",
+    "uuid": "0add34d7-958d-45b0-b391-5a53b07604e3"
+  },
+  {
+    "hex": "DE3163",
+    "name": "Cerise",
+    "uuid": "4d6f37c8-a87e-433d-b99c-3e64a22c7ccd"
+  },
+  {
+    "hex": "246BCE",
+    "name": "Celtic blue",
+    "uuid": "e4acfa87-f49e-4993-9158-b1b59b965ed0"
+  },
+  {
+    "hex": "B2FFFF",
+    "name": "Celeste",
+    "uuid": "786b37f0-9e1c-4492-af21-0fdf74709128"
+  },
+  {
+    "hex": "2F847C",
+    "name": "Celadon green",
+    "uuid": "bd2ec455-4568-4e83-a416-e60984c4eb6a"
+  },
+  {
+    "hex": "007BA7",
+    "name": "Celadon blue",
+    "uuid": "72919593-0bad-43de-9ff0-697f995132b7"
+  },
+  {
+    "hex": "ACE1AF",
+    "name": "Celadon",
+    "uuid": "9fcf237a-588f-4eda-909e-e75e9eb85a6e"
+  },
+  {
+    "hex": "C95A49",
+    "name": "Cedar Chest",
+    "uuid": "10afaac0-de5c-49c6-a1dc-09e0200464da"
+  },
+  {
+    "hex": "703642",
+    "name": "Catawba",
+    "uuid": "f1349bce-fa21-49b4-84ab-396b2f4203f2"
+  },
+  {
+    "hex": "00563F",
+    "name": "Castleton green",
+    "uuid": "e5fa1913-eb36-4838-a5f5-8fbc11c13090"
+  },
+  {
+    "hex": "ED9121",
+    "name": "Carrot orange",
+    "uuid": "83859cc1-288a-4c19-9486-2e46f926eb34"
+  },
+  {
+    "hex": "56A0D3",
+    "name": "Carolina blue",
+    "uuid": "05a62b7d-29b9-4863-8f21-70ff3f70ff97"
+  },
+  {
+    "hex": "B31B1B",
+    "name": "Carnelian",
+    "uuid": "927c2b6f-3f6d-4478-a77d-0acbc346d9c2"
+  },
+  {
+    "hex": "FFA6C9",
+    "name": "Carnation pink",
+    "uuid": "93d7973b-e78e-40e3-874c-f36f1ff33234"
+  },
+  {
+    "hex": "D70040",
+    "name": "Carmine (M&P)",
+    "uuid": "fa0c2d1c-bd9d-4dbe-b651-4bec4dc5b49a"
+  },
+  {
+    "hex": "960018",
+    "name": "Carmine",
+    "uuid": "bc3ec4d5-e882-40ae-b412-70fc115bab61"
+  },
+  {
+    "hex": "00CC99",
+    "name": "Caribbean green",
+    "uuid": "25a90b70-2d1b-4f9b-8f97-7446b57a4534"
+  },
+  {
+    "hex": "C41E3A",
+    "name": "Cardinal",
+    "uuid": "a956e865-b9bc-4519-9bb5-297efd2bf1ca"
+  },
+  {
+    "hex": "592720",
+    "name": "Caput mortuum",
+    "uuid": "ba685287-3314-4515-8b83-52512d5d58b5"
+  },
+  {
+    "hex": "00BFFF",
+    "name": "Capri",
+    "uuid": "bae75088-25ad-468a-a347-4ca7201a8acb"
+  },
+  {
+    "hex": "E4717A",
+    "name": "Candy pink",
+    "uuid": "507ddc84-b532-484d-b717-ee7360c2ebcd"
+  },
+  {
+    "hex": "FF0800",
+    "name": "Candy apple red",
+    "uuid": "bd8d810d-ce21-41bd-b622-65f0b2c57c51"
+  },
+  {
+    "hex": "FFEF00",
+    "name": "Canary yellow",
+    "uuid": "cd2b298f-c962-4ee8-a059-9a07c8c6802a"
+  },
+  {
+    "hex": "FFFF99",
+    "name": "Canary",
+    "uuid": "7b1813d4-69a7-4de4-bd07-a13c9cd7caed"
+  },
+  {
+    "hex": "EFBBCC",
+    "name": "Cameo pink",
+    "uuid": "ba7827c6-9929-4727-b25a-aca06c24cd06"
+  },
+  {
+    "hex": "C19A6B",
+    "name": "Camel",
+    "uuid": "d4b449fe-fd19-4a77-8e5a-c07840ce080c"
+  },
+  {
+    "hex": "A3C1AD",
+    "name": "Cambridge blue",
+    "uuid": "35aba4e7-651a-4c19-9a3f-e7540db1320d"
+  },
+  {
+    "hex": "4B3621",
+    "name": "CafÃ© noir",
+    "uuid": "b7817464-514f-49c1-8c10-15c1dbf2c379"
+  },
+  {
+    "hex": "A67B5B",
+    "name": "CafÃ© au lait",
+    "uuid": "342c375b-4b02-4fee-b529-432a22a22a11"
+  },
+  {
+    "hex": "FFF600",
+    "name": "Cadmium yellow",
+    "uuid": "a979f7dc-4629-4c81-a90f-a02b61404912"
+  },
+  {
+    "hex": "E30022",
+    "name": "Cadmium red",
+    "uuid": "730fc185-351f-447d-a4f8-362fcddf0311"
+  },
+  {
+    "hex": "ED872D",
+    "name": "Cadmium orange",
+    "uuid": "32ea6870-34fc-4f95-a2c5-83050e55975e"
+  },
+  {
+    "hex": "006B3C",
+    "name": "Cadmium green",
+    "uuid": "73acfa33-a6f3-413f-b85e-26632bfb7b62"
+  },
+  {
+    "hex": "91A3B0",
+    "name": "Cadet grey",
+    "uuid": "396497f9-f4cb-4451-a681-b0b833ee78ab"
+  },
+  {
+    "hex": "A9B2C3",
+    "name": "Cadet blue (Crayola)",
+    "uuid": "0ef187e0-2740-47ac-9391-66b8410cee06"
+  },
+  {
+    "hex": "5F9EA0",
+    "name": "Cadet blue",
+    "uuid": "ebc2300c-4962-4b58-be38-620f3aa632af"
+  },
+  {
+    "hex": "536872",
+    "name": "Cadet",
+    "uuid": "a1e0434d-7c2d-485f-94dc-cf5e8a672d99"
+  },
+  {
+    "hex": "702963",
+    "name": "Byzantium",
+    "uuid": "a2f5105b-3a7b-4e07-ac45-37828b2ffa3f"
+  },
+  {
+    "hex": "BD33A4",
+    "name": "Byzantine",
+    "uuid": "9336cd68-4ec9-445c-b53a-e79704d28cad"
+  },
+  {
+    "hex": "8A3324",
+    "name": "Burnt umber",
+    "uuid": "d5ca9b19-dabc-4fa0-9cfd-482fa7e6443c"
+  },
+  {
+    "hex": "E97451",
+    "name": "Burnt sienna",
+    "uuid": "3bdd851b-bdfb-4d83-8a4d-019c986e75b7"
+  },
+  {
+    "hex": "CC5500",
+    "name": "Burnt orange",
+    "uuid": "5f59544b-a860-4da7-bdfe-619c97482a72"
+  },
+  {
+    "hex": "A17A74",
+    "name": "Burnished brown",
+    "uuid": "5b9fe2cf-aa89-4ecc-a574-568661499f05"
+  },
+  {
+    "hex": "DEB887",
+    "name": "Burlywood",
+    "uuid": "13f554a4-4a90-4201-a518-0e78007941f5"
+  },
+  {
+    "hex": "800020",
+    "name": "Burgundy",
+    "uuid": "e57c08e6-497d-4618-9a24-1f944e3b0581"
+  },
+  {
+    "hex": "F0DC82",
+    "name": "Buff",
+    "uuid": "ac87df7c-9329-47e3-8a67-897dd8a16b0f"
+  },
+  {
+    "hex": "7BB661",
+    "name": "Bud green",
+    "uuid": "ab263d26-85f0-4b6d-b2a8-d8d9ad5aac14"
+  },
+  {
+    "hex": "1B4D3E",
+    "name": "Brunswick green",
+    "uuid": "431fe92d-88b1-4cfa-a7ac-997dbd43cf3c"
+  },
+  {
+    "hex": "AF6E4D",
+    "name": "Brown sugar",
+    "uuid": "9f34a5f6-5260-4dc1-a7a6-9cf8ec4d84dc"
+  },
+  {
+    "hex": "88540B",
+    "name": "Brown",
+    "uuid": "dc8dc70d-787e-4d37-a92b-7a2ea3c6c8c4"
+  },
+  {
+    "hex": "CD7F32",
+    "name": "Bronze",
+    "uuid": "5d81b68d-6b06-42e0-98b9-438d22d28ab9"
+  },
+  {
+    "hex": "004225",
+    "name": "British racing green",
+    "uuid": "a17c18f4-b9cb-4ea9-8e2a-50f7f5ba65c2"
+  },
+  {
+    "hex": "FB607F",
+    "name": "Brink pink",
+    "uuid": "34ff0a92-f908-4fe3-be75-232b3e898b17"
+  },
+  {
+    "hex": "FF55A3",
+    "name": "Brilliant rose",
+    "uuid": "18c09aee-0717-4899-8f6c-88351a9337b0"
+  },
+  {
+    "hex": "FFAA1D",
+    "name": "Bright yellow (Crayola)",
+    "uuid": "ebce02b1-f505-4b81-acab-344721d1421c"
+  },
+  {
+    "hex": "1974D2",
+    "name": "Bright navy blue",
+    "uuid": "aa1ca4d8-1c2d-49ea-b9d2-25b352743517"
+  },
+  {
+    "hex": "C32148",
+    "name": "Bright maroon",
+    "uuid": "84ba4311-29d5-49e5-a7e0-f8f27ef40438"
+  },
+  {
+    "hex": "D891EF",
+    "name": "Bright lilac",
+    "uuid": "5a3b4ff5-66c4-4eca-aaef-06b66aaf95d5"
+  },
+  {
+    "hex": "66FF00",
+    "name": "Bright green",
+    "uuid": "14902115-b9e4-4513-95f7-3aa7ff83fd67"
+  },
+  {
+    "hex": "CB4154",
+    "name": "Brick red",
+    "uuid": "578629c5-ef1b-43f7-8b89-7c766dbbf4af"
+  },
+  {
+    "hex": "87413F",
+    "name": "Brandy",
+    "uuid": "4b942619-d458-44bd-8b88-6b735e4b0acb"
+  },
+  {
+    "hex": "006A4E",
+    "name": "Bottle green",
+    "uuid": "bf8d69ec-97e7-44d9-a7fe-6501492cf5f2"
+  },
+  {
+    "hex": "E3DAC9",
+    "name": "Bone",
+    "uuid": "92393e37-8b9c-4a4d-96a2-cd1a637134f2"
+  },
+  {
+    "hex": "79443B",
+    "name": "Bole",
+    "uuid": "39cc7285-f916-41c2-8c25-71446262347f"
+  },
+  {
+    "hex": "DE5D83",
+    "name": "Blush",
+    "uuid": "9a12c881-494e-40e8-b9a3-649aa5170435"
+  },
+  {
+    "hex": "3C69E7",
+    "name": "Bluetiful",
+    "uuid": "912feadb-eb95-4900-9bfe-c459de5bb6ae"
+  },
+  {
+    "hex": "5072A7",
+    "name": "Blue yonder",
+    "uuid": "0a4b8d57-f720-4052-9751-9d57243c83cf"
+  },
+  {
+    "hex": "4D1A7F",
+    "name": "Blue-violet (color wheel)",
+    "uuid": "d6ac7c7a-8bad-4c28-9464-a2ad26a70d02"
+  },
+  {
+    "hex": "7366BD",
+    "name": "Blue-violet (Crayola)",
+    "uuid": "a94e4392-c934-4295-ac93-030dfb92ba8d"
+  },
+  {
+    "hex": "8A2BE2",
+    "name": "Blue-violet",
+    "uuid": "983aa946-85b0-4e43-8ade-11e15ff17195"
+  },
+  {
+    "hex": "126180",
+    "name": "Blue sapphire",
+    "uuid": "bc339a71-97e9-4421-9da1-c3dd92ebb154"
+  },
+  {
+    "hex": "5DADEC",
+    "name": "Blue jeans",
+    "uuid": "38c9abe1-aafb-40b5-9f32-3af3f63a5cc0"
+  },
+  {
+    "hex": "064E40",
+    "name": "Blue-green (color wheel)",
+    "uuid": "37faf378-4d9a-4df9-8e55-e2c6977b421d"
+  },
+  {
+    "hex": "0D98BA",
+    "name": "Blue-green",
+    "uuid": "f9d5f471-d503-4dca-9abc-adf03f24cb79"
+  },
+  {
+    "hex": "6699CC",
+    "name": "Blue-gray",
+    "uuid": "64cc205f-4e8e-4330-8ab5-53817e483da0"
+  },
+  {
+    "hex": "A2A2D0",
+    "name": "Blue bell",
+    "uuid": "751498a2-de98-4d5f-bb02-f0255b647105"
+  },
+  {
+    "hex": "0247FE",
+    "name": "Blue (RYB)",
+    "uuid": "8f7a0cd8-dd1e-4959-aee0-7711e2938e7c"
+  },
+  {
+    "hex": "333399",
+    "name": "Blue (pigment)",
+    "uuid": "952ef4ee-ec44-4361-9826-e3f1c19eb08e"
+  },
+  {
+    "hex": "0018A8",
+    "name": "Blue (Pantone)",
+    "uuid": "0100691b-87ed-428d-9adb-a43e9c175f50"
+  },
+  {
+    "hex": "0087BD",
+    "name": "Blue (NCS)",
+    "uuid": "60484765-4f15-4709-bbba-b98962716312"
+  },
+  {
+    "hex": "0093AF",
+    "name": "Blue (Munsell)",
+    "uuid": "b93549bd-8bcd-44cb-bc45-715fa31c90f1"
+  },
+  {
+    "hex": "1F75FE",
+    "name": "Blue (Crayola)",
+    "uuid": "1ff2f44f-17a7-46ca-b2b3-be07d338734e"
+  },
+  {
+    "hex": "0000FF",
+    "name": "Blue",
+    "uuid": "dc47a824-36f1-4d1d-b1a7-8f56efa05c3e"
+  },
+  {
+    "hex": "660000",
+    "name": "Blood red",
+    "uuid": "e7853c23-a14c-434e-aa3b-6e0cf5493e0a"
+  },
+  {
+    "hex": "FAF0BE",
+    "name": "Blond",
+    "uuid": "abc4937d-4364-4028-a9f0-67da235cc671"
+  },
+  {
+    "hex": "ACE5EE",
+    "name": "Blizzard blue",
+    "uuid": "2624971e-98f8-41bc-badc-9934ce60a884"
+  },
+  {
+    "hex": "318CE7",
+    "name": "Bleu de France",
+    "uuid": "4a012c5a-027e-41bc-861b-cf59f9e8533f"
+  },
+  {
+    "hex": "A57164",
+    "name": "Blast-off bronze",
+    "uuid": "e3292a1f-bcad-4f21-881f-dc1d8f61c483"
+  },
+  {
+    "hex": "FFEBCD",
+    "name": "Blanched almond",
+    "uuid": "555f5141-7173-4c52-b435-f66eef18ae72"
+  },
+  {
+    "hex": "BFAFB2",
+    "name": "Black Shadows",
+    "uuid": "7ff472c8-6b2d-4a5e-be36-ca7d521da604"
+  },
+  {
+    "hex": "3B3C36",
+    "name": "Black olive",
+    "uuid": "17fbd244-2eb3-4920-acde-6113d345c272"
+  },
+  {
+    "hex": "54626F",
+    "name": "Black coral",
+    "uuid": "88730afa-b535-4de8-8bb2-37a9effccbae"
+  },
+  {
+    "hex": "3B2F2F",
+    "name": "Black coffee",
+    "uuid": "a0948588-01d6-4f6e-b35f-d3c416ae7a7d"
+  },
+  {
+    "hex": "1B1811",
+    "name": "Black chocolate",
+    "uuid": "ece9a8b9-c750-4b43-b4e2-03414215b9f4"
+  },
+  {
+    "hex": "3D0C02",
+    "name": "Black bean",
+    "uuid": "a4a83a5e-0291-4663-8558-990a0b031d76"
+  },
+  {
+    "hex": "000000",
+    "name": "Black",
+    "uuid": "42e603fc-77cd-49ef-acc3-6d9c9ccb4858"
+  },
+  {
+    "hex": "BF4F51",
+    "name": "Bittersweet shimmer",
+    "uuid": "63a92030-367e-4e65-adc7-cab8af648a4c"
+  },
+  {
+    "hex": "FE6F5E",
+    "name": "Bittersweet",
+    "uuid": "ea64dae8-4a91-44f3-a68e-8ff3d321c418"
+  },
+  {
+    "hex": "BFFF00",
+    "name": "Bitter lime",
+    "uuid": "6ddfba98-6a97-43a0-8e2d-b284c3455250"
+  },
+  {
+    "hex": "CAE00D",
+    "name": "Bitter lemon",
+    "uuid": "b0dae61a-726e-454e-938a-b208ad92c978"
+  },
+  {
+    "hex": "967117",
+    "name": "Bistre brown",
+    "uuid": "2548b561-3c1d-45e0-84ac-3866307aea07"
+  },
+  {
+    "hex": "3D2B1F",
+    "name": "Bistre",
+    "uuid": "bd97421c-62ea-43b9-b89f-84499500808b"
+  },
+  {
+    "hex": "FFE4C4",
+    "name": "Bisque",
+    "uuid": "6170a88c-1c76-4532-98de-3b43ddf26f05"
+  },
+  {
+    "hex": "9C2542",
+    "name": "Big dip oâruby",
+    "uuid": "14b30d47-6365-4053-90e4-25e15307a1d4"
+  },
+  {
+    "hex": "2E5894",
+    "name": "B'dazzled blue",
+    "uuid": "e2772c3a-fb14-4972-bc56-62142f49f149"
+  },
+  {
+    "hex": "F5F5DC",
+    "name": "Beige",
+    "uuid": "c0032f46-130c-422c-b8f3-1036bf84eb07"
+  },
+  {
+    "hex": "9F8170",
+    "name": "Beaver",
+    "uuid": "b362ea71-abb4-484d-a814-7f0c717ae793"
+  },
+  {
+    "hex": "BCD4E6",
+    "name": "Beau blue",
+    "uuid": "c253d358-1c04-47a3-ac01-35337ec089c0"
+  },
+  {
+    "hex": "848482",
+    "name": "Battleship grey",
+    "uuid": "9a02ff64-7c8d-4edd-8920-84d270f99658"
+  },
+  {
+    "hex": "7C0A02",
+    "name": "Barn red",
+    "uuid": "74006817-ab29-4209-8c2f-dfd82e9569fb"
+  },
+  {
+    "hex": "DA1884",
+    "name": "Barbie Pink",
+    "uuid": "904e1d89-00b1-4d6c-8514-d08e331538bd"
+  },
+  {
+    "hex": "FAE7B5",
+    "name": "Banana Mania",
+    "uuid": "0a1165fe-b5e2-49ed-9cbf-3c73408332fc"
+  },
+  {
+    "hex": "FF91AF",
+    "name": "Baker-Miller pink",
+    "uuid": "09e58dd9-1923-40c6-973a-f90c20c32551"
+  },
+  {
+    "hex": "FEFEFA",
+    "name": "Baby powder",
+    "uuid": "efd15f22-e505-40fa-b925-0943cc1be166"
+  },
+  {
+    "hex": "F4C2C2",
+    "name": "Baby pink",
+    "uuid": "55db3bac-7436-44b4-9703-127d4b29bcd5"
+  },
+  {
+    "hex": "A1CAF1",
+    "name": "Baby blue eyes",
+    "uuid": "9414aa2c-31d8-487a-99dd-4b1dc015f75f"
+  },
+  {
+    "hex": "89CFF0",
+    "name": "Baby blue",
+    "uuid": "87c6cee4-f246-4656-9116-e4cac5fec85a"
+  },
+  {
+    "hex": "F0FFFF",
+    "name": "Azure (X11/web color)",
+    "uuid": "d01205b0-5e03-4b68-ab30-f145d99fff92"
+  },
+  {
+    "hex": "007FFF",
+    "name": "Azure",
+    "uuid": "bbe78b8d-56ca-45e7-8571-3810c385df4e"
+  },
+  {
+    "hex": "568203",
+    "name": "Avocado",
+    "uuid": "4f2976e5-76e9-4c8b-b8e9-25dff3b595dd"
+  },
+  {
+    "hex": "FDEE00",
+    "name": "Aureolin",
+    "uuid": "12c8f533-93f0-4647-9350-b277ff1f2032"
+  },
+  {
+    "hex": "A52A2A",
+    "name": "Auburn",
+    "uuid": "bcfaddf3-607c-4f6b-bd6c-2ebfd225deb3"
+  },
+  {
+    "hex": "FF9966",
+    "name": "Atomic tangerine",
+    "uuid": "a0e76abd-1751-40a4-a1bd-c43bda1e8395"
+  },
+  {
+    "hex": "87A96B",
+    "name": "Asparagus",
+    "uuid": "2382382a-7ee9-4a9c-bb0b-053a077bc4a8"
+  },
+  {
+    "hex": "B2BEB5",
+    "name": "Ash gray",
+    "uuid": "7ce71521-d29f-4dc1-b53b-3055b3eeefb1"
+  },
+  {
+    "hex": "E9D66B",
+    "name": "Arylide yellow",
+    "uuid": "88a88a6e-b9b2-43c4-aeb4-5ae0b5ffb302"
+  },
+  {
+    "hex": "8F9779",
+    "name": "Artichoke",
+    "uuid": "106cc5f1-1003-4890-beec-c4f733863f35"
+  },
+  {
+    "hex": "4B5320",
+    "name": "Army green",
+    "uuid": "516f2b53-bf6f-47e8-8098-6fb30177c82e"
+  },
+  {
+    "hex": "D0FF14",
+    "name": "Arctic lime",
+    "uuid": "54d676f4-e33e-4619-b2c0-0907a2553d93"
+  },
+  {
+    "hex": "7FFFD4",
+    "name": "Aquamarine",
+    "uuid": "ca60ecc3-5b28-4231-aae0-5a3a6803c5c7"
+  },
+  {
+    "hex": "00FFFF",
+    "name": "Aqua",
+    "uuid": "4c263ad1-d5a6-4dac-940f-54c9729bb960"
+  },
+  {
+    "hex": "FBCEB1",
+    "name": "Apricot",
+    "uuid": "53a051e5-6696-438b-b788-658dea8506b1"
+  },
+  {
+    "hex": "8DB600",
+    "name": "Apple green",
+    "uuid": "a651e031-8bd2-47bd-8b1e-e2c51d3dfa24"
+  },
+  {
+    "hex": "008000",
+    "name": "Ao (English)",
+    "uuid": "12589c98-8d3a-4fef-8f8b-b08fe89ec512"
+  },
+  {
+    "hex": "FAEBD7",
+    "name": "Antique white",
+    "uuid": "5dd4c2a2-ebd0-47f8-a740-963085ee9e48"
+  },
+  {
+    "hex": "841B2D",
+    "name": "Antique ruby",
+    "uuid": "2c23bff6-4821-48c0-ada7-d842617321d2"
+  },
+  {
+    "hex": "915C83",
+    "name": "Antique fuchsia",
+    "uuid": "98d7949d-25ba-47c6-bb7d-cb4e13a44782"
+  },
+  {
+    "hex": "665D1E",
+    "name": "Antique bronze",
+    "uuid": "fe0d018b-3223-4857-8bea-b7add89bef85"
+  },
+  {
+    "hex": "CD9575",
+    "name": "Antique brass",
+    "uuid": "347c33e9-d2a1-4c7f-bf52-2eadc4e97d93"
+  },
+  {
+    "hex": "A4C639",
+    "name": "Android green",
+    "uuid": "27d4ce89-71ca-4021-9330-0ab2ec1b1d7c"
+  },
+  {
+    "hex": "9966CC",
+    "name": "Amethyst",
+    "uuid": "9e029d09-b511-48df-84b3-cc1e86ab1722"
+  },
+  {
+    "hex": "FF7E00",
+    "name": "Amber (SAE/ECE)",
+    "uuid": "e4fd1339-2132-4a8e-baab-0eb47b5c095d"
+  },
+  {
+    "hex": "FFBF00",
+    "name": "Amber",
+    "uuid": "46b91e69-393d-4943-b1c4-86bfd936fc76"
+  },
+  {
+    "hex": "3B7A57",
+    "name": "Amazon",
+    "uuid": "fb0ad148-a0b9-4485-9c52-948d2a91a7af"
+  },
+  {
+    "hex": "D3212D",
+    "name": "Amaranth red",
+    "uuid": "f9a8fd6d-8e18-4a01-ae29-38e679488e8d"
+  },
+  {
+    "hex": "AB274F",
+    "name": "Amaranth purple",
+    "uuid": "cd5565b8-c77d-41db-a210-c4e1773f8566"
+  },
+  {
+    "hex": "F19CBB",
+    "name": "Amaranth pink",
+    "uuid": "04a702c6-a77c-42c1-809a-dca641c44fdd"
+  },
+  {
+    "hex": "9F2B68",
+    "name": "Amaranth (M&P)",
+    "uuid": "a1f2a7b6-4420-499c-ad69-0573588e45c4"
+  },
+  {
+    "hex": "E52B50",
+    "name": "Amaranth",
+    "uuid": "b9842786-7258-4800-9aa6-e895a7f2a86f"
+  },
+  {
+    "hex": "EFDECD",
+    "name": "Almond",
+    "uuid": "d632e9b3-ecff-43c9-b7d5-6c34f7370f54"
+  },
+  {
+    "hex": "C46210",
+    "name": "Alloy orange",
+    "uuid": "5eb3a4dc-b969-4dbd-bf5f-62ac301b166a"
+  },
+  {
+    "hex": "F0F8FF",
+    "name": "Alice blue",
+    "uuid": "3d8b6514-e370-481b-a893-85ee6ac4fbe5"
+  },
+  {
+    "hex": "EDEAE0",
+    "name": "Alabaster",
+    "uuid": "43132a03-5d2e-49fb-bedb-02f78d1f0e63"
+  },
+  {
+    "hex": "72A0C1",
+    "name": "Air superiority blue",
+    "uuid": "1e80eacf-6e62-41dd-a655-28af62603edb"
+  },
+  {
+    "hex": "B284BE",
+    "name": "African violet",
+    "uuid": "34661ee4-d3d0-4827-8376-7fc113ab48bd"
+  },
+  {
+    "hex": "C9FFE5",
+    "name": "Aero blue",
+    "uuid": "0e067b59-c47b-4a64-87de-fd832541dfd7"
+  },
+  {
+    "hex": "7CB9E8",
+    "name": "Aero",
+    "uuid": "f44a756f-c348-4d38-8ac5-6587d8222884"
+  },
+  {
+    "hex": "B0BF1A",
+    "name": "Acid green",
+    "uuid": "f137e704-0910-43a1-9c2a-711582f4af89"
+  },
+  {
+    "hex": "0048BA",
+    "name": "Absolute Zero",
+    "uuid": "b060ba43-d028-4223-8525-32d6be8663b1"
+  }
+]

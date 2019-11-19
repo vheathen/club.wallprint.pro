@@ -5,4 +5,5 @@ defmodule Club.Commanded do
   router(Club.Brands.Router)
   router(Club.Devices.Router)
   router(Club.SurfaceTypes.Router)
+  router(Club.Colors.Router)
 end
