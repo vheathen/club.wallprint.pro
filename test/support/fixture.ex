@@ -8,4 +8,11 @@ defmodule Club.Fixture do
   def meta(attrs \\ []) do
     build(:metadata, attrs)
   end
+
+  def make_cmd(factory, module, attrs) do
+    factory
+    |> build(attrs)
+    |> module.new()
+    |> Ecto.Changeset.apply_changes()
+  end
 end
