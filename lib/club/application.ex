@@ -25,6 +25,9 @@ defmodule Club.Application do
       # Commanded application
       Club.Commanded,
 
+      # Accounts domain
+      Club.Accounts.Supervisor,
+
       # Brands domain
       Club.Brands.Supervisor,
 
