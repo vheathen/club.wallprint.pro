@@ -14,7 +14,7 @@ defmodule Club.Brands do
     DeleteBrand
   }
 
-  alias Club.Brands.Queries.NameExists
+  alias Club.Brands.Queries.BrandNameExists
 
   @spec add_brand(brand :: map(), metadata :: maybe_improper_list | map) ::
           {:ok, Ecto.UUID.t()} | {:error, any}
@@ -69,7 +69,7 @@ defmodule Club.Brands do
 
   @spec brand_unique?(brand :: map()) :: boolean()
   def brand_unique?(%{name: name}) do
-    case Repo.one(NameExists.new(name)) do
+    case Repo.one(BrandNameExists.new(name)) do
       true -> false
       nil -> true
     end

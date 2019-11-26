@@ -74,7 +74,9 @@ defmodule Club.BrandsTest do
 
       wait_for_event(Commanded, BrandAdded)
 
-      rename_brand = build(:rename_brand, brand_uuid: brand_uuid)
+      rename_brand =
+        build(:rename_brand, brand_uuid: brand_uuid, name: unique_name(add_brand.name))
+
       :ok = Brands.rename_brand(rename_brand, meta())
 
       assert_receive_event(Commanded, BrandRenamed, fn event ->
@@ -244,7 +246,7 @@ defmodule Club.BrandsTest do
     end
 
     def unique_name(old_name) do
-      name = Faker.Company.buzzword()
+      name = Faker.Company.name()
 
       case name != old_name do
         true -> name

@@ -12,8 +12,7 @@ defmodule Club.Brands.Projectors.BrandTest do
     BrandRenamed,
     BrandUrlUpdated,
     NewProductWithBrandLinked,
-    ProductFromBrandUnlinked,
-    BrandDeleted
+    ProductFromBrandUnlinked
   }
 
   @topic "domain:brands"

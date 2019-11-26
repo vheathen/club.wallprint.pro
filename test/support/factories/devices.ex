@@ -21,7 +21,7 @@ defmodule Club.Factories.Devices do
           url: Faker.Internet.url(),
           description: Faker.Lorem.sentence(),
           brand_uuid: UUID.uuid4(),
-          brand_name: Faker.Company.En.buzzword()
+          brand_name: Faker.Company.name()
         }
       end
     end

@@ -4,7 +4,7 @@ defmodule Club.Factories.Brands do
       def brand_aggregate_factory do
         %Club.Brands.Aggregates.Brand{
           uuid: UUID.uuid4(),
-          name: Faker.Company.En.buzzword(),
+          name: Faker.Company.name(),
           url: Faker.Internet.url(),
           product_count: 0,
           products: []
@@ -14,7 +14,7 @@ defmodule Club.Factories.Brands do
       def new_brand_factory do
         %{
           brand_uuid: UUID.uuid4(),
-          name: Faker.Company.En.buzzword(),
+          name: Faker.Company.name(),
           url: Faker.Internet.url()
         }
       end
@@ -22,7 +22,7 @@ defmodule Club.Factories.Brands do
       def rename_brand_factory do
         %{
           brand_uuid: UUID.uuid4(),
-          name: Faker.Company.En.buzzword()
+          name: Faker.Company.name()
         }
       end
 

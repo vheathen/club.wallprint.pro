@@ -183,7 +183,7 @@ defmodule Club.SurfaceTypesTest do
     end
 
     def unique_name(old_name) do
-      name = Faker.Company.buzzword()
+      name = Faker.Company.name()
 
       case name != old_name do
         true -> name
