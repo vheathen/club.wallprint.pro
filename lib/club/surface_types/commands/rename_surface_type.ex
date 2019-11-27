@@ -14,7 +14,7 @@ defmodule Club.SurfaceTypes.Commands.RenameSurfaceType do
   end
 end
 
-defimpl Club.Support.Middleware.Uniqueness.UniqueFields,
+defimpl Commanded.Middleware.Uniqueness.UniqueFields,
   for: Club.SurfaceTypes.Commands.RenameSurfaceType do
   alias Club.SurfaceTypes.Commands.RenameSurfaceType
   alias Club.SurfaceTypes
@@ -22,7 +22,10 @@ defimpl Club.Support.Middleware.Uniqueness.UniqueFields,
   def unique(%RenameSurfaceType{surface_type_uuid: surface_type_uuid}),
     do: [
       {:name, "has already exist", surface_type_uuid,
-       ignore_case: true, label: :surface_type, is_unique: &is_unique/4}
+       ignore_case: true,
+       label: :surface_type,
+       is_unique: &is_unique/4,
+       partition: Club.SurfaceTypes}
     ]
 
   def is_unique(:name, value, _owner, _opts),

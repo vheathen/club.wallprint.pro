@@ -7,29 +7,11 @@ defmodule Club.SurfaceTypes.Commands.UniqueSurfaceTypeNameTest do
   alias Club.SurfaceTypes
   alias Club.SurfaceTypes.Projections.SurfaceType, as: SurfaceTypeProjection
 
-  @uniqueness_key Club.Support.Unique
-  @cachex_adapter Module.concat(@uniqueness_key, Cachex)
-
   @topic "domain:surface_types"
-
-  setup_all do
-    case Cachex.get(@cachex_adapter, :anything) do
-      {:error, :no_cache} ->
-        Application.put_env(:club, @uniqueness_key, adapter: @cachex_adapter)
-
-        {:ok, _} =
-          Cachex.start_link(@cachex_adapter, expiration: Cachex.Spec.expiration(default: 100))
-
-      {:ok, _} ->
-        true
-    end
-
-    :ok
-  end
 
   setup do
     on_exit(fn ->
-      Cachex.clear(@cachex_adapter)
+      Cachex.clear(Commanded.Middleware.Uniqueness.Adapter.get())
     end)
 
     Phoenix.PubSub.subscribe(Club.EventBus, @topic)
@@ -67,7 +49,7 @@ defmodule Club.SurfaceTypes.Commands.UniqueSurfaceTypeNameTest do
     } do
       uuid = UUID.uuid4()
       surface_type = %{surface_type | surface_type_uuid: uuid}
-      Cachex.clear(@cachex_adapter)
+      Cachex.clear(Commanded.Middleware.Uniqueness.Adapter.get())
       result = SurfaceTypes.add_surface_type(surface_type, meta())
       assert result == {:error, :validation_failure, [surface_type: "has already exist"]}
     end
@@ -112,7 +94,7 @@ defmodule Club.SurfaceTypes.Commands.UniqueSurfaceTypeNameTest do
       assert_receive {:surface_type_added, %{surface_type_uuid: ^new_uuid}}, 1_000
       assert length(Repo.all(SurfaceTypeProjection)) == 2
 
-      Cachex.clear(@cachex_adapter)
+      Cachex.clear(Commanded.Middleware.Uniqueness.Adapter.get())
 
       rename_surface_type =
         rename_surface_type(%{surface_type_uuid: new_uuid, name: surface_type.name})

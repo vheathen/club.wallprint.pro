@@ -27,7 +27,7 @@ defmodule Club.Support.Router do
       local_middleware(unquote(Keyword.get(opts, :local_middleware)))
 
       middleware(Club.Support.Middleware.MetadataValidation)
-      middleware(Club.Support.Middleware.Uniqueness)
+      middleware(Commanded.Middleware.Uniqueness)
     end
   end
 

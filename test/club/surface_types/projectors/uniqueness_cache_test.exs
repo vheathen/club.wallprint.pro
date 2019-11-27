@@ -5,29 +5,11 @@ defmodule Club.SurfaceTypes.Projectors.UniquenessCacheTest do
 
   alias Club.SurfaceTypes
 
-  @uniqueness_key Club.Support.Unique
-  @cachex_adapter Module.concat(@uniqueness_key, Cachex)
-
   @topic "domain:surface_types"
-
-  setup_all do
-    case Cachex.get(@cachex_adapter, :anything) do
-      {:error, :no_cache} ->
-        Application.put_env(:club, @uniqueness_key, adapter: @cachex_adapter)
-
-        {:ok, _} =
-          Cachex.start_link(@cachex_adapter, expiration: Cachex.Spec.expiration(default: 100))
-
-      {:ok, _} ->
-        true
-    end
-
-    :ok
-  end
 
   setup do
     on_exit(fn ->
-      Cachex.clear(@cachex_adapter)
+      Cachex.clear(Commanded.Middleware.Uniqueness.Adapter.get())
     end)
 
     Phoenix.PubSub.subscribe(Club.EventBus, @topic)

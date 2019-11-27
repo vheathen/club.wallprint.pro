@@ -70,6 +70,10 @@ config :club, Club.Support.Unique,
   # ttl: 60 minutes in milliseconds
   ttl: 60 * 60 * 1_000
 
+config :commanded_uniqueness_middleware,
+  adapter: Commanded.Middleware.Uniqueness.Adapter.Cachex,
+  ttl: 60 * 60 * 1_000
+
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
 import_config "#{Mix.env()}.exs"

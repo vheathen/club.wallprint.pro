@@ -22,7 +22,7 @@ defmodule Club.Accounts.Commands.RegisterUser do
   end
 end
 
-defimpl Club.Support.Middleware.Uniqueness.UniqueFields, for: Club.Accounts.Commands.RegisterUser do
+defimpl Commanded.Middleware.Uniqueness.UniqueFields, for: Club.Accounts.Commands.RegisterUser do
   alias Club.Accounts.Commands.RegisterUser
   alias Club.Accounts
 

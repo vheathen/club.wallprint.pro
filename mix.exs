@@ -56,6 +56,7 @@ defmodule Club.MixProject do
       {:commanded_audit_middleware, github: "commanded/commanded-audit-middleware"},
       # {:commanded_scheduler, github: "commanded/commanded-scheduler" }, # "~> 0.2"},
       {:commanded_messaging, "~> 0.2.0"},
+      {:commanded_uniqueness_middleware, github: "vheathen/commanded-uniqueness-middleware"},
 
       #
       {:cachex, "~> 3.2.0"},

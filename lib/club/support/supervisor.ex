@@ -12,6 +12,5 @@ defmodule Club.Support.Supervisor do
     )
   end
 
-  def children,
-    do: Club.Support.Unique.inject_child_spec([])
+  def children, do: []
 end

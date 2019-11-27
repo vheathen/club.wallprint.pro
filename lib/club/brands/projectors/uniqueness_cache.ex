@@ -3,17 +3,15 @@ defmodule Club.Brands.Projectors.UniquenessCache do
     application: Club.Commanded,
     name: __MODULE__
 
-  alias Club.Support.Config
-
   alias Club.Brands.Events.BrandDeleted
 
   def handle(%BrandDeleted{brand_uuid: brand_uuid}, _metadata) do
-    case Config.get_sub(Club.Support.Unique, :adapter) do
+    case Commanded.Middleware.Uniqueness.Adapter.get() do
       nil ->
         :ok
 
       adapter ->
-        :ok = adapter.release(:name, brand_uuid)
+        :ok = adapter.release(:name, brand_uuid, Club.Brands)
     end
   end
 end
